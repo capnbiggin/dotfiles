@@ -19,13 +19,13 @@
   ],
 
   "modules-right": [
-    "tray", 
     "pulseaudio", 
     "network", 
     "cpu", 
     "memory", 
     "temperature", 
     "battery", 
+    "custom/updates",
     "custom/power"
   ],
   // end waybar
@@ -140,5 +140,11 @@
     "tooltip": false,
     //"on-click": "wlogout -p layer-shell"
     "on-click": "~/.config/rofi/scripts/pmenu.sh"
+  },
+
+  "custom/updates": {
+    "exec": "$HOME/dotfiles/scripts/pacupdates.sh",
+    "interval": "3600",
+    "format": "{}"
   }
 }

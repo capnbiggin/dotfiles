@@ -13,7 +13,7 @@ git clone https://github.com/sindresorhus/pure.git ~/.config/zsh/plugins/pure/
 
 sudo pacman -S --needed --noconfirm zsh
 hash -r
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 cd ~/.hyprdots/
 stow zsh

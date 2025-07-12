@@ -263,6 +263,21 @@ window#waybar.hidden {
   color: @base;
 }
 
+/* CPU */
+#custom-updates {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @blue;
+}
+
+#custom-updates:hover {
+  background: @surface1;
+  color: @sapphire;
+}
+
 /* Animations */
 @keyframes blink {
   0% {
