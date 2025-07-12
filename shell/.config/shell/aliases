@@ -1,0 +1,43 @@
+###################################
+#            Aliases              #
+###################################
+
+
+# File Aliases
+alias ls='ls -1 --color=auto'
+#alias la='ls -a --color=auto'
+alias la='ls -laF --color=auto'
+alias ll="eza -la --group-directories-first --color=always --icons=always"
+
+# Change Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+
+
+
+# pacman
+alias i='yay -S --noconfirm --needed'                   # Install packages
+alias s='yay -Ss'
+alias syu='sudo pacman -Su'       # update pacman & packages
+
+# Editor
+alias n='nvim'
+alias t='tmux'
+alias n.='nvim .'
+
+# Mis. Aliases
+alias c='clear'
+alias x='exit'
+alias szsh='source ~/.config/zsh/.zshrc'
+
+# git
+alias ga='git add'
+alias gaa='git add .'
+alias gcm='git commit -m'
+alias gcn='git commit -m "none"'
+alias gu='git push'
+alias gd='git pull'
+

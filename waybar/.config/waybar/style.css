@@ -1,0 +1,290 @@
+/* Catppuccin Mocha Color Palette */
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+/* Reset */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", "Font Awesome 6 Free";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Main Bar */
+window#waybar {
+  background: rgba(30, 30, 46, 0.9);
+  color: @text;
+  border-radius: 12px;
+  border: 2px solid @surface0;
+  transition: all 0.3s ease;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* Workspaces */
+#workspaces {
+  background: @surface0;
+  margin: 5px 5px 5px 10px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+}
+
+#workspaces button {
+  padding: 5px 10px;
+  margin: 3px 3px;
+  border-radius: 8px;
+  color: @text;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  background: @blue;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @base;
+}
+
+#workspaces button:hover {
+  background: @surface2;
+  color: @text;
+}
+
+/* Window Title */
+#window {
+  background: @surface0;
+  margin: 5px 5px 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @text;
+}
+
+/* Clock */
+#clock {
+  background: @surface0;
+  margin: 5px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @blue;
+  font-weight: bold;
+}
+
+#clock:hover {
+  background: @surface1;
+  color: @lavender;
+}
+
+/* System Tray */
+#tray {
+  background: @surface0;
+  margin: 5px 0px 5px 5px;
+  padding: 0px 10px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+/* Audio */
+#pulseaudio {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @yellow;
+}
+
+#pulseaudio:hover {
+  background: @surface1;
+  color: @peach;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+/* Network */
+#network {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @green;
+}
+
+#network:hover {
+  background: @surface1;
+  color: @teal;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+/* CPU */
+#cpu {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @blue;
+}
+
+#cpu:hover {
+  background: @surface1;
+  color: @sapphire;
+}
+
+/* Memory */
+#memory {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @mauve;
+}
+
+#memory:hover {
+  background: @surface1;
+  color: @pink;
+}
+
+/* Temperature */
+#temperature {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @peach;
+}
+
+#temperature:hover {
+  background: @surface1;
+  color: @maroon;
+}
+
+#temperature.critical {
+  color: @red;
+  animation: blink 1s linear infinite;
+}
+
+/* Battery */
+#battery {
+  background: @surface0;
+  margin: 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @green;
+}
+
+#battery:hover {
+  background: @surface1;
+  color: @teal;
+}
+
+#battery.charging {
+  color: @blue;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation: blink 1s linear infinite;
+}
+
+/* Power Menu */
+#custom-power {
+  background: @surface0;
+  margin: 5px 10px 5px 0px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  border: 2px solid @surface1;
+  color: @red;
+}
+
+#custom-power:hover {
+  background: @red;
+  color: @base;
+}
+
+/* Animations */
+@keyframes blink {
+  0% {
+    opacity: 1; /* Fully visible at the start */
+  }
+  50% {
+    opacity: 0; /* Fully invisible halfway through */
+  }
+  100% {
+    opacity: 1; /* Fully visible at the end to complete the cycle */
+  }
+}
+
+/* Tooltip */
+tooltip {
+  background: @base;
+  border: 2px solid @surface1;
+  border-radius: 8px;
+  color: @text;
+}
+
+tooltip label {
+  color: @text;
+  padding: 5px;
+}
