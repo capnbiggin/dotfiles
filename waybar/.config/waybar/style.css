@@ -1,36 +1,8 @@
-/* Catppuccin Mocha Color Palette */
-@define-color base   #1e1e2e;
-@define-color mantle #181825;
-@define-color crust  #11111b;
+@import url("./themes/catppuccin-mocha.css");
 
-@define-color text     #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color subtext1 #bac2de;
-
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color surface2 #585b70;
-
-@define-color overlay0 #6c7086;
-@define-color overlay1 #7f849c;
-@define-color overlay2 #9399b2;
-
-@define-color blue      #89b4fa;
-@define-color lavender  #b4befe;
-@define-color sapphire  #74c7ec;
-@define-color sky       #89dceb;
-@define-color teal      #94e2d5;
-@define-color green     #a6e3a1;
-@define-color yellow    #f9e2af;
-@define-color peach     #fab387;
-@define-color maroon    #eba0ac;
-@define-color red       #f38ba8;
-@define-color mauve     #cba6f7;
-@define-color pink      #f5c2e7;
-@define-color flamingo  #f2cdcd;
-@define-color rosewater #f5e0dc;
-
-/* Reset */
+/* ----------------
+* Reset
+* ---------------- */
 * {
   border: none;
   border-radius: 0;
@@ -44,66 +16,78 @@
 
 /* Main Bar */
 window#waybar {
-  background: rgba(30, 30, 46, 0.9);
+  background: transparent;
   color: @text;
-  border-radius: 12px;
-  border: 2px solid @surface0;
+  border: none;
   transition: all 0.3s ease;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
-/* Workspaces */
+/* ---------------------
+* Workspaces 
+* -------------------- */
 #workspaces {
   background: @surface0;
-  margin: 5px 5px 5px 10px;
+  margin: 1px 3px;
   padding: 0px 5px;
-  border-radius: 10px;
-  border: 2px solid @surface1;
+  border-radius: 15px;
+  /*border: 2px solid @surface1;*/
+  border: 0px;
+  opacity: 0.8;
 }
 
 #workspaces button {
-  padding: 5px 10px;
-  margin: 3px 3px;
-  border-radius: 8px;
+  margin: 1px 3px;
+  padding: 2px;
+  border-radius: 15px;
   color: @text;
-  background: transparent;
+  background: @blue;
   transition: all 0.3s ease;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
+  min-width: 40px;
   background: @blue;
   color: @base;
+  transition: all 0.3s ease;
+  opacity: 1;
 }
 
 #workspaces button.urgent {
   background: @red;
   color: @base;
+  opacity: 0.9;
 }
 
 #workspaces button:hover {
-  background: @surface2;
   color: @text;
+  opacity: 0.7;
 }
 
-/* Window Title */
+/* ------------------------
+* Window Title
+* ----------------------- */
 #window {
   background: @surface0;
-  margin: 5px 5px 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @text;
 }
 
-/* Clock */
+/* -------------------------
+* Clock 
+* ------------------------ */
 #clock {
   background: @surface0;
-  margin: 5px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @blue;
   font-weight: bold;
@@ -117,9 +101,9 @@ window#waybar.hidden {
 /* System Tray */
 #tray {
   background: @surface0;
-  margin: 5px 0px 5px 5px;
-  padding: 0px 10px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
 }
 
@@ -135,9 +119,9 @@ window#waybar.hidden {
 /* Audio */
 #pulseaudio {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @yellow;
 }
@@ -154,9 +138,9 @@ window#waybar.hidden {
 /* Network */
 #network {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @green;
 }
@@ -173,9 +157,9 @@ window#waybar.hidden {
 /* CPU */
 #cpu {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @blue;
 }
@@ -188,9 +172,9 @@ window#waybar.hidden {
 /* Memory */
 #memory {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @mauve;
 }
@@ -203,9 +187,9 @@ window#waybar.hidden {
 /* Temperature */
 #temperature {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @peach;
 }
@@ -223,9 +207,9 @@ window#waybar.hidden {
 /* Battery */
 #battery {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @green;
 }
@@ -251,9 +235,9 @@ window#waybar.hidden {
 /* Power Menu */
 #custom-power {
   background: @surface0;
-  margin: 5px 10px 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @red;
 }
@@ -263,12 +247,12 @@ window#waybar.hidden {
   color: @base;
 }
 
-/* CPU */
+/* Update Count */
 #custom-updates {
   background: @surface0;
-  margin: 5px 0px;
-  padding: 0px 15px;
-  border-radius: 10px;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
   border: 2px solid @surface1;
   color: @blue;
 }
