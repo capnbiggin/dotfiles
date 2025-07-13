@@ -257,6 +257,15 @@ window#waybar.hidden {
   color: @blue;
 }
 
+#custom-apps {
+  background: @surface0;
+  margin: 1px 3px;
+  padding: 0px 5px;
+  border-radius: 15px;
+  border: 2px solid @surface1;
+  color: @blue;
+}
+
 #custom-updates:hover {
   background: @surface1;
   color: @sapphire;

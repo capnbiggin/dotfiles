@@ -15,5 +15,5 @@ sudo pacman -S --needed --noconfirm zsh
 hash -r
 chsh -s $(which zsh)
 
-cd ~/.hyprdots/
+cd ~/dotfiles/
 stow zsh
