@@ -19,9 +19,9 @@ if ! command -v zsh &> /dev/null; then
   sleep 0.2
   if [[ ! -d "$ZDOTDIR" ]] || [[ ! -f "~/.zshrc" ]]; then
     printf "${BLUE}putting zsh config files in the correct place for these dotfiles.${NC}/n"
-  esle
+  else
     printf "${RED}Removing old Z Shell configs.${NC}\n"
-    rm -rf $ZDOTDIR ~/.zshrc ~/.zprofile ~/.zshenv
+    rm -rf $ZDOTDIR/.zshrc $ZDOTDIR/.zprofile ~/.zshrc ~/.zprofile ~/.zshenv
   fi
 
   printf "${BLUE}making directory for the Z Shell config files and plugins${NC}\n"
