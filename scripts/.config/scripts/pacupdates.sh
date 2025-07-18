@@ -3,5 +3,5 @@
 # Arch needs `yay -S pacman-contrib` to run
 
 cupd=$(checkupdates | wc -l)
-echo "$cupd updates"
+echo " $cupd" 
 

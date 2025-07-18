@@ -17,20 +17,17 @@ if ! command -v zsh &> /dev/null; then
   printf "${BLUE}installing Z Shell, which and Stow GNU${NC}/n"
   sudo pacman -S --needed --noconfirm zsh which stow
   sleep 0.2
-  hash -r
-  chsh -s $(which zsh)
   if [[ ! -d "$ZDOTDIR" ]] || [[ ! -f "~/.zshrc" ]]; then
     printf "${BLUE}putting zsh config files in the correct place for these dotfiles.${NC}/n"
-  esle 
+  esle
     printf "${RED}Removing old Z Shell configs.${NC}\n"
     rm -rf $ZDOTDIR ~/.zshrc ~/.zprofile ~/.zshenv
   fi
-  
+
   printf "${BLUE}making directory for the Z Shell config files and plugins${NC}\n"
   mkdir -p ~/.config/zsh/plugins/
   sleep 0.2
 
-  
   printf "${BLUE}Cloning plugin zsh-syntax-highlighting${NC}\n"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting/
   sleep 0.2
@@ -46,11 +43,14 @@ if ! command -v zsh &> /dev/null; then
   printf "${BLUE}Cloning plugin pure prompt${NC}\n"
   git clone https://github.com/sindresorhus/pure.git ~/.config/zsh/plugins/pure/
 
-
   cd ~/dotfiles/
   stow zsh
 
   cd ${CDIR}
+
+  hash -r
+  chsh -s $(which zsh)
+
 fi
 
 printf "${GREEN}Z Sheel is already instaled.\n"

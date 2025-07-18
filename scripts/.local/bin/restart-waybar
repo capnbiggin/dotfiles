@@ -1,2 +1,4 @@
 #!/bin/bash
-killall waybar & sleep 1 && waybar
+killall waybar
+sleep 1
+waybar
