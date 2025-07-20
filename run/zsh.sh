@@ -51,13 +51,12 @@ if ! command -v zsh &> /dev/null; then
   hash -r
   chsh -s $(which zsh)
 
+else
+  printf "${GREEN}Z Sheel is already instaled.\n"
+  printf "If you wish to use these dotfiles please run the next line, then run this script again.${NC}\n"
+  printf "${YELLOW}chsh /bin/bash & sudo pacman -R zsh${NC}\n"
+
 fi
-
-printf "${GREEN}Z Sheel is already instaled.\n"
-printf "If you wish to use these dotfiles please run the next line, then run this script again.${NC}\n"
-printf "${YELLOW}chsh /bin/bash & sudo pacman -R zsh${NC}\n"
-
-
 
 
 exit

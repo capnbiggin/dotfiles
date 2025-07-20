@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pushd ~/dotfiles
+git add .
+git commit -m "automatid commit"
+git push
