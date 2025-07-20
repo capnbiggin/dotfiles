@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+pushd ~/My-Brain
+git add .
+git commit -m "automated My-Brain commit"
+git push
+popd
