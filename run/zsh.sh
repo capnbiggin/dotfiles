@@ -13,11 +13,11 @@ set -e
 cd ~
 
 printf "${YELLOW}Checking if Z Shell is inatalled.${NC}\n"
-if ! command -v zsh &> /dev/null; then
+if ! command -v zsh &>/dev/null; then
   printf "${BLUE}installing Z Shell, which and Stow GNU${NC}/n"
   sudo pacman -S --needed --noconfirm zsh which stow
   sleep 0.2
-  if [[ ! -d "$ZDOTDIR" ]] || [[ ! -f "~/.zshrc" ]]; then
+  if [[ ! -d "$ZDOTDIR/.zshrc" ]] || [[ ! -f "~/.zshrc" ]]; then
     printf "${BLUE}putting zsh config files in the correct place for these dotfiles.${NC}/n"
   else
     printf "${RED}Removing old Z Shell configs.${NC}\n"
@@ -43,13 +43,16 @@ if ! command -v zsh &> /dev/null; then
   printf "${BLUE}Cloning plugin pure prompt${NC}\n"
   git clone https://github.com/sindresorhus/pure.git ~/.config/zsh/plugins/pure/
 
-  cd ~/dotfiles/
+  pushd ~/dotfiles/
   stow zsh
-
-  cd ${CDIR}
+  popd
 
   hash -r
   chsh -s $(which zsh)
+
+  sleep 0.2
+
+  printf "${GREEN}You will now need to restart your PC.${NC}"
 
 else
   printf "${GREEN}Z Sheel is already instaled.\n"
@@ -57,6 +60,5 @@ else
   printf "${YELLOW}chsh /bin/bash & sudo pacman -R zsh${NC}\n"
 
 fi
-
 
 exit
