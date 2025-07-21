@@ -7,6 +7,10 @@
   "margin-left": 12,
   "margin-right": 12,
  
+  // Load Modules
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
 
   // Waybar
   "modules-left": [
@@ -30,129 +34,4 @@
     "custom/power"
   ],
   // end waybar
-
-  // workspaces
-  "hyprland/workspaces": {
-    "format": " {icon} ",
-    "on-click": "activate",
-    "format-icons": {
-      "1": "1",
-      "2": "2", 
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9"
-    },
-    "persistent_workspaces": {
-      "*": 5
-    }
-  },
-  // active window
-  "hyprland/window": {
-    "format": " {} ",
-    "max-length": 50,
-    "separate-outputs": true
-  },
-  // on-click-right
-  "clock": {
-    "format": " {:%H:%M} ",
-    "format-alt": " {:%A, %B %d, %Y (%R)} ",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#f5e0dc'><b>{}</b></span>",
-        "days": "<span color='#cdd6f4'><b>{}</b></span>",
-        "weeks": "<span color='#99d1db'><b>W{}</b></span>",
-        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
-      }
-    }
-  },
-
-  "tray": {
-    "icon-size": 18,
-    "spacing": 8
-  },
-
-  // audio
-  "pulseaudio": {
-    "format": " {icon} {volume}% ",
-    "format-muted": " 󰝟 ",
-    "format-icons": {
-      "headphone": "󰋋",
-      "headset": "󰋋",
-      "default": ["", "󱄠", ""]
-    },
-    "scroll-step": 1,
-    "on-click": "pwvucontrol",
-    "tooltip": false
-  },
-
-  // network
-  "network": {
-    "format-wifi": " 󰤨 {signalStrength}% ",
-    "format-ethernet": " 󰈀 Connected ",
-    "format-linked": " 󰈀 {ifname} (No IP) ",
-    "format-disconnected": " 󰤭 Disconnected ",
-    "format-alt": " {ifname}: {ipaddr}/{cidr} ",
-    "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-    "on-click-right": "iwgtk"
-  },
-
-  // CPU
-  "cpu": {
-    "format": " 󰍛 {usage} %",
-    "interval": 1,
-    "min-length": 6,
-    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-  },
-
-  // RAM
-  "memory": {
-    "format": " 󰾆 {percentage}% ",
-    "format-alt": " 󰾅 {used}GB ",
-    "interval": 1,
-    "tooltip": true,
-    "tooltip-format": "Memory: {used:0.1f}GB/{total:0.1f}GB\nSwap: {swapUsed:0.1f}GB/{swapTotal:0.1f}GB"
-  },
-
-  // temp
-  "temperature": {
-    "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "{icon} {temperatureC}°C",
-    "format": " {icon} {temperatureC}°C ",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip": false
-  },
-
-  // Power menu
-  "custom/power": {
-    "format": " 󰐥 ",
-    "tooltip": false,
-    //"on-click": "wlogout -p layer-shell"
-    "on-click": "~/.config/rofi/scripts/pmenu.sh"
-  },
-
-  "custom/updates": {
-    "exec": "$HOME/dotfiles/scripts/.config/scripts/pacupdates.sh",
-    "interval": "3600",
-    "format": " 󱧕 {} "
-  },
-
-  "custom/apps": {
-    "format": "  ",
-    "on-click": "sleep 0.2;rofi -show drun -replace",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "LeftClick:Application Launcher/nRightClick:Show Keybindings"
-  }
 }
