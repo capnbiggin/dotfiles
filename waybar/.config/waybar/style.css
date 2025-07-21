@@ -257,6 +257,11 @@ window#waybar.hidden {
   color: @blue;
 }
 
+#custom-updates:hover {
+  background: @surface1;
+  color: @sapphire;
+}
+
 #custom-apps {
   background: @surface0;
   margin: 1px 3px;
@@ -266,7 +271,7 @@ window#waybar.hidden {
   color: @blue;
 }
 
-#custom-updates:hover {
+#custom-apps:hover {
   background: @surface1;
   color: @sapphire;
 }
