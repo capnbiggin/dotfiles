@@ -9,27 +9,27 @@ CYAN='\033[0;36m'
 cd ~
 
 # Update the system first
-printf "${YELLOW}Updating system...${NC}\n"
+printf "\n${YELLOW}Updating system...${NC}\n"
 sudo pacman -Syu --noconfirm
 
 # Install yay AUR helper if not present
-if ! command -v yay &> /dev/null; then
-  printf "${GREEN}Installing yay AUR helper...${NC}\n"
+if ! command -v yay &>/dev/null; then
+  printf "\n${GREEN}Installing yay AUR helper...${NC}\n"
   sudo pacman -S --needed git base-devel --noconfirm
   if [[ ! -d "yay" ]]; then
-    printf "${GREEN}Cloning yay repository...${NC}\n"
+    printf "\n${GREEN}Cloning yay repository...${NC}\n"
   else
-    printf "${RED}yay directory already exists, removing it...${NC}\n"
+    printf "\n${RED}yay directory already exists, removing it...${NC}\n"
     rm -rf yay
   fi
 
   git clone https://aur.archlinux.org/yay.git
 
   cd yay
-  printf "${GREEN}building yay.... yaaaaayyyyy${NC}\n"
+  printf "\n${GREEN}building yay.... yaaaaayyyyy${NC}\n"
   makepkg -si --noconfirm
   cd ..
   rm -rf yay
 else
-  printf "${CYAN}yay is already installed${NC}\n"
+  printf "$\n{CYAN}yay is already installed${NC}\n"
 fi

@@ -12,7 +12,7 @@ source utils.sh
 
 # Source my package list
 if [ ! -f "packages.conf" ]; then
-  printf "${RED}ERROR: packages.conf not found!!${NC}"
+  printf "\n${RED}ERROR: packages.conf not found!!${NC}\n"
   exit 1
 fi
 
@@ -24,29 +24,29 @@ source packages.conf
 sleep 1
 
 # Install all packages
-printf "${GREEN}Installing System Utilities...${NC}"
+printf "\n${GREEN}Installing System Utilities...${NC}/n"
 install_packages "${SYSTEM_UTILS[@]}"
 
-printf "${GREEN}Installing Dev Tools...${NC}"
+printf "\n${GREEN}Installing Dev Tools...${NC}\n"
 install_packages "${DEV[@]}"
 
-printf "$GREEN}Installing Fonts...${NC}"
+printf "\n$GREEN}Installing Fonts...${NC}\n"
 install_packages "${FONTS[@]"
 
-printf "${GREEN}Installing Media packages...${NC}"
+printf "\n${GREEN}Installing Media packages...${NC}\n"
 install_packages "${MEDIA[@]}"
 
-printf "${GREEN}Installing Network Packages...${NC}"
+printf "\n${GREEN}Installing Network Packages...${NC}\n"
 install_packages "${NETWORK[@]}"
 
 # Enable Services
-printf "${GREEN}Configuring services...${NC}"
+printf "\n${GREEN}Configuring services...${NC}\n"
 for service in "${SERVICES[@]}"; do
   if ! systemctl is-enabled "$service" &>/dev/null; then
     printf "Enabling $service..."
     sudo systemctl enable "$service"
   else
-    printf "$service is already enabled"
+    printf "n${GREEN}$service is already enabled${NC}\n"
   fi
 done
 
