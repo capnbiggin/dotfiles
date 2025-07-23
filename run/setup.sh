@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -8,7 +8,7 @@ RED='\033[0;31m'
 set -e
 
 # Source Utility function
-source utils.sh
+source ./utils.sh
 
 # Source my package list
 if [ ! -f "packages.conf" ]; then
