@@ -31,7 +31,7 @@ printf "\n${GREEN}Installing Dev Tools...${NC}\n"
 install_packages "${DEV[@]}"
 
 printf "\n$GREEN}Installing Fonts...${NC}\n"
-install_packages "${FONTS[@]"
+install_packages "${FONTS[@]}"
 
 printf "\n${GREEN}Installing Media packages...${NC}\n"
 install_packages "${MEDIA[@]}"
@@ -52,4 +52,3 @@ done
 
 # Sett up Z Shell
 . zsh.sh
-
