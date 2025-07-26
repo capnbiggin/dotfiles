@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+pushd ~/My-Brain
+git add .
+git commit -m "automatic commit"
+git push
+popd
+
+pushd ~/dotfiles
+git add .
+git commit -m "automatic commit"
+git push
+popd
