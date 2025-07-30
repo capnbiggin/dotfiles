@@ -21,7 +21,7 @@ alias .....='cd ../../../..'
 # pacman
 alias i='yay -S --noconfirm --needed'                   # Install packages
 alias s='yay -Ss'
-alias syu='sudo pacman -Su'       # update pacman & packages
+alias syu='yay -Syu --noconfirm --needed'                        # update pacman & packages
 
 # Editor
 alias n='nvim'
