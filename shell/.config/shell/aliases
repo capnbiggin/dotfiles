@@ -14,7 +14,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
+alias dot='cd ~/dotfiles'
+alias brain='cd ~/My-Brain'
 
 
 
