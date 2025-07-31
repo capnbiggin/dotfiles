@@ -42,3 +42,4 @@ alias gcn='git commit -m "none"'
 alias gu='git push'
 alias gd='git pull'
 
+alias linutil='curl -fsSL https://christitus.com/linux | sh'
