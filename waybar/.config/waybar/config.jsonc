@@ -14,7 +14,7 @@
 
   // Waybar
   "modules-left": [
-    "custom/apps",
+    "clock",
     "hyprland/window"
   ],
 
@@ -30,7 +30,6 @@
     "temperature", 
     "battery", 
     "custom/updates",
-    "clock",
     "custom/power"
   ],
   // end waybar
