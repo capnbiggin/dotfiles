@@ -17,7 +17,12 @@ alias .....='cd ../../../..'
 alias dot='cd ~/dotfiles'
 alias brain='cd ~/My-Brain'
 
-
+# Alias to mod commands
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -rf'
+alias mkdir='mkdir -p'
+alias ping='ping -c 5'
 
 # pacman
 alias i='yay -S --noconfirm --needed'                   # Install packages
