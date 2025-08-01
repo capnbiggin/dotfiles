@@ -112,7 +112,7 @@
   },
 
   "custom/updates": {
-    "exec": "$HOME/dotfiles/scripts/.config/scripts/pacupdates.sh",
+    "exec": "$HOME/.local/scripts/pacupdates.sh",
     "interval": "3600",
     "format": " 󱧕 {} "
   },
