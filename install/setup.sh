@@ -19,7 +19,7 @@ fi
 source packages.conf
 
 # install the Arch User Repository helper yay.
-. yay.sh
+. preflight/yay-install.sh
 
 sleep 1
 

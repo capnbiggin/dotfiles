@@ -44,7 +44,7 @@ if ! command -v zsh &>/dev/null; then
   git clone https://github.com/sindresorhus/pure.git ~/.config/zsh/plugins/pure/
 
   pushd ~/dotfiles/
-  stow zsh
+  stow config
   popd
 
   hash -r
