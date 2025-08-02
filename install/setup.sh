@@ -1,8 +1,8 @@
 #!/bin/bash
 
-NC='\033[0m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
+C='\033[0m'    # no color
+G='\033[0;32m' # green color
+R='\033[0;31m' # red color
 
 # Exit on error
 set -e
@@ -12,7 +12,7 @@ source ./utils.sh
 
 # Source my package list
 if [ ! -f "packages.conf" ]; then
-  printf "\n${RED}ERROR: packages.conf not found!!${NC}\n"
+  printf "\n${R}ERROR: packages.conf not found!!${C}\n"
   exit 1
 fi
 
@@ -24,31 +24,37 @@ source packages.conf
 sleep 1
 
 # Install all packages
-printf "\n${GREEN}Installing System Utilities...${NC}/n"
+printf "\n${G}Installing System Utilities...${C}/n"
 install_packages "${SYSTEM_UTILS[@]}"
 
-printf "\n${GREEN}Installing Dev Tools...${NC}\n"
+printf "\n${G}Installing Dev Tools...${C}\n"
 install_packages "${DEV[@]}"
 
-printf "\n$GREEN}Installing Fonts...${NC}\n"
+printf "\n$G}Installing Fonts...${C}\n"
 install_packages "${FONTS[@]}"
 
-printf "\n${GREEN}Installing Media packages...${NC}\n"
+printf "\n${G}Installing Media packages...${C}\n"
 install_packages "${MEDIA[@]}"
 
-printf "\n${GREEN}Installing Network Packages...${NC}\n"
+printf "\n${G}Installing Network Packages...${C}\n"
 install_packages "${NETWORK[@]}"
 
 # Enable Services
-printf "\n${GREEN}Configuring services...${NC}\n"
+printf "\n${G}Configuring services...${C}\n"
 for service in "${SERVICES[@]}"; do
   if ! systemctl is-enabled "$service" &>/dev/null; then
     printf "Enabling $service..."
-    sudo systemctl enable "$service"
+    sudo systemctl enable --now "$service"
   else
-    printf "n${GREEN}$service is already enabled${NC}\n"
+    printf "n${G}$service is already enabled${C}\n"
   fi
 done
 
 # Sett up Z Shell
-. zsh.sh
+. config/zsh.sh
+
+# Link config files
+printf "/n${G}Linking config files${C}/n"
+pushd ~/dotfiles/
+stow config
+popd
