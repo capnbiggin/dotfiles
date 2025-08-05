@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pushd ~/My-Brain
+pushd ~/Desktop/My-Brain
 git pull
 popd
 
