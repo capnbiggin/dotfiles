@@ -7,15 +7,29 @@
 alias ls='ls -1 --color=auto'
 #alias la='ls -a --color=auto'
 alias la='ls -laF --color=auto'
-alias ll="eza -la --group-directories-first --color=always --icons=always"
+alias ll="eza -lha --group-directories-first --color=always --icons=always"
+alias lt='eza -lha --tree --level=2 --long --icons --git'
 
 # Change Directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias dot='cd ~/dotfiles'
-alias brain='cd ~/Desktop/My-Brain'
+alias dot='cd ~/dotfiles && printf " \U000F17A9 " && pwd'
+alias brain='cd ~/Desktop/My-Brain && printf " \U000F17A9 " && pwd'
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf " \U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
+
+# File system
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 
 # Alias to mod commands
 alias cp='cp -i'
