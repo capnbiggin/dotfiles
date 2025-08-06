@@ -11,3 +11,9 @@ git add .
 git commit -m "automatic commit"
 git push
 popd
+
+pushd ~/.local/share/capndot
+git add .
+git commit -m "automatic commit"
+git push
+popd

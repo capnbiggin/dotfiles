@@ -16,6 +16,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias dot='cd ~/dotfiles && printf " \U000F17A9 " && pwd'
+alias cdot='cd ~/.local/share/capndot && printf " \U000F17A9 " && pwd'
 alias brain='cd ~/Desktop/My-Brain && printf " \U000F17A9 " && pwd'
 alias cd="zd"
 zd() {

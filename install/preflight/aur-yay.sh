@@ -6,7 +6,7 @@ YELLOW='\033[0;33m'
 RED='\033[0;31m'
 CYAN='\033[0;36m'
 
-cd ~
+pushd ~
 
 # Update the system first
 printf "\n${YELLOW}Updating system...${NC}\n"
@@ -33,3 +33,5 @@ if ! command -v yay &>/dev/null; then
 else
   printf "$\n{CYAN}yay is already installed${NC}\n"
 fi
+
+popd

@@ -7,3 +7,7 @@ popd
 pushd ~/dotfiles
 git pull
 popd
+
+pushd ~/.local/share/capndot
+git pull
+popd
