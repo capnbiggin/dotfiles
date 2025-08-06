@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
 
+echo
+printf "\033[0;35m"
 pushd ~/Documents/My-Brain
 git add .
 git commit -m "automatic commit"
 git push
 popd
+printf "\033[0m"
 
+echo
+printf "\033[0;34m"
 pushd ~/dotfiles
 git add .
 git commit -m "automatic commit"
 git push
 popd
+printf "\033[0m"
 
+printf "\033[0;32m"
 pushd ~/.local/share/capndot
 git add .
 git commit -m "automatic commit"
 git push
 popd
+printf "\033[0m"
