@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo -e "\n"
+pushd ~/.local/share/chezmoi/
+git add .
+git commit -m "automatic commit"
+git push
+popd
