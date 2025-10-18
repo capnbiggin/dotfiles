@@ -15,6 +15,7 @@ PACKAGES=(
   impala
   jq
   kitty
+  lastpass-cli
   less
   man
   plocate
