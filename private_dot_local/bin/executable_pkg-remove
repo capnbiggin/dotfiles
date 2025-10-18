@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+pkg_name=$(yay -Qqe | fzf --multi --preview 'yay -Qi {1}' --preview-window=down:75%)
+
+if [[ -n "$pkg_name" ]]; then
+  yay -Rns --noconfirm "$pkg_name"
+  sudo updatedb
+fi

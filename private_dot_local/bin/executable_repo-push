@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo -e "\n"
+pushd ~/Documents/My-Brain
+git add .
+git commit -m "automatic commit"
+git push
+popd
+
+echo -e "\n"
+pushd ~/capndot
+git add .
+git commit -m "automatic commit"
+git push
+popd
