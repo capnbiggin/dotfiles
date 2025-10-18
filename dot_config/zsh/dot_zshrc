@@ -1,7 +1,7 @@
 # ~/.config/zsh/.zshrc
 
 # source global shell alias & variable files
-[ -f "$HOME/capndot/shell/aliases" ] && source "$HOME/capndot/shell/aliases"
+[ -f "$HOME/.config/shell/aliases" ] && source "$HOME/.config/shell/aliases"
 
 # Checking for fastfetch
 [ -f /usr/bin/fastfetch ] && fastfetch
