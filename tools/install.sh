@@ -23,12 +23,10 @@ show_logo
 # Install Prerequisites
 printf "\nInstalling AUR helper yay...\n"
 source $CDOT_INSTALL/preflight/aur-yay.sh
-source $CDOT_INSTALL/preflight/presentation.sh
 
 # Config
 show_logo
 printf "\nStarting Capndot Install\n"
-source $CDOT_INSTALL/config/identification.sh
 source $CDOT_INSTALL/config/config.sh
 source $CDOT_INSTALL/config/bluetooth.sh
 source $CDOT_INSTALL/config/network.sh
