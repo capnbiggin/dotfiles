@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CDOT_INSTALL=~/capndot/install
+CDOT_INSTALL=~/.local/share/chezmoi/tools
 
 # Exit immediately if a command exits with a non-zero status
 set -e
@@ -47,6 +47,7 @@ source $CDOT_INSTALL/desktop/fonts.sh
 show_logo
 printf "\nInstalling Terminal tools...\n"
 source $CDOT_INSTALL/development/terminal.sh
+source $CDOT_INSTALL/development/lazyvim.sh
 source $CDOT_INSTALL/development/development.sh
 source $CDOT_INSTALL/development/nvim.sh
 source $CDOT_INSTALL/development/docker.sh
