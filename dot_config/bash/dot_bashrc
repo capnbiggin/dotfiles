@@ -20,7 +20,7 @@ PS1=${blu}'\n\w'${ylw}' $(branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null);
 PS1+=${grn}'\n  '${clr}
 
 # Aliases
-[[ -f ~/capndot/shell/aliases ]] && source ~/capndot/shell/aliases
+[[ -f ~/.config/shell/aliases ]] && source ~/.config/shell/aliases
 
 # History
 HISTCONTROL=ignoredups
@@ -31,4 +31,4 @@ HISTFILE='$HOME/.cache/.bash_history'
 shopt -s histappend
 
 # Path
-PATH="PATH:$HOME/capndot/bin:$HOME/.local/bin"
+PATH="PATH:$HOME/.local/bin"
