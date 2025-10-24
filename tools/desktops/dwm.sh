@@ -24,17 +24,18 @@ XORG=(
   xorg-xsetroot
   )
 
-for pkg in $UTILS; do
+for pkg in "${UTILS[@]}"; do
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
 done
 
-for pkg in $BDETS; do
+for pkg in "${BDETS[@]}" ; do
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
 done
 
-for pkg in $XORG; do
+
+for pkg in "${XORG[@]}" ; do
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
 done
