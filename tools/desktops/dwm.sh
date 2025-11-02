@@ -58,4 +58,7 @@ cd ~/.local/share/suckless/st
 
 sudo make clean install
 
+cd ~/.local/share/suckless/slstatus
+
+sudo make clean install
 cd ~

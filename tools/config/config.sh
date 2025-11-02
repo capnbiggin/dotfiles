@@ -12,6 +12,3 @@ rm -rf ~/.config/zsh/.zprofile
 rm -rf ~/.bashrc
 rm -rf ~/.bash_profile
 
-# Link Configs
-cd ~/capndot
-stow dotfiles
