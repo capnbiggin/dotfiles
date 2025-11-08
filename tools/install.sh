@@ -41,6 +41,7 @@ printf "\nInstalling Desktop...\n"
 #source $CDOT_INSTALL/desktops/hyprland.sh
 source $CDOT_INSTALL/desktop/webapps.sh
 source $CDOT_INSTALL/desktop/fonts.sh
+source $CDOT_INSTALL/desktop/browsers.sh
 
 # Dev
 show_logo
