@@ -37,8 +37,8 @@ source $CDOT_INSTALL/config/zsh.sh
 # Desktop
 show_logo
 printf "\nInstalling Desktop...\n"
-source $CDOT_INSTALL/desktops/dwm.sh
-source $CDOT_INSTALL/desktops/hyprland.sh
+#source $CDOT_INSTALL/desktops/dwm.sh
+#source $CDOT_INSTALL/desktops/hyprland.sh
 source $CDOT_INSTALL/desktop/webapps.sh
 source $CDOT_INSTALL/desktop/fonts.sh
 
