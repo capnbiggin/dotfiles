@@ -94,6 +94,7 @@ export FZF_DEFAULT_OPTS=" \
 [ -d $HOME/.config/zsh/plugins/plugins/zsh-history-substring-search ] && source $HOME/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -d $HOME/.config/zsh/plugins/zsh-you-should-use ] && source $HOME/.config/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 
+# Start terminal with Tmux
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
