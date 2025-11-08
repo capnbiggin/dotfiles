@@ -7,6 +7,7 @@ UTILS=(
   zip
   unzip
   firefox
+  feh
   )
 
 BDETS=(
