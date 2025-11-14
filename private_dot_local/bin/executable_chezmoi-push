@@ -4,5 +4,5 @@ echo -e "\n"
 pushd ~/.local/share/chezmoi/
 git add .
 git commit -m "automatic commit"
-git push
+git push -u origin main
 popd
