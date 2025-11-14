@@ -21,6 +21,7 @@ PACKAGES=(
   plocate
   ripgrep
   tldr
+  tmux
   unzip
   wget
   whois
