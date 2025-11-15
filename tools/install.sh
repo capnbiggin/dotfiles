@@ -14,7 +14,7 @@ trap catch_errors ERR
 show_logo() {
   clear
   echo -e "\033[96m"
-  cat <~/capndot/logo.txt
+  cat <~/local/share/chezmoi/tools/logo.txt
   echo -e "\033[0m"
 }
 
