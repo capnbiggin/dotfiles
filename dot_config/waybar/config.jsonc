@@ -41,7 +41,7 @@
   },
   "custom/omarchy": {
     "format": " ",
-    "on-click": "~/capndot/bin/capndot-menu",
+    "on-click": "~/local/bin/capndot-menu",
     "tooltip-format": "Capndot Menu\n\nSuper + Shift + Space"
   },
 
