@@ -10,6 +10,7 @@ HYPR=(
   hyprpicker
   hyprlock
   hyprpaper
+  noctalia-shell
   swww
   wl-clipboard
   rofi
@@ -18,7 +19,7 @@ HYPR=(
   matugen
 )
 
-for pkg in "${HYPR[@]}" ; do
+for pkg in "${HYPR[@]}"; do
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
 done
