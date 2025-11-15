@@ -15,7 +15,6 @@ HYPR=(
   rofi
   waybar
   waypaper
-  wallust
   matugen
 )
 
