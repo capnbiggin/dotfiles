@@ -1,5 +1,5 @@
-#!/usr/bin/env bach
+#!/usr/bin/env bash
 
-sudo pacman -S light --noconfirm --needed
+yay -S light --noconfirm --needed
 
 sudo usermod -aG video $USER

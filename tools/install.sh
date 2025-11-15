@@ -27,10 +27,10 @@ source $CDOT_INSTALL/preflight/aur-yay.sh
 # Config
 show_logo
 printf "\nStarting Capndot Install\n"
-source $CDOT_INSTALL/config/config.sh
-source $CDOT_INSTALL/config/bluetooth.sh
+#source $CDOT_INSTALL/config/config.sh
+#source $CDOT_INSTALL/config/bluetooth.sh
 source $CDOT_INSTALL/config/backlight.sh
-source $CDOT_INSTALL/config/network.sh
+#source $CDOT_INSTALL/config/network.sh
 source $CDOT_INSTALL/config/power.sh
 source $CDOT_INSTALL/config/zsh-plugins.sh
 source $CDOT_INSTALL/config/zsh.sh
@@ -51,6 +51,6 @@ source $CDOT_INSTALL/development/terminal.sh
 source $CDOT_INSTALL/development/lazyvim.sh
 source $CDOT_INSTALL/development/development.sh
 source $CDOT_INSTALL/development/nvim.sh
-source $CDOT_INSTALL/development/docker.sh
-source $CDOT_INSTALL/development/firewall.sh
+#source $CDOT_INSTALL/development/docker.sh
+#source $CDOT_INSTALL/development/firewall.sh
 source $CDOT_INSTALL/development/python.sh
