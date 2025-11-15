@@ -98,6 +98,6 @@ export FZF_DEFAULT_OPTS=" \
 #if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 #    tmux attach -t default || tmux new -s default
 #fi
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux
-fi
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux
+#fi
