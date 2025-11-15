@@ -9,7 +9,7 @@ pacman -S chezmoi
 ## Clone dotfiles and install them
 
 ```bash
-chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git
+chezmoi init --apply git@github.com:capnbiggin/dotfiles.git
 ```
 
 https://www.chezmoi.io
