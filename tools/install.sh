@@ -43,6 +43,7 @@ printf "\nInstalling Desktop...\n"
 source $CDOT_INSTALL/desktop/webapps.sh
 source $CDOT_INSTALL/desktop/fonts.sh
 source $CDOT_INSTALL/desktop/browsers.sh
+source $CDOT_INSTALL/desktop/screen-cap.sh
 
 # Dev
 show_logo
