@@ -30,7 +30,7 @@ printf "\nStarting Capndot Install\n"
 #source $CDOT_INSTALL/config/config.sh
 source $CDOT_INSTALL/config/bluetooth.sh
 source $CDOT_INSTALL/config/backlight.sh
-#source $CDOT_INSTALL/config/network.sh
+source $CDOT_INSTALL/config/network.sh
 source $CDOT_INSTALL/config/power.sh
 source $CDOT_INSTALL/config/zsh-plugins.sh
 source $CDOT_INSTALL/config/zsh.sh
