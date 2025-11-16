@@ -10,7 +10,6 @@ G_PACKS=(
   kate
   thunar
   obsidian
-  google-chrome-canary
   gwenview
   flatpak
   light
