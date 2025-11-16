@@ -23,6 +23,7 @@ show_logo
 # Install Prerequisites
 printf "\nInstalling AUR helper yay...\n"
 source $CDOT_INSTALL/preflight/aur-yay.sh
+source $CDOT_INSTALL/g-packs.sh
 
 # Config
 show_logo
