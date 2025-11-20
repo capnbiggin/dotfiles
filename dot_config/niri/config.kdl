@@ -329,6 +329,12 @@ window-rule {
   default-column-width { proportion 0.33333; }
 }
 
+// ghostty Window Rules
+window-rule {
+  match app-id="google-chrome"
+  default-column-width { proportion 0.66667; }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
