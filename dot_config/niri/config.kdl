@@ -386,7 +386,7 @@ binds {
     // Menu keybinds
     Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.local/bin/clipboard-history"; }
-    Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.local/bin/repo-menu"; }
+    Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/Documents/scripts/projects_menu.sh"; }
     Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/Documents/scripts/tmux_sessions.sh"; }
     Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
 
