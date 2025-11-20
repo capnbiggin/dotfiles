@@ -323,6 +323,11 @@ window-rule {
     default-column-width {}
 }
 
+// ghostty Window Rules
+//window-rule {
+//  match app-id=
+//}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -346,7 +351,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -375,7 +380,7 @@ binds {
     Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.local/bin/clipboard-history"; }
     Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.local/bin/repo-menu"; }
-    Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.local/bin/tmux-sessions"; }
+    Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/Documents/scripts/tmux_sessions.sh"; }
     Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
 
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
