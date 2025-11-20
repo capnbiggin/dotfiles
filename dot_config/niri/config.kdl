@@ -324,9 +324,10 @@ window-rule {
 }
 
 // ghostty Window Rules
-//window-rule {
-//  match app-id=
-//}
+window-rule {
+  match app-id="com.mitchellh.ghostty"
+  default-column-width { proportion 0.33333; }
+}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
