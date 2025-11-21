@@ -4,7 +4,7 @@ ICON_DIR="$HOME/.local/share/applications/icons"
 DESKTOP_DIR="$HOME/.local/share/applications/"
 
 if [ "$#" -ne 1 ]; then
-  ~/capndot/bin/show-logo
+  ~/.local/bin/show-logo
 
   # Find all web apps
   while IFS= read -r -d '' file; do
