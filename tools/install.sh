@@ -56,3 +56,4 @@ source $CDOT_INSTALL/development/nvim.sh
 #source $CDOT_INSTALL/development/docker.sh
 #source $CDOT_INSTALL/development/firewall.sh
 source $CDOT_INSTALL/development/python.sh
+source $CDOT_INSTALL/development/yazi.sh
