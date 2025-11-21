@@ -341,6 +341,12 @@ window-rule {
   default-column-width { proportion 0.66667; }
 }
 
+// Obsidian
+window-rule {
+  match app-id="obsidian"
+  default-column-width { proportion 0.66667; }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
