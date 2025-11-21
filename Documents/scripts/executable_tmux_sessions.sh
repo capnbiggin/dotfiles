@@ -13,7 +13,6 @@ list_sessions() {
 # Function to create or attach to a session
 create_or_attach() {
   session_name="$1"
-
   # Check if the session exists
   if tmux has-session -t "$session_name" 2>/dev/null; then
     # Attach to existing session
@@ -26,6 +25,7 @@ create_or_attach() {
 
 # Rofi command to show existing sessions and allow user input for a new name
 selected_session=$(list_sessions | rofi -dmenu -i -p "Tmux Session" -config "$ROFI_CONFIG" -format s -entry-field "Enter a session name or select from list:")
+[ -n "$selected_session" ] || exit 0
 
 # Nuke any existing st (since you only use one terminal)
 pkill -x $TERMINAL 2>/dev/null || true
