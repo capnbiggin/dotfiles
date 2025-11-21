@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 echo -e "\n"
-pushd ~/Documents/repos/My-Brain
+pushd ~/Documents/dev/My-Brain
 git pull
 popd
