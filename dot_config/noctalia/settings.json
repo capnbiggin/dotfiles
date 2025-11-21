@@ -361,7 +361,7 @@
             {
                 "directory": "/home/capn/Pictures/wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/capn/Pictures/wallpapers/girl-at-desk.jpg"
+                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_lyy2qp.jpg"
             }
         ],
         "overviewEnabled": false,
@@ -373,7 +373,7 @@
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
-        "useWallhaven": false,
+        "useWallhaven": true,
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
