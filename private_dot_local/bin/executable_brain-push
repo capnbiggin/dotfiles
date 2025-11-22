@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-echo -e "\n"
-pushd ~/Documents/dev/My-Brain
-git add .
-git commit -m "automatic commit"
-git push
-popd
