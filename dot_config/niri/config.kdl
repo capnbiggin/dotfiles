@@ -18,6 +18,7 @@ input {
             // For example:
             // layout "us,ru"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            options "numpad:mac,compose:caps"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -69,8 +70,12 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
+
+workspace "a"
+workspace "b"
+workspace "c"
 
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -273,6 +278,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 
+// spawn-sh-at-startup "niri" "msg" "action" "focus-workspace" "2"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-sh-at-startup "xwayland-satellite"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
