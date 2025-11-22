@@ -6,6 +6,7 @@ terminal="ghostty"
 dev="$HOME/Documents/dev"
 
 # Pick repo
+# configs="$(find "$dev" -maxdepth 0 -print0 | xargs -0 -n1 basename)"
 configs="$(ls -1d "$dev"/*/ 2>/dev/null | xargs -n1 basename)"
 [ -n "$configs" ] || exit 0
 chosen="$(printf '%s\n' "$configs" | rofi -dmenu -p 'Projects:')"
