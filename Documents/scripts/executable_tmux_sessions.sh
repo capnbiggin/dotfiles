@@ -28,8 +28,8 @@ selected_session=$(list_sessions | rofi -dmenu -i -p "Tmux Session" -config "$RO
 [ -n "$selected_session" ] || exit 0
 
 # Nuke any existing st (since you only use one terminal)
-pkill -x $TERMINAL 2>/dev/null || true
-sleep 0.1
+# pkill -x $TERMINAL 2>/dev/null || true
+# sleep 0.1
 
 if [ -n "$selected_session" ]; then
   create_or_attach "$selected_session"

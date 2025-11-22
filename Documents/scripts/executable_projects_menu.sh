@@ -14,8 +14,8 @@ chosen="$(printf '%s\n' "$configs" | rofi -dmenu -p 'Projects:')"
 dir="$HOME/Documents/dev/$chosen"
 
 # Nuke any existing terminal (since you only use one terminal)
-pkill -x $terminal 2>/dev/null || true
-sleep 0.1
+# pkill -x $terminal 2>/dev/null || true
+# sleep 0.1
 
 # Launch a clean terminal: attach if exists, else create
 # exec st -e tmux new-session -As "$chosen" -c "$dir" "nvim ."
