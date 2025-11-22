@@ -124,6 +124,13 @@
                     "id": "Volume"
                 },
                 {
+                    "displayMode": "onhover",
+                    "id": "Brightness"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
                     "customFont": "",
                     "formatHorizontal": "h:mm AP ddd, MMM dd",
                     "formatVertical": "HH mm - dd MM",
