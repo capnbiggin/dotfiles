@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-if [ -d "$HOME/Documents/dev/My-Brain/" ]; then
-  cd ~/Documents/dev/My-Brain/
+DIR="$HOME/Documents/dev/My-Brain/"
+
+if [ -d "$DIR" ]; then
+  cd "$DIR" || exit 0
 else
   printf "\nMy Brain directory not found\n"
   exit 0
@@ -13,11 +15,12 @@ if ! (git diff --exit-code origin/main..main >/dev/null) ||
   printf "\nYour local repo has some changes that aren't pushed to origin/main .\n"
   printf "\nLet's take care of that for you.\n\n\n"
   git add --all
-  git commit -m "updated on - $(date)"
+  printf "\nPlease add commit message\n"
+  read -r msg
+  git commit -m "${msg} - $(date)"
   git push origin main
   exit 1
 else
   printf "\nYour local repo is up to date with origin/main .\n"
-  cd "$HOME"
-  exit 0
+  cd "$HOME" || exit 0
 fi
