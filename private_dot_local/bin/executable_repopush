@@ -9,19 +9,19 @@ NC='\033[0m' # No Color
 
 # Logging functions
 log_info() {
-  echo -e "${BLUE}[INFO]${NC} $1"
+  echo -e "\n${BLUE}[INFO]${NC} $1"
 }
 
 log_success() {
-  echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "\n${GREEN}[SUCCESS]${NC} $1"
 }
 
 log_warning() {
-  echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "\n${YELLOW}[WARNING]${NC} $1"
 }
 
 log_error() {
-  echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "\n${RED}[ERROR]${NC} $1"
 }
 
 sleep 0.1
@@ -29,13 +29,15 @@ if ! (git diff --exit-code origin/main..main >/dev/null) ||
   ! (git diff --exit-code main >/dev/null) ||
   ! [[ -z "$(git status --porcelain)" ]]; then
   log_info "\nYour local repo has some changes that aren't pushed to origin/main .\n"
-  log_info "\nLet's take care of that for you.\n\n\n"
+  log_info "\nLet's take care of that for you.\n"
   git add --all
   log_warning "\nPlease add commit message .\n"
   read -r msg
   git commit -m "$msg - $(date)"
   git push origin main
   log_success "\nRepo up to date with origin/main .\n"
+  exit 1
 else
   log_info "\nYour local repo is up to date with origin/main .\n"
+  exit 0
 fi
