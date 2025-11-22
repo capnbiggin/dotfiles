@@ -50,6 +50,11 @@
                     "useDistroLogo": false
                 },
                 {
+                    "displayMode": "onhover",
+                    "id": "Battery",
+                    "warningThreshold": 30
+                },
+                {
                     "id": "SystemMonitor",
                     "showCpuTemp": true,
                     "showCpuUsage": true,
@@ -378,6 +383,11 @@
                 "directory": "/home/capn/Pictures/wallpapers",
                 "name": "HDMI-A-1",
                 "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_lyy2qp.jpg"
+            },
+            {
+                "directory": "/home/capn/Pictures/wallpapers",
+                "name": "eDP-1",
+                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_ogg6zm.jpg"
             }
         ],
         "overviewEnabled": false,
