@@ -82,6 +82,22 @@
             ],
             "right": [
                 {
+                    "hideTextInVerticalBar": false,
+                    "icon": "arrow-merge-alt-right",
+                    "id": "CustomButton",
+                    "leftClickExec": "source ~/.local/bin/pacupdates",
+                    "leftClickUpdateText": true,
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "textCollapse": "",
+                    "textCommand": "source ~/.local/bin/pacupdates",
+                    "textIntervalMs": 30000,
+                    "textStream": false
+                },
+                {
                     "id": "ScreenRecorder"
                 },
                 {

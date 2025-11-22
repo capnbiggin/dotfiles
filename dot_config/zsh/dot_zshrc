@@ -98,9 +98,14 @@ export FZF_DEFAULT_OPTS=" \
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t mySession || tmux new -s mySession
 fi
-#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#    tmux
-#fi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 export NVM_DIR="$HOME/.config//nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

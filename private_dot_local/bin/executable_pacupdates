@@ -2,6 +2,6 @@
 
 # Arch needs `yay -S pacman-contrib` to run
 
-cupd=$(checkupdates | wc -l)
-sleep 2
+cupd=$(pacman -Qu | wc -l)
+# sleep 0.2
 echo " $cupd"
