@@ -4,11 +4,11 @@ ICON_DIR="$HOME/.local/share/applications/icons"
 DESKTOP_DIR="$HOME/.local/share/applications/"
 
 if [ "$#" -ne 1 ]; then
-  ~/.local/bin/show-logo
+  source $HOME/Documents/scripts/show-logo.sh
 
   # Find all web apps
   while IFS= read -r -d '' file; do
-    if grep -q '^Exec=.*chromium.*--app' "$file"; then
+    if grep -q '^Exec=.*google-chrome-stable.*--app' "$file"; then
       WEB_APPS+=("$(basename "${file%.desktop}")")
     fi
   done < <(find "$DESKTOP_DIR" -name '*.desktop' -print0)
