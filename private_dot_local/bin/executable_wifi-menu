@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-
 terminal() {
-  alacritty --class=Capndot -e $1
+  ghostty --class=capndot.menu -e $1
 }
 
 terminal impala
