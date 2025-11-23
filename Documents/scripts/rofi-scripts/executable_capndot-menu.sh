@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH=$HOME/Documents/scripts/rofi-scripts
+SCRIPT_PATH=$HOME/Documents/scripts
 
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
@@ -28,7 +28,7 @@ install_menu() {
 
 learn_menu() {
   case $(menu "Learn" "  Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
-  *Keybindings*) "$SCRIPT_PATH"/keybindings ;;
+  *Keybindings*) "$SCRIPT_PATH"/rofi-scripts/hypr-keybindings.sh ;;
   *Hyprland*) setsid chromium --new-window --app="https://wiki.hypr.land/" & ;;
   *Arch*) setsid chromium --new-window --app="https://wiki.archlinux.org/title/Main_page" & ;;
   *Bash*) setsid chromium --new-window --app="https://devhints.io/bash" & ;;
