@@ -12,16 +12,16 @@ terminal() {
 
 remove_menu() {
   case $(menu "Removw" "󰣇  Package\n  Web App") in
-  *Package*) terminal "$SCRIPT_PATH"/pkg-remove ;;
-  *Web*) terminal "$SCRIPT_PATH"/webapp-remove ;;
+  *Package*) terminal "$SCRIPT_PATH"/pkg-remove.sh ;;
+  *Web*) terminal "$SCRIPT_PATH"/webapp-remove.sh ;;
   *) main_menu ;;
   esac
 }
 
 install_menu() {
   case $(menu "Install" "󰣇  Package\n  Web App") in
-  *Package*) terminal "$SCRIPT_PATH"/pkg-install ;;
-  *Web*) terminal "$SCRIPT_PATH"/webapp-install ;;
+  *Package*) terminal "$SCRIPT_PATH"/pkg-install.sh ;;
+  *Web*) terminal "$SCRIPT_PATH"/webapp-install.sh ;;
   *) main_menu ;;
   esac
 }
