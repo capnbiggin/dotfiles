@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 G_PACKS=(
+  cups
+  cups-browsed
+  cups-filters
+  cups-pdf
   zip
   unzip
   tar
