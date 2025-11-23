@@ -5,18 +5,18 @@ G_PACKS=(
   cups-browsed
   cups-filters
   cups-pdf
-  zip
-  unzip
+  curl
   tar
   wget
   git
-  curl
   kate
   thunar
   obsidian
   gwenview
   flatpak
   light
+  unzip
+  zip
 )
 
 for pak in "${G_PACKS[@]}"; do
