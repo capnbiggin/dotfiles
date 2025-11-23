@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CDOT_INSTALL=~/.local/share/chezmoi/tools
+CDOT_INSTALL=~/Documents/scripts/install-scripts
 
 # Exit immediately if a command exits with a non-zero status
 set -e
@@ -14,47 +14,8 @@ trap catch_errors ERR
 show_logo() {
   clear
   echo -e "\033[96m"
-  cat <~/local/share/chezmoi/tools/logo.txt
+  cat <"$CDOT_INSTALL"/logo.txt
   echo -e "\033[0m"
 }
 
 show_logo
-
-# Install Prerequisites
-printf "\nInstalling AUR helper yay...\n"
-source $CDOT_INSTALL/preflight/aur-yay.sh
-source $CDOT_INSTALL/g-packs.sh
-
-# Config
-show_logo
-printf "\nStarting Capndot Install\n"
-#source $CDOT_INSTALL/config/config.sh
-source $CDOT_INSTALL/config/bluetooth.sh
-source $CDOT_INSTALL/config/backlight.sh
-source $CDOT_INSTALL/config/network.sh
-source $CDOT_INSTALL/config/power.sh
-source $CDOT_INSTALL/config/zsh-plugins.sh
-source $CDOT_INSTALL/config/zsh.sh
-
-# Desktop
-show_logo
-printf "\nInstalling Desktop...\n"
-#source $CDOT_INSTALL/desktops/dwm.sh
-source $CDOT_INSTALL/desktops/niri.sh
-source $CDOT_INSTALL/desktops/hyprland.sh
-source $CDOT_INSTALL/desktop/webapps.sh
-source $CDOT_INSTALL/desktop/fonts.sh
-source $CDOT_INSTALL/desktop/browsers.sh
-source $CDOT_INSTALL/desktop/screen-cap.sh
-
-# Dev
-show_logo
-printf "\nInstalling Terminal tools...\n"
-source $CDOT_INSTALL/development/terminal.sh
-source $CDOT_INSTALL/development/lazyvim.sh
-source $CDOT_INSTALL/development/development.sh
-source $CDOT_INSTALL/development/nvim.sh
-#source $CDOT_INSTALL/development/docker.sh
-#source $CDOT_INSTALL/development/firewall.sh
-source $CDOT_INSTALL/development/python.sh
-source $CDOT_INSTALL/development/yazi.sh
