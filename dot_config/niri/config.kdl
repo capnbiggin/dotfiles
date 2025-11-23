@@ -406,10 +406,10 @@ binds {
 
     // Menu keybinds
     Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
-    Mod+ALT+SPACE hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/.local/bin/capndot-menu"; }
-    Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.local/bin/clipboard-history"; }
-    Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/Documents/scripts/projects_menu.sh"; }
-    Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/Documents/scripts/tmux_sessions.sh"; }
+    Mod+ALT+SPACE hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/Documents/scripts/rofi-scripts/capndot-menu.sh"; }
+    Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/Documents/scripts/rofi-scripts/clipboard-history.sh"; }
+    Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/Documents/scripts/rofi-scripts/projects_menu.sh"; }
+    Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/Documents/scripts/rofi-scripts/tmux_sessions.sh"; }
     Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
 
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
