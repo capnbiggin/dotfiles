@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BIN_PATH=~/.local/bin
+SCRIPT_PATH=$HOME/Documents/scripts/rofi-scripts
 
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
@@ -12,23 +12,23 @@ terminal() {
 
 remove_menu() {
   case $(menu "Removw" "󰣇  Package\n  Web App") in
-  *Package*) terminal $BIN_PATH/pkg-remove ;;
-  *Web*) terminal $BIN_PATH/webapp-remove ;;
+  *Package*) terminal "$SCRIPT_PATH"/pkg-remove ;;
+  *Web*) terminal "$SCRIPT_PATH"/webapp-remove ;;
   *) main_menu ;;
   esac
 }
 
 install_menu() {
   case $(menu "Install" "󰣇  Package\n  Web App") in
-  *Package*) terminal $BIN_PATH/pkg-install ;;
-  *Web*) terminal $BIN_PATH/webapp-install ;;
+  *Package*) terminal "$SCRIPT_PATH"/pkg-install ;;
+  *Web*) terminal "$SCRIPT_PATH"/webapp-install ;;
   *) main_menu ;;
   esac
 }
 
 learn_menu() {
   case $(menu "Learn" "  Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
-  *Keybindings*) $BIN_PATH/keybindings ;;
+  *Keybindings*) "$SCRIPT_PATH"/keybindings ;;
   *Hyprland*) setsid chromium --new-window --app="https://wiki.hypr.land/" & ;;
   *Arch*) setsid chromium --new-window --app="https://wiki.archlinux.org/title/Main_page" & ;;
   *Bash*) setsid chromium --new-window --app="https://devhints.io/bash" & ;;
