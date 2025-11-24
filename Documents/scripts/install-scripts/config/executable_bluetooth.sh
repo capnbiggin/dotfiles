@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# Install Bluetooh controls
+source "$HOME/Documents/scripts/script-beginer.sh"
+
+log_info "\nInstalling bluberry Bluetooh controls\n"
 yay -S --noconfirm --needed bluberry
 
-# Turn on bluetooth servise by default
+log-info "\nTurning on bluetooth servise by default\n"
 sudo systemctl enable --now bluetooth

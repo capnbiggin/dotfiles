@@ -1,25 +1,11 @@
 #!/usr/bin/env bash
 
-C='\033[0m'
-G='\033[0;32m'
-R='\033[0;31m'
-B='\033[0;34m'
-Y='\033[0;33m'
+source "$HOME/Documents/scripts/script-beginer.sh"
 
-CDIR=$(pwd)
-
-set -e
-
-pushd ~
-
-printf "\n${B}installing Z Shell, which and Stow GNU${C}/n"
+log_info "\nInstalling Z Shell./n"
 sudo pacman -S --needed --noconfirm zsh which
 sleep 0.2
 
-printf "\n${G}Changing default shell to zsh${C}\n"
+log_info "\nChanging default shell to zsh.\n"
 hash -r
 chsh -s $(which zsh)
-
-sleep 0.2
-
-popd
