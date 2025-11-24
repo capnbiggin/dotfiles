@@ -20,5 +20,5 @@ G_PACKS=(
 )
 
 for pak in "${G_PACKS[@]}"; do
-  yay -S --needed --noconfirm $pak
+  yay -S --needed --noconfirm "$pak"
 done
