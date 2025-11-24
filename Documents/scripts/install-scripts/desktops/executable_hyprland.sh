@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-C='\033[0m'    # no color
-G='\033[0;32m' # green color
-R='\033[0;31m' # red color
+source "$HOME/Documents/scripts/script-beginer.sh"
 
 HYPR=(
   hyprland
@@ -20,6 +18,7 @@ HYPR=(
 )
 
 for pkg in "${HYPR[@]}"; do
+  log_info "\nInstalling $pkg\n"
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
 done

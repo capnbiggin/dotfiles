@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$HOME/Documents/scripts/script-beginer.sh"
+
 FONTS=(
   ttf-jetbrains-mono-nerd
   ttf-font-awesome
@@ -15,5 +17,6 @@ FONTS=(
 printf "\nDownloading Fonts...\n"
 
 for font in "${FONTS[@]}"; do
-  yay -S --needed --noconfirm $font
+  log_info "\nInstalling Font $font\n"
+  yay -S --needed --noconfirm "$font"
 done
