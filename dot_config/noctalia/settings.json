@@ -154,7 +154,7 @@
         "generateTemplatesForPredefined": true,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-fidelity",
+        "matugenSchemeType": "scheme-rainbow",
         "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "useWallpaperColors": true
@@ -389,7 +389,7 @@
             {
                 "directory": "/home/capn/Pictures/wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_lyy2qp.jpg"
+                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_gwwdyd.jpg"
             },
             {
                 "directory": "/home/capn/Pictures/wallpapers",
