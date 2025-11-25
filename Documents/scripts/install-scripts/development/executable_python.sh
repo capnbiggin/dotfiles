@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+source "$HOME/Documents/scripts/script-beginer.sh"
+
 PYTHON=(
   python
   python3
@@ -8,5 +12,6 @@ PYTHON=(
 )
 
 for py in "${PYTHON[@]}"; do
+  log-info "\nInstalling $py.\n"
   yay -S --needed --noconfirm $py
 done
