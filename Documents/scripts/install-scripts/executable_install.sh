@@ -20,3 +20,8 @@ show_logo() {
 sudo pacman -Syyu --noconfirm --needed
 
 show_logo
+
+source "$INSTALL_DIR"/preflight/all.sh
+source "$INSTALL_DIR"/config/all.sh
+source "$INSTALL_DIR"/development/all.sh
+source "$INSTALL_DIR"/desktops/all.sh
