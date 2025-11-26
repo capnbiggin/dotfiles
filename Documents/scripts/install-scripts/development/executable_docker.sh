@@ -8,7 +8,7 @@ PACKAGES=(
   docker-buildx
 )
 
-for pkg in "${HYPR[@]}"; do
+for pkg in "${PACKAGES[@]}"; do
   log_info "\nInstalling $pkg\n"
   yay -S --needed --noconfirm "$pkg" ||
     printf "\n${R}Failed to install $pkg. Continuing without!${C}\n"
