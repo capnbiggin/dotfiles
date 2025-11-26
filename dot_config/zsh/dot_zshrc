@@ -10,7 +10,7 @@
 #      Enviroment Variables      #
 ##################################
 
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/:$HOME/.config/emacs/bin"
 
 
 export EDITOR="nvim"
