@@ -1,9 +1,14 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+	modi:                         "drun,run,window,ssh,filebrowser";
     show-icons:                 true;
     display-drun:               "";
-	drun-display-format:        "{name}";
+    drun-display-format:        "{name}";
+    display-ssh:                "󰣀 ssh:";
+    display-run:                "󱓞 Run:";
+    display-window:             "󱂬 window:";
+    display-combi:              "󰕘 Combi:";
+    display-filebrowser:        "󰉋 ";
 }
 
 /*****----- Global Properties -----*****/
