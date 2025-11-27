@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 SCRIPT_PATH=$HOME/Documents/scripts
+ROFI_PATH=$HOME/.config/rofi
 
 menu() {
-  echo -e "$2" | rofi -dmenu -p "$1…"
+  echo -e "$2" | rofi -dmenu -theme ~/.config/rofi/launchers/type-1/style-1.rasi -p "$1…"
 }
 
 terminal() {
@@ -49,7 +50,8 @@ system_menu() {
 
 main_menu() {
   case $(menu "Start" " Apps\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
-  *Apps*) rofi -show drun -show-icons -display-drun "Applications" ;;
+  # *Apps*) rofi -show drun -show-icons -display-drun "Applications" ;;
+  *Apps*) "$ROFI_PATH"/launchers/type-1/launcher.sh ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;

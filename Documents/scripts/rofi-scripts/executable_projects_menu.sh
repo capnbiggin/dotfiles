@@ -9,7 +9,8 @@ dev="$HOME/Documents/dev"
 configs="$(find "$dev"/*/ -maxdepth 0 -print0 | xargs -0 -n1 basename)"
 # configs="$(ls -1d "$dev"/*/ 2>/dev/null | xargs -n1 basename)"
 [ -n "$configs" ] || exit 0
-chosen="$(printf '%s\n' "$configs" | rofi -dmenu -p 'Projects:')"
+chosen="$(printf '%s\n' "$configs" |
+  rofi -dmenu -theme ~/.config/rofi/launchers/type-1/style-1.rasi -p 'Projects:')"
 [ -n "$chosen" ] || exit 0
 dir="$dev/$chosen"
 

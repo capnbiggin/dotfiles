@@ -2,8 +2,8 @@
 
 # A simple script to list, attach to, or create a new tmux session using rofi.
 
-ROFI_CONFIG="${HOME}/.config/rofi/config.rasi" # Optional: specify your rofi config path
-TERMINAL="ghostty"                             # Replace with your preferred terminal (e.g., gnome-terminal, kitty)
+ROFI_THEME="${HOME}/.config/rofi/launchers/type-1/style-1.rasi" # Optional: specify your rofi config path
+TERMINAL="ghostty"                                              # Replace with your preferred terminal (e.g., gnome-terminal, kitty)
 
 # Function to list tmux sessions
 list_sessions() {
@@ -24,7 +24,8 @@ create_or_attach() {
 }
 
 # Rofi command to show existing sessions and allow user input for a new name
-selected_session=$(list_sessions | rofi -dmenu -i -p "Tmux Session" -config "$ROFI_CONFIG" -format s -entry-field "Enter a session name or select from list:")
+selected_session=$(list_sessions |
+  rofi -dmenu -i -p "Tmux Session" -theme "$ROFI_THEME" -format s -entry-field "Enter a session name or select from list:")
 [ -n "$selected_session" ] || exit 0
 
 # Nuke any existing st (since you only use one terminal)
