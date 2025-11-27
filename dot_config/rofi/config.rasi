@@ -1,10 +1,12 @@
 oonfiguration {
-    display-ssh: "󰣀 ssh:";
-    display-run: "󱓞 run:";
-    display-drun: " Applications:";
-    display-window: "󱂬 window:";
-    display-combi: "󰕘 combi:";
-    display-filebrowser: "󰉋 filebrowser:";
+  modi: "drun,run,window,ssh,filebrowser";
+  display-ssh: "󰣀 ssh:";
+  display-run: "󱓞 Run:";
+  display-drun: " Applications:";
+  display-window: "󱂬 window:";
+  display-combi: "󰕘 Combi:";
+  display-filebrowser: "󰉋 Filebrowser:";
 }
 
 @theme "~/.config/rofi/themes/catppuccin-lavrent-mocha.rasi"
+// @theme "~/.config/rofi/themes/catppuccin-default.rasi"
