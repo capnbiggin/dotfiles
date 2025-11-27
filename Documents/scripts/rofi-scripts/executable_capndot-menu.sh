@@ -4,7 +4,7 @@ SCRIPT_PATH=$HOME/Documents/scripts
 ROFI_PATH=$HOME/.config/rofi
 
 menu() {
-  echo -e "$2" | rofi -dmenu -theme ~/.config/rofi/launchers/type-1/style-1.rasi -p "$1…"
+  echo -e "$2" | rofi -dmenu -p "$1…"
 }
 
 terminal() {

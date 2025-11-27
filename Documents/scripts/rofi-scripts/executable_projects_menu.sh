@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -eu
 
-ROFI_THEME="~/.config/rofi/launchers/type-1/style-1.rasi"
-
 # Set your terminal:
 terminal="ghostty"
 dev="$HOME/Documents/dev"
@@ -11,7 +9,7 @@ dev="$HOME/Documents/dev"
 configs="$(find "$dev"/*/ -maxdepth 0 -print0 | xargs -0 -n1 basename)"
 [ -n "$configs" ] || exit 0
 chosen="$(printf '%s\n' "$configs" |
-  rofi -dmenu -theme "$ROFI_THEME" -p 'Projects:')"
+  rofi -dmenu -p 'Projects:')"
 [ -n "$chosen" ] || exit 0
 dir="$dev/$chosen"
 
