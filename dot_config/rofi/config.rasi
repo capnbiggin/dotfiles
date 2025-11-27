@@ -1,4 +1,5 @@
-oonfiguration {
+configuration {
+  modes: "drun,run,window,ssh,filebrowser";
   modi: "drun,run,window,ssh,filebrowser";
   display-ssh: "󰣀 ssh:";
   display-run: "󱓞 Run:";
