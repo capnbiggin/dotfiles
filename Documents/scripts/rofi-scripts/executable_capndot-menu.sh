@@ -11,8 +11,12 @@ terminal() {
   ghostty --class=capndot.menu -e bash -c "$1"
 }
 
+browser() {
+  setsid google-chrome-stable --new-window --app="$1"
+}
+
 remove_menu() {
-  case $(menu "Removw" "󰣇  Package\n  Web App") in
+  case $(menu "Remove" "󰣇  Package\n  Web App") in
   *Package*) terminal "$SCRIPT_PATH"/pkg-remove.sh ;;
   *Web*) terminal "$SCRIPT_PATH"/webapp-remove.sh ;;
   *) main_menu ;;
@@ -28,12 +32,12 @@ install_menu() {
 }
 
 learn_menu() {
-  case $(menu "Learn" "  Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
+  case $(menu "Learn" " Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
   *Keybindings*) "$SCRIPT_PATH"/rofi-scripts/hypr-keybindings.sh ;;
-  *Hyprland*) setsid chromium --new-window --app="https://wiki.hypr.land/" & ;;
-  *Arch*) setsid chromium --new-window --app="https://wiki.archlinux.org/title/Main_page" & ;;
-  *Bash*) setsid chromium --new-window --app="https://devhints.io/bash" & ;;
-  *Neovim*) setsid chromium --new-window --app="https://www.lazyvim.org/keymaps" & ;;
+  *Hyprland*) browser "https://wiki.hypr.land/" & ;;
+  *Arch*) browser "https://wiki.archlinux.org/title/Main_page" & ;;
+  *Bash*) browser "https://devhints.io/bash" & ;;
+  *Neovim*) browser "https://www.lazyvim.org/keymaps" & ;;
   *) main_menu ;;
   esac
 }
