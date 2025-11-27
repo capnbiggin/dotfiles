@@ -282,6 +282,8 @@ layout {
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-sh-at-startup "xwayland-satellite"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store" 
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
