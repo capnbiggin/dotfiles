@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-clear
-echo -e "\033[96m"
-cat <$HOME/Documents/scripts/install-scripts/logo.txt
-echo -e "\033[0m"
-echo
