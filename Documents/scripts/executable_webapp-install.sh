@@ -45,3 +45,5 @@ chmod +x "$DESKTOP_FILE"
 if [ "$#" -ne 3 ]; then
   echo -e "You can now find $APP_NAME using the app launcher (SUPER + SPACE)\n"
 fi
+
+source "$HOME/Documents/scripts/show-done.sh"

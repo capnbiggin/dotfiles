@@ -36,3 +36,5 @@ rm "$ICON_DIR/$APP_NAME.png"
 if [ "$#" -ne 1 ]; then
   echo -e "Removed $APP_NAME\n"
 fi
+
+source "$HOME/Documents/scripts/show-done.sh"
