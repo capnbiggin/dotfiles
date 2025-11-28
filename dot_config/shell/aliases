@@ -40,9 +40,13 @@ alias mkdir='mkdir -p'
 alias ping='ping -c 5'
 
 # pacman
-alias i='yay -S --noconfirm --needed'                            # Install packages
+alias i='pacman -S --noconfirm --needed'                            # Install packages
+alias yayi='yay -S --noconfirm --needed'                            # Install packages
 alias s='yay -Ss'                                                # Search packages
-alias Syu='yay -Syu --noconfirm --needed'                        # update pacman & packages
+alias Syy='pacman -Syy --noconfirm --needed'                        # update pacman & packages
+alias Syu='pacman -Syyu --noconfirm --needed'                        # update pacman & packages
+alias ySyu='yay -Syyu --noconfirm --needed'                        # update pacman & packages
+alias ySyy='yay -Syy --noconfirm --needed'                        # update pacman & packages
 
 # Editor
 alias n='nvim'
