@@ -409,8 +409,8 @@ binds {
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     // Menu keybinds
-    // Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
-    Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher.sh"; }
+    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
+    Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher-1.sh"; }
     Mod+ALT+SPACE hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/Documents/scripts/rofi-scripts/capndot-menu.sh"; }
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/Documents/scripts/rofi-scripts/clipboard-history.sh"; }
     Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/Documents/scripts/rofi-scripts/projects_menu.sh"; }
