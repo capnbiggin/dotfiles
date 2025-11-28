@@ -389,7 +389,7 @@
             {
                 "directory": "/home/capn/Pictures/wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_gwwdyd.jpg"
+                "wallpaper": "/home/capn/Pictures/wallpapers/wallhaven_w55mqx.jpg"
             },
             {
                 "directory": "/home/capn/Pictures/wallpapers",
@@ -406,7 +406,7 @@
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
-        "useWallhaven": true,
+        "useWallhaven": false,
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
