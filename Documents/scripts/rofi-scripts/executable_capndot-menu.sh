@@ -53,9 +53,10 @@ system_menu() {
 }
 
 main_menu() {
-  case $(menu "Start" " Apps\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
-  # *Apps*) rofi -show drun -show-icons -display-drun "Applications" ;;
+  case $(menu "Start" " Apps\n  Tmux_Sessions\n  Project_tmux_Sessions\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
   *Apps*) "$ROFI_PATH"/launchers/type-1/launcher.sh ;;
+  *Tmux_Sessions*) "$SCRIPT_PATH"/rofi-scripts/tmux_sessions.sh ;;
+  *Project_tmux_Sessions*) "$SCRIPT_PATH"/rofi-scripts/projects_menu.sh ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;
