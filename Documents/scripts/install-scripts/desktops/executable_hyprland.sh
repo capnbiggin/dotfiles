@@ -8,6 +8,7 @@ HYPR=(
   hyprpicker
   hyprlock
   hyprpaper
+  imv
   noctalia-shell
   swww
   wl-clipboard
