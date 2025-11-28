@@ -28,16 +28,16 @@ sleep 0.1
 if ! (git diff --exit-code origin/main..main >/dev/null) ||
   ! (git diff --exit-code main >/dev/null) ||
   ! [[ -z "$(git status --porcelain)" ]]; then
-  log_info "\nYour local repo has some changes that aren't pushed to origin/main .\n"
-  log_info "\nLet's take care of that for you.\n"
+  log_info "\nYour local repo has some changes that aren't pushed to origin/main ."
+  log_info "\nLet's take care of that for you."
   git add --all
-  log_warning "\nPlease add commit message .\n"
+  log_warning "\nPlease add commit message ."
   read -r msg
   git commit -m "$msg - $(date)"
   git push origin main
-  log_success "\nRepo up to date with origin/main .\n"
+  log_success "\nRepo up to date with origin/main ."
   exit 1
 else
-  log_info "\nYour local repo is up to date with origin/main .\n"
+  log_info "\nYour local repo is up to date with origin/main ."
   exit 0
 fi
