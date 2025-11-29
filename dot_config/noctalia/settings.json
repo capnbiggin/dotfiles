@@ -2,16 +2,19 @@
     "appLauncher": {
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "enableClipPreview": true,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "xterm -e",
-        "useApp2Unit": false
+        "useApp2Unit": false,
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 30,
+        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
@@ -22,6 +25,7 @@
     },
     "bar": {
         "backgroundOpacity": 1,
+        "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": false,
@@ -36,6 +40,7 @@
             "center": [
                 {
                     "characterCount": 2,
+                    "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "index"
@@ -55,6 +60,7 @@
                     "warningThreshold": 30
                 },
                 {
+                    "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": true,
                     "showCpuUsage": true,
@@ -80,6 +86,8 @@
                     "maxWidth": 145,
                     "scrollingMode": "hover",
                     "showAlbumArt": false,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
                     "showVisualizer": false,
                     "useFixedWidth": false,
                     "visualizerType": "linear"
@@ -87,11 +95,14 @@
             ],
             "right": [
                 {
-                    "hideTextInVerticalBar": false,
                     "icon": "arrow-merge-alt-right",
                     "id": "CustomButton",
                     "leftClickExec": "source ~/.local/bin/pacupdates",
                     "leftClickUpdateText": true,
+                    "maxTextLength": {
+                        "horizontal": 10,
+                        "vertical": 10
+                    },
                     "middleClickExec": "",
                     "middleClickUpdateText": false,
                     "parseJson": false,
@@ -100,7 +111,14 @@
                     "textCollapse": "",
                     "textCommand": "source ~/.local/bin/pacupdates",
                     "textIntervalMs": 30000,
-                    "textStream": false
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
                 },
                 {
                     "id": "ScreenRecorder"
@@ -141,13 +159,13 @@
             ]
         }
     },
-    "battery": {
-        "chargingMode": 0
-    },
     "brightness": {
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
+    },
+    "changelog": {
+        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -225,9 +243,11 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
+        "radiusRatio": 0.1,
         "size": 1
     },
     "general": {
+        "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/capn/.face",
@@ -243,6 +263,7 @@
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
+        "showHibernateOnLockScreen": false,
         "showScreenCorners": false
     },
     "hooks": {
@@ -259,7 +280,8 @@
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
         "useFahrenheit": true,
-        "weatherEnabled": true
+        "weatherEnabled": true,
+        "weatherShowEffects": true
     },
     "network": {
         "wifiEnabled": true
@@ -351,6 +373,7 @@
     },
     "templates": {
         "alacritty": false,
+        "cava": false,
         "code": false,
         "discord": false,
         "enableUserTemplates": false,
@@ -363,6 +386,7 @@
         "pywalfox": false,
         "qt": false,
         "spicetify": false,
+        "telegram": false,
         "vicinae": false,
         "walker": false,
         "wezterm": false
