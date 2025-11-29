@@ -43,8 +43,8 @@ alias ping='ping -c 5'
 alias i='pacman -S --noconfirm --needed'                            # Install packages
 alias yayi='yay -S --noconfirm --needed'                            # Install packages
 alias s='yay -Ss'                                                # Search packages
-alias Syy='pacman -Syy --noconfirm --needed'                        # update pacman & packages
-alias Syu='pacman -Syyu --noconfirm --needed'                        # update pacman & packages
+alias Syy='sudo pacman -Syy --noconfirm --needed'                        # update pacman & packages
+alias Syu='sudo pacman -Syyu --noconfirm --needed'                        # update pacman & packages
 alias ySyu='yay -Syyu --noconfirm --needed'                        # update pacman & packages
 alias ySyy='yay -Syy --noconfirm --needed'                        # update pacman & packages
 
