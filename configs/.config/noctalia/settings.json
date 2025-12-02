@@ -401,7 +401,7 @@
     },
     "wallpaper": {
         "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
-        "directory": "/home/capn/Pictures/wallpapers",
+        "directory": "/home/capn/.dotfiles/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
