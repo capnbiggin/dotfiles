@@ -1,0 +1,70 @@
+###################################
+#            Aliases              #
+###################################
+
+
+# File Aliases
+alias ls='ls -1 --color=auto'
+#alias la='ls -a --color=auto'
+alias la='ls -laF --color=auto'
+alias ll="eza -lha --group-directories-first --color=always --icons=always"
+alias lt='eza -lha --tree --level=2 --long --icons --git'
+
+# Change Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias cdot='cd ~/capndot && printf " \U000F17A9 " && pwd'
+alias brain='cd ~/Documents/My-Brain && printf " \U000F17A9 " && pwd'
+alias aliases='nvim ~/capndot/shell/aliases'
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf " \U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
+
+# File system
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+
+# Alias to mod commands
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -rf'
+alias mkdir='mkdir -p'
+alias ping='ping -c 5'
+
+# pacman
+alias i='sudo pacman -S --noconfirm --needed'                            # Install packages
+alias yayi='yay -S --noconfirm --needed'                            # Install packages
+alias s='yay -Ss'                                                # Search packages
+alias Syy='sudo pacman -Syy --noconfirm --needed'                        # update pacman & packages
+alias Syyu='sudo pacman -Syyu --noconfirm --needed'                        # update pacman & packages
+alias ySyu='yay -Syyu --noconfirm --needed'                        # update pacman & packages
+alias ySyy='yay -Syy --noconfirm --needed'                        # update pacman & packages
+
+# Editor
+alias n='nvim'
+alias sn='sudoedit'
+alias t='tmux'
+alias n.='nvim .'
+
+# Mis. Aliases
+alias c='clear'
+alias x='exit'
+alias szsh='source ~/.config/zsh/.zshrc'
+
+# git
+alias ga='git add'
+alias gaa='git add .'
+alias gcm='git commit -m'
+alias gcn='git commit -m "none"'
+alias gu='git push'
+alias gd='git pull'
+
+alias linutil='curl -fsSL https://christitus.com/linux | sh'
