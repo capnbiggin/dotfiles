@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH=$HOME/Documents/scripts
+SCRIPT_PATH=$HOME/.dotfiles/scripts
 ROFI_PATH=$HOME/.config/rofi
 
 menu() {
@@ -56,9 +56,9 @@ system_menu() {
 main_menu() {
   case $(menu "Start" " Apps\n  Tmux_Sessions\n  Project\n  Kill_Tmux_Session\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
   *Apps*) "$ROFI_PATH"/launchers/launcher-1.sh ;;
-  *Tmux_Sessions*) "$SCRIPT_PATH"/rofi-scripts/tmux_sessions.sh ;;
-  *Kill_Tmux_Session*) "$SCRIPT_PATH"/rofi-scripts/kill_tmux_sessions.sh ;;
-  *Project*) "$SCRIPT_PATH"/rofi-scripts/projects_menu.sh ;;
+  *Tmux_Sessions*) "$ROFI_PATH"/scripts/tmux_sessions.sh ;;
+  *Kill_Tmux_Session*) "$ROFI_PATH"/scripts/kill_tmux_sessions.sh ;;
+  *Project*) "$ROFI_PATH"/scripts/projects_menu.sh ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;

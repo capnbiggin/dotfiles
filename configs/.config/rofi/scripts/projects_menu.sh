@@ -6,23 +6,23 @@ TERM="ghostty"
 
 # Directories
 DEV="$HOME/Documents/dev"
-CHEZMOI_DIR="$HOME/.local/share/chezmoi"
-SCRIPT_DIR="$HOME/Documents/scripts"
+SCRIPT_DIR="$HOME/.dotfiles/scripts"
+MY_BRAIN="$HOME/Documents/My-Brain"
 
 # Pick repo
 configs="$(find "$DEV"/*/ -maxdepth 0 -print0 | xargs -0 -n1 basename)"
 [ -n "$configs" ] || exit 0
-chezmoi="$(basename "$CHEZMOI_DIR")"
-[ -n "$chezmoi" ] || exit 0
 scripts="$(basename "$SCRIPT_DIR")"
 [ -n "$scripts" ] || exit 0
-chosen="$(printf '%s\n' "$configs" "$chezmoi" "$scripts" |
+brain="$(basename "$MY_BRAIN")"
+[ -n "$brain" ] || exit 0
+chosen="$(printf '%s\n' "$configs" "$scripts" "$brain" |
   rofi -dmenu -p 'Projects:')"
 [ -n "$chosen" ] || exit 0
-if [[ "$chosen" == "chezmoi" ]]; then
-  dir="$CHEZMOI_DIR"
-elif [[ "$chosen" == "scripts" ]]; then
+if [[ "$chosen" == "scripts" ]]; then
   dir="$SCRIPT_DIR"
+elif [[ "$chosen" == "My-Brain" ]]; then
+  dir="$MY_BRAIN"
 else
   dir="$DEV/$chosen"
 fi
