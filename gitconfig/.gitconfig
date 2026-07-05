@@ -1,0 +1,13 @@
+[user]
+	email = 3750145+capnbiggin@users.noreply.github.com
+	name = capnbiggin
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[pull]
+	rebase = true

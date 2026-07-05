@@ -1,0 +1,12 @@
+{
+  "cSpell.words": [
+    "paru",
+    "Pipewire",
+    "Propo",
+    "Quickshell"
+  ],
+  "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
+  "editor.defaultFormatter": "Delgan.qml-format",
+  "qmlFormat.command": "/usr/lib/qt6/bin/qmlformat",
+  "qmlFormat.extraArguments": ["--indent-width", "2"],
+}

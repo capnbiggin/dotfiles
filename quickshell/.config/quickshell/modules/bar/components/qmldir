@@ -1,0 +1,7 @@
+Audio Audio.qml
+Battery Battery.qml
+Clock Clock.qml
+CPU CPU.qml
+Divider Divider.qml
+Network Network.qml
+Workspaces Workspaces.qml

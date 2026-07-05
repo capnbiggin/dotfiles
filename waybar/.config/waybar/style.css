@@ -1,0 +1,77 @@
+@import "colors.css";
+
+* {
+  all: unset;
+  font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo";
+}
+
+.modules-center {
+  color: @fg;
+  background-color: transparent;
+  margin: 5 0 0 0;
+  padding: 6 10;
+  border-radius: 10px;
+}
+
+/* --- module commons ---*/
+#workspaces,
+#clock,
+#icon-wrapper,
+#hardware {
+  background-color: @bg1;
+  border-radius: 6px;
+  padding: 3 6;
+  margin: 0 10;
+}
+
+/* --- wokspaces buttons --- */
+#workspaces button {
+  color: @fg;
+  background-color: @bg4;
+  padding: 0 3;
+  margin: 1 2;
+  border-radius: 4px;
+  min-width: 10px;
+}
+#workspaces button.active {
+  color: @bg0;
+  background-color: @purple;
+  padding: 0 8;
+}
+
+/* --- wrapper commons --- */
+#network,
+#pulseaudio,
+#battery,
+#custom-notification,
+#temperature,
+#memory,
+#cpu,
+#power-profiles-daemon {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+#battery.warning,
+#temperature.warning {
+  color: @yellow;
+}
+#battery.critical,
+#temperature.critical {
+  color: @red;
+}
+
+/* --- seprtator --- */
+#custom-seperator {
+  color: @bg4;
+  padding: 0 1;
+}
+
+/* --- tooltip --- */
+tooltip {
+  border: 2px solid @bg4;
+  border-radius: 10px;
+  background-color: @bg1;
+}
+tooltip > box {
+  padding: 5px 8px;
+}
