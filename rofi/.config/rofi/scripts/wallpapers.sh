@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALL_DIR="$HOME/Pictures/wallpapers"
+WALL_DIR="$HOME/dotfiles/wallpapers"
 CACHE_DIR="$HOME/.cache/thumbnails/large"  # Standard XDG thumbnail cache
 
 # Ensure thumbnail cache exists
