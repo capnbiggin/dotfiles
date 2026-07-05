@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+<<'COMMENT'
+The is a script to get, set and toggle mute with PipeWire and WirePlumber.
+COMMENT
+
+
+SINK="@DEFAULT_AUDIO_SINK@"
+
+get_volume() {
+      VOL_RAW="$(wpctl get-volume "${SINK}")"
+      VOL_FRACTION="$(echo ${VOL_RAW} | awk '{print $2}')"
+      VOL_PERCENT="$(awk -v v="$VOL_FRACTION" 'BEGIN{printf "%d", (v * 100) + 0.5}')"
+
+      if [[ ${VOL_RAW} == *MUTED* ]]; then
+        MUTED=1
+      else
+        MUTED=0
+      fi
+
+      if [[ ${MUTED} -eq 1 ]]; then
+        echo "󰸈 Muted"
+      else
+        echo "󰕾 ${VOL_PERCENT}%"
+      fi
+}
+
+set_volume() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: vol set <volume_percentage_number>"
+    exit 1
+  else
+    wpctl set-volume "${SINK}" "$2"%
+  fi
+}
+
+main() {
+  if ! command -v wpctl &> /dev/null; then
+    echo "wpctl command not found. Please install WirePlumber or PipeWire."
+    exit 1
+  else
+    case $1 in
+    get)
+      get_volume
+      ;;
+    set)
+      set_volume "$@"
+      ;;
+    up)
+      wpctl set-volume "${SINK}" 5%+
+      ;;
+    down)
+      wpctl set-volume "${SINK}" 5%-
+      ;;
+    mutetoggle)
+      wpctl set-mute "${SINK}" toggle
+      ;;
+    *)
+      echo "Usage: vol {get|set|up|down|mutetoggle}"
+      exit 1
+      ;;
+  esac
+  fi
+}
+
+main "$@"
