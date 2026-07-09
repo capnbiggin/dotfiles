@@ -37,7 +37,7 @@ RowLayout {
         }
         color: wsButton.isActive ? Colors.accent : (ws ? Colors.fg : Colors.fgMuted)
         font {
-          family: Fonts.body
+          family: Fonts.famBody
           pixelSize: Fonts.fsBody
           weight: Fonts.wSemiBold
         }

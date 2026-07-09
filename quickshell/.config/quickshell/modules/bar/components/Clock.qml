@@ -14,7 +14,7 @@ RowLayout {
     color: Colors.fg
 
     font {
-      family: Fonts.body
+      family: Fonts.famBody
       pixelSize: Fonts.fsHeader
       weight: Fonts.wSemiBold
     }

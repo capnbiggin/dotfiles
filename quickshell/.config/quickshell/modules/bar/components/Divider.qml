@@ -7,7 +7,7 @@ Text {
   color: Colors.bg4
 
   font {
-    family: Fonts.body
+    family: Fonts.famBody
     pixelSize: Fonts.fsHeader
     weight: Fonts.wBold
   }

@@ -28,7 +28,7 @@ RowLayout {
     color: root.temp > 79 ? Colors.bad : root.temp > 65 ? Colors.warn : Colors.good
 
     font {
-      family: Fonts.mono
+      family: Fonts.famMono
       pixelSize: Fonts.fsBody
       weight: Fonts.wSemiBold
     }
@@ -39,7 +39,7 @@ RowLayout {
     color: Colors.fg
 
     font {
-      family: Fonts.body
+      family: Fonts.famBody
       pixelSize: Fonts.fsBody
       weight: Fonts.wSemiBold
     }

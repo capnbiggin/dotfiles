@@ -7,7 +7,7 @@ Text {
   color: Colors.fg
 
   font {
-    family: Fonts.body
+    family: Fonts.famBody
     pixelSize: Fonts.fsBody
     weight: Fonts.wMd
   }

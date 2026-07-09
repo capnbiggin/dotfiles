@@ -30,7 +30,7 @@ RowLayout {
     color: root.charging ? Colors.blue : root.level <= 15 ? Colors.bad : root.level <= 30 ? Colors.warn : Colors.good
 
     font {
-      family: Fonts.mono
+      family: Fonts.famMono
       pixelSize: Fonts.fsBody
     }
   }
@@ -40,7 +40,7 @@ RowLayout {
     color: Colors.fg
 
     font {
-      family: Fonts.body
+      family: Fonts.famBody
       pixelSize: Fonts.fsBody
       weight: Fonts.wSemiBold
     }

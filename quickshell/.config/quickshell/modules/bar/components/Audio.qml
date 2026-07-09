@@ -39,7 +39,7 @@ RowLayout {
     color: Colors.yellow
 
     font {
-      family: Fonts.mono
+      family: Fonts.famMono
       pixelSize: Fonts.fsBody
     }
   }
@@ -57,7 +57,7 @@ RowLayout {
     color: Colors.fg
 
     font {
-      family: Fonts.body
+      family: Fonts.famBody
       pixelSize: Fonts.fsBody
       weight: Fonts.wSemiBold
     }
