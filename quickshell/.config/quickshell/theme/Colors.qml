@@ -15,27 +15,25 @@ Singleton {
   // JsonAdapter {
   QtObject {
     id: pal
-    property string background: "#1e1e2e"
-    property string foreground: "#cdd6f4"
-    property string cursor: "#f5e0dc"
-    property string color0: "#bac2de"
-    property string color1: "#f38ba8"
-    property string color2: "#a6e3a1"
-    property string color3: "#f9e2af"
-    property string color4: "#89b4fa"
-    property string color5: "#f5c2e7"
-    property string color6: "#94e2d5"
-    property string color7: "#a6adc8"
-    property string color8: "#585b70"
-    property string color9: "#ff6048"
-    property string color10: "#7ad9a8"
-    property string color11: "#f5cd5b"
-    property string color12: "#5fc8d4"
-    property string color13: "#e89aa8"
-    property string color14: "#3dd1b0"
-    property string color15: "#bac2de"
-    property string color16: "#fab387"
-    property string color17: "#f5e0dc"
+    property string background: "#061115"
+    property string foreground: "#d9d7d6"
+    property string cursor: "#d9d7d6"
+    property string color0: "#061115"
+    property string color1: "#df5b61"
+    property string color2: "#78b892"
+    property string color3: "#ecd28b"
+    property string color4: "#6791c9"
+    property string color5: "#c488ec"
+    property string color6: "#67afc1"
+    property string color7: "#d9d7d6"
+    property string color8: "#313c40"
+    property string color9: "#f16269"
+    property string color10: "#8cd7aa"
+    property string color11: "#f6dc95"
+    property string color12: "#79aaeb"
+    property string color13: "#bc83e3"
+    property string color14: "#7acfe4"
+    property string color15: "#edebea"
   }
   // }
 
@@ -66,7 +64,7 @@ Singleton {
   // ─── Foreground ───────────────────────
   readonly property color fg: pal.foreground
   readonly property color fgMuted: alpha(fg, 0.60)
-  readonly property color accent: pal.color12
+  readonly property color accent: pal.color14
 
   // ─── Colors ───────────────────────────
   readonly property color red: pal.color1

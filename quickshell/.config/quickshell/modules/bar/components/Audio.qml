@@ -33,6 +33,7 @@ RowLayout {
 
   spacing: Sizes.s1
 
+  // ─── Icon & Volume ───────────────────────
   Text {
     text: root.icon
     color: Colors.yellow
@@ -62,6 +63,26 @@ RowLayout {
     }
   }
 
+  // ─── Volume Control ───────────────────────
+  readonly property real volume: (sink && sink.audio) ? sink.audio.volume : 0
+  function setVolume(v) {
+    if (sink && sink.audio)
+      sink.audio.volume = Math.max(0, Math.min(1, v));
+  }
+  function toggleMute() {
+    if (sink && sink.audio)
+      sink.audio.muted = !sink.audio.muted;
+  }
+
+  MouseArea {
+    anchors.fill: parent
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    onPressed: root.toggleMute()
+    onWheel: (wheel.angleDelta.y > 0) ? root.setVolume(root.volume + 0.01) : root.setVolume(root.volume - 0.01)
+  }
+
+  // ─── Pipewire Object Tracker ───────────────────────
   PwObjectTracker {
     objects: [root.sink]
   }
