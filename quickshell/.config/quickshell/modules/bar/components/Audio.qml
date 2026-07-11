@@ -11,7 +11,7 @@ RowLayout {
   property var sink: Pipewire.defaultAudioSink
   readonly property bool ready: sink && sink.ready
   readonly property bool muted: ready && sink.audio.muted
-  readonly property int vol: ready ? Math.round(sink.audio.volume * 100) : 0
+  readonly property int volPer: ready ? Math.round(sink.audio.volume * 100) : 0
   readonly property string icon: {
     if (!ready)
       return String.fromCodePoint(984449);
@@ -19,13 +19,13 @@ RowLayout {
     if (muted)
       return String.fromCodePoint(984927);
 
-    if (vol === 0)
+    if (volPer === 0)
       return String.fromCodePoint(984449);
 
-    if (vol < 34)
+    if (volPer < 34)
       return String.fromCodePoint(984447);
 
-    if (vol < 76)
+    if (volPer < 76)
       return String.fromCodePoint(984448);
 
     return String.fromCodePoint(984446);
@@ -52,7 +52,7 @@ RowLayout {
       if (root.muted)
         return "Muted";
 
-      return root.vol + "%";
+      return root.volPer + "%";
     }
     color: Colors.fg
 
