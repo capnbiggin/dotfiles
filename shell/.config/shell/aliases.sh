@@ -24,13 +24,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ....='cd ../../../..'
-alias brain='cd ~/projects/My-Brain && printf " \U000F17A9 " && pwd'
+alias brain='cd ~/projects/My-Brain'
+alias dot='cd ~/dotfiles'
 alias cd="zd"
 zd() {
   if [ $# -eq 0 ]; then
     builtin cd ~ && return
   elif [ -d "$1" ]; then
-    builtin cd "$1" && pwd
+    builtin cd "$1" && printf " \U000F17A9 " && pwd
   else
     z "$@" && printf " \U000F17A9 " && pwd || echo "Error: Directory not found"
   fi
