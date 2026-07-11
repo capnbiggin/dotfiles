@@ -1,9 +1,17 @@
+-- Autostart with Hyprland
+
+local appList = {
+  "awww-daemon",
+  "qs",
+  "wl-paste --type text --watch cliphist store",
+  "wl-paste --type image --watch cliphist store",
+  "wl-clip-persist --clipboard regular",
+  "/usr/lib/xdg-desktop-portal",
+  "systemctl --user start hyprpolkitagent",
+}
+
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("awww-daemon")
-  hl.exec_cmd("qs -p ~/.config/quickshell")
-  hl.exec_cmd("wl-paste --type text --watch cliphist store")
-  hl.exec_cmd("wl-paste --type image --watch cliphist store")
-  hl.exec_cmd("wl-clip-persist --clipboard regular")
-  hl.exec_cmd("/usr/lib/xdg-desktop-portal")
-  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  for _, command in ipairs(appList) do
+    hl.exec_cmd(command)
+  end
 end)

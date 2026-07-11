@@ -1,12 +1,18 @@
-require("modules.monitors")
-require("modules.keybinds")
-require("modules.autostart")
-require("modules.env")
 
-require("modules.inputs")
-require("modules.look_feel")
-require("modules.rules")
-require("modules.misc")
+
+require("autoload_modules")
+
+--require("modules.monitors")
+--require("modules.keybinds")
+--require("modules.binds.program_binds")
+--require("modules.binds.menu_binds")
+--require("modules.autostart")
+--require("modules.env")
+--
+--require("modules.inputs")
+--require("modules.look_feel")
+--require("modules.rules")
+--require("modules.misc")
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
