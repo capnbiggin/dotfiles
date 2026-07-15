@@ -2,7 +2,8 @@
 
 local mod           = "SUPER"
 
-local terminal      = "ghostty"
+local terminal      = "kitty"
+local terminal2     = "ghostty"
 local browser1      = "zen-browser"
 local fileManager   = "thunar"
 local notes1        = "obsidian"
@@ -13,6 +14,7 @@ local bar_toggle    = "pkill qs || qs"
 
 
 hl.bind(mod .. " + RETURN"       , hl.dsp.exec_cmd(terminal))
+hl.bind(mod .. " + ALT + RETURN" , hl.dsp.exec_cmd(terminal2))
 hl.bind(mod .. " + W"            , hl.dsp.exec_cmd(browser1))
 hl.bind(mod .. " + E"            , hl.dsp.exec_cmd(fileManager))
 hl.bind(mod .. " + O"            , hl.dsp.exec_cmd(notes1))

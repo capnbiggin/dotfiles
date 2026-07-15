@@ -2,6 +2,7 @@
 local mod = "SUPER"
 
 local capture       = "~/.local/bin/screencap"
+local hypr_reload   = "~/.local/bin/hypr_reload"
 
 -- screencap
 hl.bind(mod .. " + SHIFT + C"    , hl.dsp.exec_cmd(capture))
@@ -15,3 +16,6 @@ hl.bind(mod .. " + SHIFT + Q"    ,
 hl.bind(mod .. " + F"            , hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mod .. " + P"         , hl.dsp.window.pseudo())
 -- hl.bind(mod .. " + J"         , hl.dsp.layout("togglesplit")) -- dwindle only
+
+-- Reload hyprland Config
+hl.bind(mod .. " + R"            , hl.dsp.exec_cmd(hypr_reload))

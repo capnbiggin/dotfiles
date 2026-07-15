@@ -23,7 +23,7 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ....='cd ../../../..'
+alias .....='cd ../../../..'
 alias brain='cd ~/projects/My-Brain'
 alias dot='cd ~/dotfiles'
 alias cd="zd"
