@@ -38,14 +38,12 @@ else
   exit 1
 fi
 
-source "${INSTALL_DIR}/configs.sh"
+# source "${INSTALL_DIR}/configs.sh"
 source "${INSTALL_DIR}/aur-yay.sh"
 source "${INSTALL_DIR}/base.sh"
 # source "${INSTALL_DIR}/fonts.sh"
-source "${INSTALL_DIR}/gum.sh"
 source "${INSTALL_DIR}/firewall.sh"
 source "${INSTALL_DIR}/g-packs.sh"
-source "${INSTALL_DIR}/firewall.sh"
 
 # source "${INSTALL_DIR}/niri.sh"
 # source "${INSTALL_DIR}/qtile.sh"

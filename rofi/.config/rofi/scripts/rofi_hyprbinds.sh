@@ -28,36 +28,36 @@ parse_conf() {
 # ── Fallback: built-in common Hyprland keybind reference ─────────────────────
 builtin_keybinds() {
   cat <<'EOF'
-─── Window Management ─────────────────────────────────────────────────────────
-SUPER + Q                          Kill active window
-SUPER + F                          Toggle fullscreen
-SUPER + V                          Toggle floating
-SUPER + P                          Toggle pseudo (dwindle)
-SUPER + J                          Toggle split (dwindle)
-SUPER + left/right/up/down         Move focus between windows
-SUPER + SHIFT + left/right/up/down Move/resize window
-─── Workspaces ────────────────────────────────────────────────────────────────
-SUPER + 1-9                        Switch to workspace 1-9
-SUPER + SHIFT + 1-9                Move window to workspace 1-9
-SUPER + S                          Toggle scratchpad workspace
-SUPER + mouse scroll               Cycle workspaces
-─── Launchers ─────────────────────────────────────────────────────────────────
-SUPER + Return                     Terminal (kitty)
-SUPER + D                          App launcher (rofi/wofi)
-SUPER + E                          File manager
-SUPER + B                          Browser
-─── System ────────────────────────────────────────────────────────────────────
-SUPER + L                          Lock screen
-SUPER + M                          Exit Hyprland
-SUPER + SHIFT + R                  Reload Hyprland config
-Print                              Screenshot (full)
-SUPER + Print                      Screenshot (region)
-─── Media ─────────────────────────────────────────────────────────────────────
-XF86AudioRaiseVolume               Volume up
-XF86AudioLowerVolume               Volume down
-XF86AudioMute                      Toggle mute
-XF86MonBrightnessUp                Brightness up
-XF86MonBrightnessDown              Brightness down
+─── Window Management ────────────────────────────────────────────────
+SUPER + Q                            Kill active window
+SUPER + F                            Toggle fullscreen
+SUPER + V                            Toggle floating
+SUPER + P                            Toggle pseudo (dwindle)
+SUPER + J                            Toggle split (dwindle)
+SUPER + H/J/K/L/ or arrow            Move focus between windows
+SUPER + SHIFT + H/J/K/L/ or arrow    Move/resize window
+─── Workspaces ───────────────────────────────────────────────────────
+SUPER + 1-9                          Switch to workspace 1-9
+SUPER + SHIFT + 1-9                  Move window to workspace 1-9
+SUPER + S                            Toggle scratchpad workspace
+SUPER + mouse scroll                 Cycle workspaces
+─── Launchers ────────────────────────────────────────────────────────
+SUPER + Return                       Terminal (kitty)
+SUPER + ALT + SPACE                  App launcher (rofi/wofi)
+SUPER + E                            File manager
+SUPER + W                            Browser (Zen browser)
+─── System ───────────────────────────────────────────────────────────
+SUPER + L                            Lock screen
+SUPER + M                            Exit Hyprland
+SUPER + SHIFT + R                    Reload Hyprland config
+Print                                Screenshot (full)
+SUPER + Print                        Screenshot (region)
+─── Media ────────────────────────────────────────────────────────────
+XF86AudioRaiseVolume                 Volume up
+XF86AudioLowerVolume                 Volume down
+XF86AudioMute                        Toggle mute
+XF86MonBrightnessUp                  Brightness up
+XF86MonBrightnessDown                Brightness down
 EOF
 }
 
@@ -80,8 +80,8 @@ main() {
     -dmenu \
     -i \
     -p "Hyprland Keybinds" \
-    -theme-str 'window {width: 60%;}' \
-    -theme-str 'listview {lines: 20;}' \
+    -theme-str 'window {width: 50%;}' \
+    -theme-str 'listview {lines: 12;}' \
     -font "monospace 11" \
     -no-fixed-num-lines \
     -format 'i')

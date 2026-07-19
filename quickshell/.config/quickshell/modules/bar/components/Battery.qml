@@ -27,7 +27,7 @@ RowLayout {
 
   Text {
     text: root.icon
-    color: root.charging ? Colors.blue : root.level <= 15 ? Colors.bad : root.level <= 30 ? Colors.warn : Colors.good
+    color: root.charging ? Colors.blue : root.level <= 15 ? Colors.bad : root.level <= 30 ? Colors.warn : root.level === 100 ? Colors.blue : Colors.good
 
     font {
       family: Fonts.famMono

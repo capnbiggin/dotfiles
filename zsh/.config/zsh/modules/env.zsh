@@ -12,6 +12,6 @@ elif command -v vim &. /dev/null; then
 else
   export EDITOR="nano"
 fi
-export MANPAGER='nvim +Man!'
+export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi

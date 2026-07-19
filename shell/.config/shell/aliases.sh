@@ -141,3 +141,4 @@ function extract() {
   fi
 }
 
+alias wall=". ~/dotfiles/rofi/.config/rofi/scripts/wallpapers.sh"
