@@ -59,4 +59,5 @@ source "${INSTALL_DIR}/zsh.sh"
 
 log_warning "\nRESTART NEEDED!!!"
 notify-send "RESTART NEEDED"
+read -rsn 1 -p "Press any key to exit..."
 exit 0
