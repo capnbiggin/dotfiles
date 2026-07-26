@@ -4,47 +4,47 @@ clear='\033[0m'
 
 fg=(
   # Regular colors
-  "\033[107;30m"  # Black
-  "\033[107;31m"  # Red
-  "\033[107;32m"  # Green
-  "\033[107;33m"  # Yellow
-  "\033[107;34m"  # Blue
-  "\033[107;35m"  # Magenta
-  "\033[107;36m"  # Cyan
-  "\033[107;37m"  # Light Gray
+  "\033[1;107;30m"  # Black
+  "\033[1;107;31m"  # Red
+  "\033[1;107;32m"  # Green
+  "\033[1;107;33m"  # Yellow
+  "\033[1;107;34m"  # Blue
+  "\033[1;107;35m"  # Magenta
+  "\033[1;107;36m"  # Cyan
+  "\033[1;107;37m"  # Light Gray
 )
 bright_fg=(
   # Bright colors
-  "\033[47;90m"  # Bright Black (Gray)
-  "\033[47;91m"  # Bright Red
-  "\033[47;92m"  # Bright Green
-  "\033[47;93m"  # Bright Yellow
-  "\033[47;94m"  # Bright Blue
-  "\033[47;95m"  # Bright Magenta
-  "\033[47;96m"  # Bright Cyan
-  "\033[47;97m"  # Bright White
+  "\033[1;47;90m"  # Bright Black (Gray)
+  "\033[1;47;91m"  # Bright Red
+  "\033[1;47;92m"  # Bright Green
+  "\033[1;47;93m"  # Bright Yellow
+  "\033[1;47;94m"  # Bright Blue
+  "\033[1;47;95m"  # Bright Magenta
+  "\033[1;47;96m"  # Bright Cyan
+  "\033[1;47;97m"  # Bright White
 )
 bg=(
   # Background colors
-  "\033[0;40m"  # Black
-  "\033[0;41m"  # Red
-  "\033[0;42m"  # Green
-  "\033[0;43m"  # Yellow
-  "\033[0;44m"  # Blue
-  "\033[0;45m"  # Magenta
-  "\033[0;46m"  # Cyan
-  "\033[0;47m"  # White
+  "\033[1;40m"  # Black
+  "\033[1;41m"  # Red
+  "\033[1;42m"  # Green
+  "\033[1;43m"  # Yellow
+  "\033[1;44m"  # Blue
+  "\033[1;45m"  # Magenta
+  "\033[1;46m"  # Cyan
+  "\033[1;47m"  # White
 )
 bright_bg=(
   # Bright background colors
-  "\033[0;100m"  # Bright Black (Gray)
-  "\033[0;101m"  # Bright Red
-  "\033[0;102m"  # Bright Green
-  "\033[0;103m"  # Bright Yellow
-  "\033[0;104m"  # Bright Blue
-  "\033[0;105m"  # Bright Magenta
-  "\033[0;106m"  # Bright Cyan
-  "\033[0;107m"  # Bright White
+  "\033[1;100m"  # Bright Black (Gray)
+  "\033[1;101m"  # Bright Red
+  "\033[1;102m"  # Bright Green
+  "\033[1;103m"  # Bright Yellow
+  "\033[1;104m"  # Bright Blue
+  "\033[1;105m"  # Bright Magenta
+  "\033[1;106m"  # Bright Cyan
+  "\033[1;107m"  # Bright White
 )
 
 mode="${1:-all}"

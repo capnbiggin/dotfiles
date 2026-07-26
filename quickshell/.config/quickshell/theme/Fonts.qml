@@ -7,7 +7,7 @@ QtObject {
   id: root
 
   readonly property string famMono: "JetBrainsMono Nerd Font Propo"
-  readonly property string famBody: "SF Pro text"
+  readonly property string famBody: "SF Pro Text"
   readonly property string famDisplay: "SF Mono"
 
   readonly property int fontSize: 14

@@ -13,28 +13,28 @@ Singleton {
   //     onFileChanged: reload()
 
   // JsonAdapter {
-  QtObject {
-    id: pal
-    property string background: "#061115"
-    property string foreground: "#d9d7d6"
-    property string cursor: "#d9d7d6"
-    property string color0: "#061115"
-    property string color1: "#df5b61"
-    property string color2: "#78b892"
-    property string color3: "#ecd28b"
-    property string color4: "#6791c9"
-    property string color5: "#c488ec"
-    property string color6: "#67afc1"
-    property string color7: "#d9d7d6"
-    property string color8: "#313c40"
-    property string color9: "#f16269"
-    property string color10: "#8cd7aa"
-    property string color11: "#f6dc95"
-    property string color12: "#79aaeb"
-    property string color13: "#bc83e3"
-    property string color14: "#7acfe4"
-    property string color15: "#edebea"
-  }
+  // QtObject {
+  //   id: pal
+  //   property string background: "#061115"
+  //   property string foreground: "#d9d7d6"
+  //   property string cursor: "#d9d7d6"
+  //   property string color0: "#061115"
+  //   property string color1: "#df5b61"
+  //   property string color2: "#78b892"
+  //   property string color3: "#ecd28b"
+  //   property string color4: "#6791c9"
+  //   property string color5: "#c488ec"
+  //   property string color6: "#67afc1"
+  //   property string color7: "#d9d7d6"
+  //   property string color8: "#313c40"
+  //   property string color9: "#f16269"
+  //   property string color10: "#8cd7aa"
+  //   property string color11: "#f6dc95"
+  //   property string color12: "#79aaeb"
+  //   property string color13: "#bc83e3"
+  //   property string color14: "#7acfe4"
+  //   property string color15: "#edebea"
+  // }
   // }
 
   // color helpers
@@ -53,7 +53,7 @@ Singleton {
   }
 
   // ─── Background ───────────────────────
-  readonly property color bg0: pal.background
+  readonly property color bg0: Pallet.background
   readonly property color bg1: "#11111b"
   readonly property color bg2: "#181825"
   readonly property color bg3: "#313244"
@@ -62,26 +62,27 @@ Singleton {
   readonly property color bgBlack: "#000000"
 
   // ─── Foreground ───────────────────────
-  readonly property color fg: pal.foreground
-  readonly property color fgMuted: alpha(fg, 0.60)
-  readonly property color accent: pal.color14
+  readonly property color fg: Pallet.foreground
+  readonly property color fgMuted: Pallet.dim
+  // readonly property color fgMuted: alpha(fg, 0.60)
+  readonly property color accent: Pallet.accent
 
   // ─── Colors ───────────────────────────
-  readonly property color red: pal.color1
-  readonly property color green: pal.color2
-  readonly property color orange: pal.color3
-  readonly property color yellow: pal.color3
-  readonly property color blue: pal.color4
-  readonly property color purple: pal.color5
-  readonly property color teal: pal.color6
+  readonly property color red: Pallet.red
+  readonly property color green: Pallet.green
+  readonly property color orange: Pallet.yellow
+  readonly property color yellow: Pallet.yellow
+  readonly property color blue: Pallet.color4
+  readonly property color purple: Pallet.color5
+  readonly property color teal: Pallet.color6
 
   // ─── Greys ───────────────────────────
-  readonly property color grey0: pal.color8
-  readonly property color grey1: pal.color0
-  readonly property color grey2: pal.color7
+  readonly property color grey0: Pallet.color8
+  readonly property color grey1: Pallet.color0
+  readonly property color grey2: Pallet.color7
 
   // ─── Warn ───────────────────────────
-  readonly property color good: pal.color2
-  readonly property color warn: pal.color3
-  readonly property color bad: pal.color1
+  readonly property color good: Pallet.green
+  readonly property color warn: Pallet.yellow
+  readonly property color bad: Pallet.red
 }

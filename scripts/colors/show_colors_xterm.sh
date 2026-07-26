@@ -13,12 +13,12 @@ mode="${1:-all}"
 print_basic() {
     echo "== Basic 16 colors (foreground on default / on black bg) =="
     for fg in {0..15}; do
-        printf "\e[38;5;%sm%3s: sample text\e[0m\n" "$fg" "$fg"
+        printf "\033[1;38;5;%sm%3s: sample text\033[0m\n" "$fg" "$fg"
     done
     echo
     echo "== Basic 16 colors as backgrounds =="
     for bg in {0..15}; do
-        printf "\e[48;5;%sm%3s \e[0m " "$bg" "$bg"
+        printf "\033[1;48;5;%sm%3s \033[0m " "$bg" "$bg"
         if (( (bg + 1) % 8 == 0 )); then echo; fi
     done
     echo
@@ -27,7 +27,7 @@ print_basic() {
 print_256() {
     echo "== 256-color palette =="
     for i in {0..255}; do
-        printf "\e[48;5;%sm%3d\e[0m " "$i" "$i"
+        printf "\033[1;48;5;%sm%3d\033[0m " "$i" "$i"
         if (( (i + 1) % 16 == 0 )); then echo; fi
     done
     echo
@@ -39,7 +39,7 @@ print_truecolor() {
         r=$(( 255 - (i * 255 / 75) ))
         g=$(( i * 2 * 255 / 75 % 256 ))
         b=$(( i * 255 / 75 ))
-        printf "\e[48;2;%d;%d;%dm \e[0m" "$r" "$g" "$b"
+        printf "\033[1;48;2;%d;%d;%dm \033[0m" "$r" "$g" "$b"
     done
     echo
     echo

@@ -1,3 +1,4 @@
 singleton Colors Colors.qml
 singleton Fonts Fonts.qml
 singleton Sizes Sizes.qml
+singleton Pallet Pallet.qml
