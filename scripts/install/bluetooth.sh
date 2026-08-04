@@ -17,7 +17,7 @@ source "${LIB_DIR}"/common.sh
 source "$INSTALL_DIR"/packages.conf
 
 log_info "\nInstalling bluberry Bluetooh controls\n"
-yay -S --noconfirm --needed blueberry
+yay -S --noconfirm --needed bluez bluez-utils blueman blueberry
 
 log_info "\nTurning on bluetooth servise by default\n"
 sudo systemctl enable --now bluetooth

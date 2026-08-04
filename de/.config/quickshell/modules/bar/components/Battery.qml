@@ -35,14 +35,14 @@ RowLayout {
     }
   }
 
-  Text {
-    text: root.level + "%"
-    color: Colors.fg
+  // Text {
+  //   text: root.level + "%"
+  //   color: Colors.fg
 
-    font {
-      family: Fonts.famBody
-      pixelSize: Fonts.fsBody
-      weight: Fonts.wSemiBold
-    }
-  }
+  //   font {
+  //     family: Fonts.famBody
+  //     pixelSize: Fonts.fsBody
+  //     weight: Fonts.wSemiBold
+  //   }
+  // }
 }

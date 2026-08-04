@@ -13,7 +13,6 @@ Singleton {
   //     onFileChanged: reload()
 
   // JsonAdapter {
-  // QtObject {
   //   id: pal
   //   property string background: "#061115"
   //   property string foreground: "#d9d7d6"
@@ -35,7 +34,6 @@ Singleton {
   //   property string color14: "#7acfe4"
   //   property string color15: "#edebea"
   // }
-  // }
 
   // color helpers
   // Blend two colors (t=0 → a, t=1 → b). We derive the surface shades from the
@@ -53,7 +51,7 @@ Singleton {
   }
 
   // ─── Background ───────────────────────
-  readonly property color bg0: Pallet.base
+  readonly property color bg0: "#000000" //Pallet.base
   readonly property color bg1: Pallet.crust
   readonly property color bg2: Pallet.mantle
   readonly property color bg3: Pallet.surface0

@@ -27,4 +27,10 @@ QtObject {
   readonly property int s4: 16
   readonly property int s5: 24
   readonly property int s6: 32
+  readonly property int s7: 40
+  readonly property int s8: 48
+  readonly property int s9: 64
+  readonly property int s10: 80
+
+  readonly property int sBar: 380
 }

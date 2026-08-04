@@ -5,6 +5,9 @@ G_PACKS=(
   cups-browsed
   cups-filters
   cups-pdf
+  simple-scan
+  sane
+  sane-airscan
   curl
   tar
   wget
@@ -22,3 +25,5 @@ G_PACKS=(
 for pak in "${G_PACKS[@]}"; do
   yay -S --needed --noconfirm "$pak"
 done
+
+sudo systemctl enable --now cups.service

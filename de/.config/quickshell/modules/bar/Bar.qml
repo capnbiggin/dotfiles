@@ -20,15 +20,17 @@ PanelWindow {
   }
 
   margins {
-    top: Sizes.s2
-    left: Sizes.s4
-    right: Sizes.s4
+    // top: Sizes.s2
+    left: Sizes.sBar
+    right: Sizes.sBar
   }
 
   Rectangle {
     anchors.fill: parent
     color: Colors.bg0
-    radius: height / 2 //Sizes.rMd
+    // radius: height / 2 //Sizes.rMd
+    bottomLeftRadius: Sizes.rMd
+    bottomRightRadius: Sizes.rMd
 
     GridLayout {
       id: grid
@@ -39,8 +41,8 @@ PanelWindow {
 
       anchors {
         fill: parent
-        leftMargin: Sizes.s5
-        rightMargin: Sizes.s5
+        leftMargin: Sizes.s3
+        rightMargin: Sizes.s3
       }
 
       Item {
@@ -81,12 +83,9 @@ PanelWindow {
           spacing: Sizes.s3
 
           CPU {}
-
-          Network {}
-
           Audio {}
-
           Battery {}
+          Network {}
         }
       }
     }

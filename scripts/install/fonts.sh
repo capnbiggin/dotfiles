@@ -5,11 +5,15 @@ source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
 
 FONTS=(
-  ttf-jetbrains-mono-nerd
   ttf-font-awesome
   ttf-roboto
   ttf-font-awesome
   ttf-cascadia-mono-nerd
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  ttf-dejavu
+  ttf-liberation
 )
 
 printf "\nDownloading Fonts...\n"

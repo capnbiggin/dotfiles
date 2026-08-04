@@ -41,7 +41,7 @@ fi
 # source "${INSTALL_DIR}/configs.sh"
 source "${INSTALL_DIR}/aur-yay.sh"
 source "${INSTALL_DIR}/base.sh"
-# source "${INSTALL_DIR}/fonts.sh"
+source "${INSTALL_DIR}/fonts.sh"
 source "${INSTALL_DIR}/firewall.sh"
 source "${INSTALL_DIR}/g-packs.sh"
 

@@ -38,22 +38,22 @@ RowLayout {
     }
   }
 
-  Text {
-    text: {
-      if (!Networking.wifiEnabled)
-        return "off";
+  // Text {
+  //   text: {
+  //     if (!Networking.wifiEnabled)
+  //       return "off";
 
-      if (!root.active)
-        return "Disconnected";
+  //     if (!root.active)
+  //       return "Disconnected";
 
-      return root.active.name;
-    }
-    color: Colors.fg
+  //     return root.active.name;
+  //   }
+  //   color: Colors.fg
 
-    font {
-      family: Fonts.famBody
-      pixelSize: Fonts.fsBody
-      weight: Fonts.wSemiBold
-    }
-  }
+  //   font {
+  //     family: Fonts.famBody
+  //     pixelSize: Fonts.fsBody
+  //     weight: Fonts.wSemiBold
+  //   }
+  // }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-GETVOL="$(wpctl get-volume 59 | awk '{print $2 * 100}')"
+GETVOL="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}')"
 
 echo "${GETVOL}%"
