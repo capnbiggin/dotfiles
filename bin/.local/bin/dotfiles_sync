@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#
+# sync-dotfiles.sh
+# Pulls the latest dotfiles from git and re-applies them with GNU Stow.
+# Meant to run once at Hyprland login (see hyprland.conf snippet below).
+
+set -euo pipefail
+
+# --- config ---------------------------------------------------------------
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
+DOTFILES_REMOTE_BRANCH="${DOTFILES_REMOTE_BRANCH:-main}"
+LOG_FILE="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles-sync.log"
+LOCK_FILE="/tmp/dotfiles-sync.lock"
+NOTIFY="${DOTFILES_SYNC_NOTIFY:-1}"   # set to 0 to disable notify-send
+# ---------------------------------------------------------------------------
+
+mkdir -p "$(dirname "$LOG_FILE")"
+log() { echo "[$(date '+%F %T')] $*" >> "$LOG_FILE"; }
+
+notify() {
+    if [[ "$NOTIFY" == "1" ]] && command -v notify-send >/dev/null 2>&1; then
+        notify-send -a "dotfiles-sync" "$1" "$2"
+    fi
+}
+
+# Avoid overlapping runs (e.g. quick relogin/reload)
+exec 9>"$LOCK_FILE"
+if ! flock -n 9; then
+    log "Another sync is already running, exiting."
+    exit 0
+fi
+
+if [[ ! -d "$DOTFILES_DIR/.git" ]]; then
+    log "ERROR: $DOTFILES_DIR is not a git repo, aborting."
+    notify "Dotfiles sync failed" "$DOTFILES_DIR is not a git repo"
+    exit 1
+fi
+
+cd "$DOTFILES_DIR"
+
+# Bail out cleanly if there are uncommitted local changes, rather than
+# clobbering them.
+if ! git diff --quiet || ! git diff --cached --quiet; then
+    log "WARNING: local changes present in $DOTFILES_DIR, skipping pull."
+    notify "Dotfiles sync skipped" "Uncommitted changes in $DOTFILES_DIR"
+    exit 0
+fi
+
+log "Fetching latest dotfiles..."
+if ! git pull --ff-only origin "$DOTFILES_REMOTE_BRANCH" >>"$LOG_FILE" 2>&1; then
+    log "ERROR: git pull failed."
+    notify "Dotfiles sync failed" "git pull failed, check $LOG_FILE"
+    exit 1
+fi
+
+# Re-apply with stow if it's available and the repo looks like a stow tree
+# (i.e. it has package subdirectories like hypr/, waybar/, nvim/, etc).
+if command -v stow >/dev/null 2>&1; then
+    log "Applying dotfiles with stow..."
+    # Add/remove package names here to match your repo layout.
+    STOW_PACKAGES=(base de bin fonts)
+    for pkg in "${STOW_PACKAGES[@]}"; do
+        if [[ -d "$DOTFILES_DIR/$pkg" ]]; then
+            stow -v -R -t "$HOME" "$pkg" >>"$LOG_FILE" 2>&1 || \
+                log "WARNING: stow failed for package '$pkg'"
+        fi
+    done
+else
+    log "stow not found, skipping apply step (pull only)."
+fi
+
+log "Dotfiles sync complete."
+notify "Dotfiles synced" "Repo updated and re-applied"
