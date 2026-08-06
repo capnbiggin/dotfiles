@@ -22,3 +22,5 @@ hl.bind(mod .. " + SHIFT + O"    , hl.dsp.exec_cmd(notes2))
 hl.bind(mod .. " + I"            , hl.dsp.exec_cmd(editor1))
 hl.bind(mod .. " + SHIFT + I"    , hl.dsp.exec_cmd(editor2))
 hl.bind(mod .. " + B"            , hl.dsp.exec_cmd(bar_toggle))
+
+hl.bind("ALT + RETURN"           , hl.dsp.exec_cmd(terminal))

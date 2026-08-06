@@ -3,6 +3,9 @@
 
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # or
+    nixpkgs.url = "github:nixpkgs/nixos-26.05";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     # use the following for unstable:
     # nixpkgs.url = "nixpkgs/nixos-unstable";
