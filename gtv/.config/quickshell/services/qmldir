@@ -1,0 +1,2 @@
+singleton CPUTemp CPUTemp.qml
+singleton TimeDate TimeDate.qml
