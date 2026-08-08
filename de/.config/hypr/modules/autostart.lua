@@ -8,7 +8,8 @@ local appList = {
   "wl-clip-persist --clipboard regular",
   "/usr/lib/xdg-desktop-portal",
   "systemctl --user start hyprpolkitagent",
-  "sleep 5 && ~/.local/bin/dotfiles_sync"
+  "sleep 5 && ~/.local/bin/dotfiles_sync",
+  "obsidian"
 }
 
 hl.on("hyprland.start", function ()
