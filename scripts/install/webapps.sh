@@ -5,14 +5,14 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
 LIB_DIR="${SCRIPTS_DIR}/lib"
 
 source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
 
 WEBAPP_INSTALL="${SCRIPTS_DIR}"/webapp-install.sh
-WEBAPP_DIR="${HOME}"/.local/share/applications
+WEBAPP_DIR="${ACTUAL_HOME}"/.local/share/applications
 
 # Ensureing the application directory exist
 mkdir -p "$WEBAPP_DIR"
