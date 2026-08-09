@@ -5,7 +5,7 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # # Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
 
 source "${SCRIPTS_DIR}/lib/colors.sh"
 
