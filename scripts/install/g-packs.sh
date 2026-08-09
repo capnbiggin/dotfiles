@@ -12,12 +12,6 @@ G_PACKS=(
   tar
   wget
   git
-  kate
-  thunar
-  obsidian
-  gwenview
-  flatpak
-  light
   unzip
   zip
 )
