@@ -50,6 +50,7 @@ alias mv='mv -i'
 alias rm='rm -rf'
 alias mkdir='mkdir -p'
 alias ping='ping -c 5'
+alias cat='bat'
 
 # --------
 # packages
@@ -94,12 +95,12 @@ alias newtag='git tag -a'
 # -----------------------------------------
 # bare gti repo alias for managing dotfiles
 # -----------------------------------------
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-config_acp() {
-  config add $1
-  config commit -m "Modified/Added $1 - $(date)"
-  config push origin
-}
+# alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+# config_acp() {
+#   config add $1
+#   config commit -m "Modified/Added $1 - $(date)"
+#   config push origin
+# }
 
 # -------
 # linutil
@@ -109,17 +110,17 @@ alias linutil='curl -fsSL https://christitus.com/linux | sh'
 # --------------------------------------------
 # .dotfiles repo edit and apply
 # --------------------------------------------
-ce() {
-  $EDITOR $1
-  config add $1
-  config commit -m "Modified $1 - $(date)"
-  config push origin
-}
+# ce() {
+#   $EDITOR $1
+#   config add $1
+#   config commit -m "Modified $1 - $(date)"
+#   config push origin
+# }
 
 ###########################
 #   Universal Extractor   #
 ###########################
-function extract() {
+function ex() {
   if [ -f $1 ]; then
     case $1 in
       *.tar.bz2)   tar xjf $1     ;;
