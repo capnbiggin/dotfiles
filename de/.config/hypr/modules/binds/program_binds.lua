@@ -3,14 +3,14 @@
 local mod           = "SUPER"
 
 local terminal1     = "ghostty"
-local terminal2      = "kitty"
-local browser1      = "zen-browser"
+local terminal2     = "kitty"
+local browser1      = "zen-browser || zen"
 local fileManager   = "thunar"
 local notes1        = "obsidian"
 local notes2        = "zennotes"
-local editor1       = "code"
+local editor1       = "codium"
 local editor2       = "zeditor"
-local bar_toggle    = "pkill qs || qs"
+local bar_toggle    = "pkill quickshell || quickshell"
 
 
 hl.bind(mod .. " + RETURN"       , hl.dsp.exec_cmd(terminal1))

@@ -4,13 +4,13 @@
 ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
-# Directory's
-SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
-LIB_DIR="${SCRIPTS_DIR}/lib"
-CONFIG_DIR="${ACTUAL_HOME}"/.config
+# Script Directory
+SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
 
-source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/common.sh
+source "${SCRIPTS_DIR}/lib/colors.sh"
+source "${SCRIPTS_DIR}/lib/common.sh"
+
+CONFIG_DIR="${ACTUAL_HOME}"/.config
 
 log_info "\nInstalling Z Shell./n"
 sudo pacman -S --needed --noconfirm zsh which
@@ -18,7 +18,7 @@ sleep 0.2
 
 log_info "\nChanging default shell to zsh.\n"
 hash -r
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 
 # Make Directory for zsh config and plugins
 mkdir -p "${CONFIG_DIR}"/zsh/plugins

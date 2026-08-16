@@ -6,10 +6,9 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
 SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
-LIB_DIR="${SCRIPTS_DIR}/lib"
 
-source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/common.sh
+source "${SCRIPTS_DIR}/lib/colors.sh"
+source "${SCRIPTS_DIR}/lib/common.sh"
 
 PACKAGES=(
   docker
@@ -20,7 +19,7 @@ PACKAGES=(
 for pkg in "${PACKAGES[@]}"; do
   log_info "\nInstalling $pkg\n"
   yay -S --needed --noconfirm "$pkg" ||
-    printf "\n${RED}Failed to install $pkg. Continuing without!${NC}\n"
+    echo -e "\n${FG_RED}Failed to install $pkg. Continuing without!${NC}\n"
 done
 
 log_info "\nLimit log size to avoid running out of disk/n"
@@ -31,7 +30,7 @@ log_info "\nStart Docker automatically\n"
 sudo systemctl enable docker
 
 log_info "\nGive this user privileged Docker access\n"
-sudo usermod -aG docker ${USER}
+sudo usermod -aG docker "${USER}"
 
 log_info "\nPreventing Docker from preventing boot for network-online.target\n"
 sudo mkdir -p /etc/systemd/system/docker.service.d

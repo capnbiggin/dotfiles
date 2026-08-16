@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-source "${HOME}"/projects/scripts/lib/env.sh
-source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/common.sh
+# Set Actual Home
+ACTUAL_USER="${SUDO_USER:-$USER}"
+ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+
+# Script Directory
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
+
+source "${SCRIPTS_DIR}/lib/colors.sh"
+source "${SCRIPTS_DIR}/lib/common.sh"
 
 ICON_DIR="$ACTUAL_HOME/.local/share/applications/icons"
 DESKTOP_DIR="$ACTUAL_HOME/.local/share/applications/"

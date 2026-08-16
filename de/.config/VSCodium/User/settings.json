@@ -1,7 +1,7 @@
 {
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Yukinord",
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "material-icon-theme",
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.renderWhitespace": "none",
@@ -70,4 +70,13 @@
     "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
     "*.qrc": "qt-core.qrcEditor",
   },
+  "editor.fontSize": 13,
+  "qt-core.additionalQtPaths": [
+    {
+      "name": "Qt-5.15.19-linux-g++-x86_64_from_PATH",
+      "path": "/usr/bin/qmake",
+    },
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "git.openRepositoryInParentFolders": "always",
 }

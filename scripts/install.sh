@@ -21,9 +21,9 @@ fi
 
 show_logo() {
   clear
-  echo -e "$CYAN"
+  echo -e "${FG_BLUE}"
   cat <"${SCRIPTS_DIR}/lib/logo.txt"
-  echo -e "$NC"
+  echo -e "${NC}"
 }
 
 # Update System
@@ -38,26 +38,25 @@ else
   exit 1
 fi
 
-# source "${INSTALL_DIR}/configs.sh"
-source "${INSTALL_DIR}/aur-yay.sh"
-source "${INSTALL_DIR}/base.sh"
-source "${INSTALL_DIR}/fonts.sh"
-source "${INSTALL_DIR}/firewall.sh"
-source "${INSTALL_DIR}/g-packs.sh"
-
-# source "${INSTALL_DIR}/niri.sh"
-# source "${INSTALL_DIR}/qtile.sh"
-source "${INSTALL_DIR}/hypr.sh"
-source "${INSTALL_DIR}/backlight.sh"
-source "${INSTALL_DIR}/bluetooth.sh"
-source "${INSTALL_DIR}/docker.sh"
-# source "${INSTALL_DIR}/power.sh"
-source "${INSTALL_DIR}/screen-cap.sh"
-source "${INSTALL_DIR}/webapps.sh"
-
-source "${INSTALL_DIR}/zsh.sh"
+source "${SCRIPTS_DIR}/install/configs.sh"
+source "${SCRIPTS_DIR}/install/aur-yay.sh"
+source "${SCRIPTS_DIR}/install/gum.sh"
+source "${SCRIPTS_DIR}/install/base.sh"
+source "${SCRIPTS_DIR}/install/fonts.sh"
+source "${SCRIPTS_DIR}/install/firewall.sh"
+source "${SCRIPTS_DIR}/install/g-packs.sh"
+# source "${SCRIPTS_DIR}/install/niri.sh"
+# source "${SCRIPTS_DIR}/install/qtile.sh"
+source "${SCRIPTS_DIR}/install/hypr.sh"
+source "${SCRIPTS_DIR}/install/backlight.sh"
+source "${SCRIPTS_DIR}/install/bluetooth.sh"
+source "${SCRIPTS_DIR}/install/docker.sh"
+# source "${SCRIPTS_DIR}/install/power.sh"
+source "${SCRIPTS_DIR}/install/screen-cap.sh"
+source "${SCRIPTS_DIR}/install/webapps.sh"
+source "${SCRIPTS_DIR}/install/zsh.sh"
 
 log_warning "\nRESTART NEEDED!!!"
-notify-send "RESTART NEEDED"
+notify-send "RESTART NEEDED" "RESTSART NEEDED"
 read -rsn 1 -p "Press any key to exit..."
 exit 0

@@ -3271,3 +3271,13 @@ italic_font      auto
 bold_italic_font auto
 font_size      11
 # END_KITTY_FONTS
+
+background_opacity 0.9
+background_blur 2
+scrollback_lines 5000
+window_margin_width 10
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Mocha
+include Catppuccin-Mocha.conf
+# END_KITTY_THEME

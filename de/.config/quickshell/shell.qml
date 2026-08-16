@@ -1,7 +1,6 @@
 // ─── Root Shell ───────────────────────
 
 import QtQuick
-import QtQuick.Layouts
 import Quickshell
 import "modules/bar"
 import "modules/notifications"

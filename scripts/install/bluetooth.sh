@@ -6,18 +6,16 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
 SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
-LIB_DIR="${SCRIPTS_DIR}/lib"
-INSTALL_DIR="${SCRIPTS_DIR}"/install
 
-source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/common.sh
+source "${SCRIPTS_DIR}/lib/colors.sh"
+source "${SCRIPTS_DIR}/lib/common.sh"
 
 # Install Directory
 
 source "$INSTALL_DIR"/packages.conf
 
-log_info "\nInstalling bluberry Bluetooh controls\n"
-yay -S --noconfirm --needed bluez bluez-utils blueman blueberry
+log_info "\nInstalling blueman Bluetooh controls\n"
+yay -S --noconfirm --needed bluez bluez-utils blueman
 
 log_info "\nTurning on bluetooth servise by default\n"
 sudo systemctl enable --now bluetooth

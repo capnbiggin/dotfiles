@@ -6,10 +6,9 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
 SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
-LIB_DIR="${SCRIPTS_DIR}/lib"
 
-source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/common.sh
+source "${SCRIPTS_DIR}/lib/colors.sh"
+source "${SCRIPTS_DIR}/lib/common.sh"
 
 log-info "\nInstalling power-profiles-daemon\n"
 yay -S --noconfirm --needed power-profiles-daemon
