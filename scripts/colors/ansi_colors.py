@@ -1,8 +1,8 @@
+#!/usr/bin/env python
+
 # Source - https://stackoverflow.com/a/33206814
 # Posted by Richard, modified by community. See post 'Timeline' for change history
 # Retrieved 2026-07-19, License - CC BY-SA 4.0
-
-#!/usr/bin/env python
 
 for i in range(30, 37 + 1):
     print("\033[%dm%d\t\t\033[%dm%d" % (i, i, i + 60, i + 60))

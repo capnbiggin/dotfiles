@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-<< 'COMMENT'
-This script is used to display the current volume level in the status bar.
-It uses the `wpctl` command to get the volume information from WirePlumber.
-
-Required - `wireplumber` & `pipewire`
-COMMENT
+# --------------------------------------------------------------------------- #
+# This script is used to display the current volume level in the status bar.
+# It uses the `wpctl` command to get the volume information from WirePlumber.
+# 
+# Required - `wireplumber` & `pipewire`
+# --------------------------------------------------------------------------- #
 
 
 OUTPUT_ID="@DEFAULT_AUDIO_SINK@"
