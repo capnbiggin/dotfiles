@@ -51,7 +51,7 @@ mode="${1:-all}"
 
 print_fg() {
   echo "== Fourground Colors 30-37 White BG 97 =="
-  for i in ${fg[@]}; do
+  for i in "${fg[@]}"; do
     printf "${i}%3s${clear}\n" "$i"
   done
   echo
@@ -59,7 +59,7 @@ print_fg() {
 
 print_bg() {
   echo "== Forground Colors as Backgrounds 40-47 =="
-  for i in ${bg[@]}; do
+  for i in "${bg[@]}"; do
     printf "${i}%3s ${clear}" "$i"
   done
   echo
@@ -68,7 +68,7 @@ print_bg() {
 
 print_bright_fg() {
   echo "== Bright Forground Colors 90-97 Light Gray BG 47 =="
-  for i in ${bright_fg[@]}; do
+  for i in "${bright_fg[@]}"; do
     printf "${i}%3s${clear}\n" "$i"
   done
   echo
@@ -76,7 +76,7 @@ print_bright_fg() {
 
 print_bright_bg() {
   echo "== Bright Forground Colors as Backgrounds 100-107 =="
-  for bg in ${bright_bg[@]}; do
+  for bg in "${bright_bg[@]}"; do
     printf "${bg}%3s ${clear}" "$bg"
   done
   echo
