@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import qs.theme
 
-RowLayout {
+Row {
   spacing: Sizes.s1
 
   Repeater {

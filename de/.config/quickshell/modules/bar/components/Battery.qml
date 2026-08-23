@@ -4,7 +4,7 @@ import Quickshell
 import Quickshell.Services.UPower
 import qs.theme
 
-RowLayout {
+Row {
   id: root
 
   property var battery: UPower.displayDevice

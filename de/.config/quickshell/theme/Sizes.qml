@@ -32,5 +32,5 @@ QtObject {
   readonly property int s9: 64
   readonly property int s10: 80
 
-  readonly property int sBar: 250
+  readonly property int sBar: 0
 }

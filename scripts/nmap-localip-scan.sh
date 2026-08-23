@@ -15,7 +15,7 @@ NR==1{print; print ""; next}
 COMMENT
 
 main() {
-    if ! command nmap; then
+    if ! command -v nmap > /dev/null; then
         echo "nmap Required"
         exit 1
     fi
@@ -23,9 +23,9 @@ main() {
     if [[ $# -ne 1 ]]; then
         echo "Usage: ex: ./nmap-localip-scan.sh 192.168.1.0/24"
         exit 1
-    else
-        sudo nmap -T4 -sn "$1" | awk 'NR==1{print; print ""; next} {print} (NR-1)%3==0{print ""}'
     fi
+    
+    sudo nmap -T4 -sn "$1" | awk 'NR==1{print; print ""; next} {print} (NR-1)%3==0{print ""}'
 }
 
 main "$@"

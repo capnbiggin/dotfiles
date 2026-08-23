@@ -2,7 +2,7 @@
 
 local appList = {
   "awww-daemon",
-  "qs",
+  "quickshell",
   "wl-paste --type text --watch cliphist store",
   "wl-paste --type image --watch cliphist store",
   "wl-clip-persist --clipboard regular",

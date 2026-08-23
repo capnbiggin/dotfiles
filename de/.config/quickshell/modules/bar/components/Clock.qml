@@ -4,8 +4,7 @@ import Quickshell
 import qs.theme
 import qs.services
 
-RowLayout {
-  Layout.alignment: Qt.AlignHCenter
+Row {
 
   Text {
     id: root

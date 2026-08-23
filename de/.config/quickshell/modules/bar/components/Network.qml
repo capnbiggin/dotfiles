@@ -4,7 +4,7 @@ import Quickshell
 import Quickshell.Networking
 import qs.theme
 
-RowLayout {
+Row {
   id: root
 
   property var wifiDevice: Networking.devices.values.find(d => {

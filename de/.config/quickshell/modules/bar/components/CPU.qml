@@ -4,7 +4,7 @@ import Quickshell
 import qs.services
 import qs.theme
 
-RowLayout {
+Row {
   id: root
 
   readonly property int temp: CPUTemp.cpuTemp

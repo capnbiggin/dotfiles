@@ -76,6 +76,8 @@ RowLayout {
 
   MouseArea {
     anchors.fill: parent
+    // Layout.fillHeight: true
+    // Layout.fillWidth: true
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor
     onPressed: root.toggleMute()

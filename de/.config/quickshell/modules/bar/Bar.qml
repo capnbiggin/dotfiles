@@ -29,27 +29,24 @@ PanelWindow {
     anchors.fill: parent
     color: Colors.bg0
     // radius: height / 2 //Sizes.rMd
-    bottomLeftRadius: Sizes.rMd
-    bottomRightRadius: Sizes.rMd
+    // bottomLeftRadius: Sizes.rMd
+    // bottomRightRadius: Sizes.rMd
 
-    GridLayout {
-      id: grid
-
-      columns: 3
-      rows: 1
-      columnSpacing: 0
+    RowLayout {
+      id: barRow
 
       anchors {
         fill: parent
-        leftMargin: Sizes.s3
-        rightMargin: Sizes.s3
+        leftMargin: Sizes.s4
+        rightMargin: Sizes.s4
       }
 
-      Item {
+      Rectangle {
         id: leftItem
 
-        Layout.fillWidth: true
+        // Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.alignment: Qt.AlignLeft
 
         RowLayout {
           anchors.fill: parent
@@ -58,11 +55,12 @@ PanelWindow {
         }
       }
 
-      Item {
+      Rectangle {
         id: centerItem
 
-        Layout.fillWidth: true
+        // Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.alignment: Qt.AlignHCenter
 
         RowLayout {
           anchors.fill: parent
@@ -71,11 +69,12 @@ PanelWindow {
         }
       }
 
-      Item {
+      Rectangle {
         id: rightItem
 
-        Layout.fillWidth: true
+        // Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.alignment: Qt.AlignRight
 
         RowLayout {
           anchors.verticalCenter: parent.verticalCenter
