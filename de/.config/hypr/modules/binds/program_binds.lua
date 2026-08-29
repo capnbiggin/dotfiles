@@ -8,8 +8,9 @@ local browser1      = "zen-browser || zen"
 local fileManager   = "thunar"
 local notes1        = "obsidian"
 local notes2        = "zennotes"
-local editor1       = "codium"
+local editor1       = "code"
 local editor2       = "zeditor"
+local editor3       = "codium"
 local bar_toggle    = "pkill quickshell || quickshell"
 
 
@@ -21,6 +22,7 @@ hl.bind(mod .. " + O"            , hl.dsp.exec_cmd(notes1))
 hl.bind(mod .. " + SHIFT + O"    , hl.dsp.exec_cmd(notes2))
 hl.bind(mod .. " + I"            , hl.dsp.exec_cmd(editor1))
 hl.bind(mod .. " + SHIFT + I"    , hl.dsp.exec_cmd(editor2))
+hl.bind(mod .. " + ALT + I"      , hl.dsp.exec_cmd(editor2))
 hl.bind(mod .. " + B"            , hl.dsp.exec_cmd(bar_toggle))
 
 hl.bind("ALT + RETURN"           , hl.dsp.exec_cmd(terminal1))
