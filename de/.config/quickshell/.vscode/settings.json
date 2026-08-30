@@ -1,9 +1,13 @@
 {
   "cSpell.words": [
+    "opsz",
     "paru",
     "Pipewire",
     "Propo",
-    "Quickshell"
+    "Quickshell",
+    "rgba",
+    "shellroot",
+    "wght"
   ],
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
   "editor.defaultFormatter": "Delgan.qml-format",
@@ -13,4 +17,6 @@
     "2"
   ],
   "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
 }

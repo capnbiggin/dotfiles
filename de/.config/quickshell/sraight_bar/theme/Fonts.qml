@@ -6,8 +6,10 @@ import Quickshell
 QtObject {
   id: root
 
+  // readonly property string famBody: "Iosevka Nerd Font"
   readonly property string famMono: "JetBrainsMono Nerd Font Propo"
   readonly property string famBody: "SF Pro Text"
+  // readonly property string famBody: "SF Pro Display"
   readonly property string famDisplay: "SF Mono"
 
   readonly property int fontSize: 14
