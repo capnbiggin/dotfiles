@@ -24,4 +24,5 @@ Pill {
 
     return "battery_android_frame_3";
   }
+  iconColor: root.charging ? Theme.blue : root.level <= 15 ? Theme.red : root.level <= 30 ? Theme.yellow : root.level === 100 ? Theme.blue : Theme.green
 }

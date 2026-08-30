@@ -7,7 +7,7 @@ Rectangle {
   property string icon: ""
   property color iconColor: Theme.text
 
-  property real nudge: 5
+  property real nudge: 3
 
   width: height
   height: parent.height
