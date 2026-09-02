@@ -10,7 +10,7 @@ Pill {
     if (!temp.text)
       return "-";
 
-    return temp.text + "C";
+    return temp.text + "°C";
   }
   icon: {
     if (!temp.text)

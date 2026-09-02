@@ -4,20 +4,24 @@ import qs.theme
 Rectangle {
   id: root
 
+  property double pillWidth: row.width
+  property double pillHeight: Theme.moduleHeight
+  property int pillRadius: Theme.radius
+  property int textSize: Theme.fontSize
+
   property string icon: ""
   property color iconColor: Theme.text
   property string text: ""
 
-  implicitWidth: row.width
-  implicitHeight: Theme.moduleHeight
-  radius: Theme.radius
+  implicitWidth: pillWidth
+  implicitHeight: pillHeight
+  radius: pillRadius
   color: Theme.pill
 
   Shadow {}
 
   Row {
     id: row
-
     height: parent.height
 
     PillIcon {
@@ -34,7 +38,7 @@ Rectangle {
       color: Theme.text
       font {
         family: Theme.fontFam
-        pixelSize: Theme.fontSize
+        pixelSize: textSize
         letterSpacing: Theme.letterSpacing
         weight: 600
       }

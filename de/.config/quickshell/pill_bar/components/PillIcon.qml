@@ -6,8 +6,9 @@ Rectangle {
 
   property string icon: ""
   property color iconColor: Theme.text
+  property int iconSize: Theme.iconSize
 
-  property real nudge: 3
+  property real nudge: 1.5
 
   width: height
   height: parent.height
@@ -25,7 +26,7 @@ Rectangle {
     color: root.iconColor
     font {
       family: Theme.iconFam
-      pixelSize: Theme.iconSize
+      pixelSize: iconSize
       variableAxes: Theme.iconAxes
     }
   }

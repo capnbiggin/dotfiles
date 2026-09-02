@@ -11,6 +11,8 @@ Pill {
   iconColor: Theme.magenta
   text: Qt.formatDateTime(clock.date, "h:mm ap")
 
+  // pillHeight: 100
+
   // Ticks once a minute, matching what the bar draws.
   // Add seconds to the format above and switch this to SystemClock.Seconds.
   SystemClock {

@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 
-ShellRoot {
+Scope {
   id: shellroot
 
   Bar {}

@@ -60,10 +60,10 @@ Singleton {
   readonly property color pink: palette.pink
   readonly property color magenta: palette.flamingo
 
-  property int barHeight: 40
+  property int barHeight: 42
   property int moduleHeight: 30
   property int spacing: 4
-  property int margin: 13
+  property int margin: 16
   property int radius: moduleHeight / 2
 
   // Fonts
@@ -96,7 +96,7 @@ Singleton {
     })
 
   // Shadow
-  property int shadowRoom: 24
+  property int shadowRoom: 14
   property real shadowBlur: 16
   property real shadowSpread: 1
   property real shadowOffset: 3
