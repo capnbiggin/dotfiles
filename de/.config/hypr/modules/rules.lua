@@ -47,7 +47,7 @@ hl.window_rule({ match = { class = "^(org.pulseaudio.pavucontrol)$" }, float = t
 hl.window_rule({ match = { class = "^(blueberry.py)$" }, float = true })
 hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true, size = {600, 600}, center = true })
 
-hl.window_rule({ match = { class = "^(obsidian)$" }, workspace = 10 })
+hl.window_rule({ match = { class = "^(ghostty)$" }, workspace = 1 })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"

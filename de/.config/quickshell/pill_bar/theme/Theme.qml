@@ -63,7 +63,7 @@ Singleton {
   property int barHeight: 42
   property int moduleHeight: 30
   property int spacing: 4
-  property int margin: 16
+  property int margin: 15
   property int radius: moduleHeight / 2
 
   // Fonts

@@ -14,9 +14,9 @@ Scope {
       required property var modelData
       screen: modelData
 
-      property double barExclusionZone: IpcManager.gameMode ? Theme.moduleHeight : Theme.moduleHeight + Theme.shadowRoom / 2
-      property double barMaxHeight: IpcManager.gameMode ? Theme.barHeight : Theme.moduleHeight + Theme.shadowRoom * 1.5
-      property double barTopMargin: IpcManager.gameMode ? 0 : Theme.margin + 5 - Theme.shadowRoom
+      property double barExclusionZone: IpcManager.gameMode ? Theme.barHeight : Theme.barHeight + Theme.shadowRoom / 2
+      property double barMaxHeight: IpcManager.gameMode ? Theme.barHeight : Theme.barHeight + Theme.shadowRoom * 1.5
+      property double barTopMargin: IpcManager.gameMode ? 0 : Theme.margin //+ 5 - Theme.shadowRoom
 
       color: Theme.bgT
       exclusionMode: ExclusionMode.Normal
@@ -27,6 +27,9 @@ Scope {
         top: true
         left: true
         right: true
+      }
+      margins {
+        top: 0
       }
 
       Rectangle {
