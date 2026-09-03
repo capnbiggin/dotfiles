@@ -32,7 +32,7 @@ Rectangle {
         implicitWidth: label.implicitWidth + 6
         implicitHeight: 22
         radius: Theme.radius
-        color: isActive ? Theme.butBg1 : (ws ? Theme.butBg2 : "transparent")
+        color: isActive ? Theme.butBg1 : (ws ? Theme.butBg2 : Theme.pillIcon)
         anchors.verticalCenter: parent.verticalCenter
 
         Behavior on color {
