@@ -1,8 +1,9 @@
 import QtQuick
 import Quickshell
+import qs.bar
 
-Scope {
-  id: shellroot
+Variants {
+  model: Quickshell.screens
 
   Bar {}
 }
