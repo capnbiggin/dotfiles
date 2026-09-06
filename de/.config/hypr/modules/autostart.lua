@@ -9,7 +9,7 @@ local appList = {
   "/usr/lib/xdg-desktop-portal",
   "systemctl --user start hyprpolkitagent",
   "sleep 5 && ~/.local/bin/dotfiles_sync",
-  "ghostty"
+  "google-chrome-stable"
 }
 
 hl.on("hyprland.start", function ()
