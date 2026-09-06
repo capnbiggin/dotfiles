@@ -45,6 +45,7 @@ PanelWindow {
       leftMargin: IpcManager.gameMode ? Theme.s4 : Theme.s6
     }
     spacing: Theme.s1
+    Power {}
     Workspaces2 {}
   }
 
