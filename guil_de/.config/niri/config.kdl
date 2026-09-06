@@ -1,0 +1,25 @@
+include "./modules/binds.kdl"
+include "./modules/input.kdl"
+include "./modules/autostart.kdl"
+include "./modules/workspace.kdl"
+include "./modules/animations.kdl"
+include "./modules/layout.kdl"
+include "./modules/monitors.kdl"
+
+// Omit client-side decorations 
+prefer-no-csd
+
+
+// Screenshoot Path 
+screenshot-path "~/Pictures/captures/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+
+
+
+
+environment
+
+window-rule {
+    draw-border-with-background false
+}

@@ -1,0 +1,22 @@
+/* tokyonight-night color theme */
+
+@define-color bg0 #1a1b26;
+@define-color bg1 #1f2231;
+@define-color bg2 #323449;
+@define-color bg3 #414868;
+@define-color bg4 #737aa2;
+
+@define-color fg #e9e9ed;
+
+@define-color red #f7768e;
+@define-color pink #ff007c;
+@define-color orange #ff9e64;
+@define-color yellow #e0af68;
+@define-color green #1abc9c;
+@define-color cyan #7dcfff;
+@define-color blue #7aa2f7;
+@define-color purple #bb9af7;
+
+@define-color grey0 #a9b1d6;
+@define-color grey1 #b6b8cd;
+@define-color grey2 #d2d2da;

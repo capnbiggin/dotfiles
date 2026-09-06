@@ -1,0 +1,43 @@
+This file contains colors for the Ariadne color scheme.
+
+bg0    #040e0d;
+bg1    #0a1816;
+bg2    #0f211f;
+bg3    #152a26;
+bg4    #1d3631;
+
+fg     #f5e2c5;
+
+red    #ff6048;
+orange #ffa478;
+yellow #f5cd5b;
+green  #7ad9a8;
+aqua   #3dd1b0;
+blue   #5fc8d4;
+purple #e89aa8;
+
+grey0  #3a1a35;
+grey1  #5a4d3e;
+grey2  #c4b09a;
+
+|color|index       |hex        |
+| --- | ---------- | --------- |
+|     | background | #040e0d |
+|     | foreground | #f5e2c5 |
+|     | cursor     | #f5e2c5 |
+|     | 0          | #040e0d |
+|     | 1          | #ff6048 |
+|     | 2          | #7ad9a8 |
+|     | 3          | #f5cd5b |
+|     | 4          | #5fc8d4 |
+|     | 5          | #e89aa8 |
+|     | 6          | #3dd1b0 |
+|     | 7          | #c4b09a |
+|     | 8          | #3a1a35 |
+|     | 9          | #ff6048 |
+|     | 10         | #7ad9a8 |
+|     | 11         | #f5cd5b |
+|     | 12         | #5fc8d4 |
+|     | 13         | #e89aa8 |
+|     | 14         | #3dd1b0 |
+|     | 15         | #f5e2c5 |

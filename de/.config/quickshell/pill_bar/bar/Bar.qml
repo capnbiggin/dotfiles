@@ -42,9 +42,9 @@ PanelWindow {
     anchors {
       left: parent.left
       verticalCenter: parent.verticalCenter
-      leftMargin: Theme.margin * 2
+      leftMargin: IpcManager.gameMode ? Theme.s4 : Theme.s6
     }
-    spacing: Theme.spacing
+    spacing: Theme.s1
     Workspaces2 {}
   }
 
@@ -54,6 +54,7 @@ PanelWindow {
       horizontalCenter: parent.horizontalCenter
       verticalCenter: parent.verticalCenter
     }
+    spacing: Theme.s1
     Clock {}
   }
 
@@ -62,9 +63,9 @@ PanelWindow {
     anchors {
       right: parent.right
       verticalCenter: parent.verticalCenter
-      rightMargin: Theme.margin * 2
+      rightMargin: IpcManager.gameMode ? Theme.s4 : Theme.s6
     }
-    spacing: Theme.spacing
+    spacing: Theme.s1
     CPUTemp {}
     Volume {}
     Battery {}
