@@ -41,11 +41,12 @@ PanelWindow {
     id: modulesLeft
     anchors {
       left: parent.left
-      verticalCenter: parent.verticalCenter
+      // verticalCenter: parent.verticalCenter
       leftMargin: IpcManager.gameMode ? Theme.s4 : Theme.s6
     }
+    topPadding: IpcManager.gameMode ? Theme.s1 : Theme.s4
     spacing: Theme.s1
-    Power {}
+    // Power {}
     Workspaces2 {}
   }
 
@@ -53,8 +54,9 @@ PanelWindow {
     id: modulesCenter
     anchors {
       horizontalCenter: parent.horizontalCenter
-      verticalCenter: parent.verticalCenter
+      // verticalCenter: parent.verticalCenter
     }
+    topPadding: IpcManager.gameMode ? Theme.s1 : Theme.s4
     spacing: Theme.s1
     Clock {}
   }
@@ -63,9 +65,10 @@ PanelWindow {
     id: modulesRight
     anchors {
       right: parent.right
-      verticalCenter: parent.verticalCenter
+      // verticalCenter: parent.verticalCenter
       rightMargin: IpcManager.gameMode ? Theme.s4 : Theme.s6
     }
+    topPadding: IpcManager.gameMode ? Theme.s1 : Theme.s4
     spacing: Theme.s1
     CPUTemp {}
     Volume {}

@@ -15,21 +15,21 @@ fi
 # display menu; store user choice
 CHENTRY=$(echo -e "$TOGGLE\n$LIST" | uniq -u | rofi -dmenu -selected-row 1 -config "./theme.rasi")
 # store selected SSID
-CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
+CHSSID=$(echo "$CHENTRY" | sed 's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 
 if [ "$CHENTRY" = "" ]; then
-    exit
+	exit
 elif [ "$CHENTRY" = "Enable WiFi 直" ]; then
 	nmcli radio wifi on
 elif [ "$CHENTRY" = "Disable WiFi 睊" ]; then
 	nmcli radio wifi off
 else
-    # get list of known connections
-    KNOWNCON=$(nmcli connection show)
-	
+	# get list of known connections
+	KNOWNCON=$(nmcli connection show)
+
 	# If the connection is already in use, then this will still be able to get the SSID
 	if [ "$CHSSID" = "*" ]; then
-		CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $3}')
+		CHSSID=$(echo "$CHENTRY" | sed 's/\s\{2,\}/\|/g' | awk -F "|" '{print $3}')
 	fi
 
 	# Parses the list of preconfigured connections to see if it already contains the chosen SSID. This speeds up the connection process
@@ -37,10 +37,9 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "" ]]; then
-			WIFIPASS=$(echo " Press Enter if network is saved" | rofi -dmenu -p " WiFi Password: " -lines 1 )
+			WIFIPASS=$(echo " Press Enter if network is saved" | rofi -dmenu -p " WiFi Password: " -lines 1)
 		fi
-		if nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
-		then
+		if nmcli dev wifi con "$CHSSID" password "$WIFIPASS"; then
 			notify-send 'Connection successful'
 		else
 			notify-send 'Connection failed'

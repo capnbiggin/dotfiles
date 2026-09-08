@@ -64,6 +64,8 @@ Singleton {
 
   property int barHeight: Config.barHeight
   property int moduleHeight: Config.moduleHeight
+  property int moduleHeightClock: moduleHeight
+  property int moduleHeightExpanded: Config.moduleHeightExpanded
   property int margin: Config.spacingStep * 4
   property int radius: moduleHeight / 2
 

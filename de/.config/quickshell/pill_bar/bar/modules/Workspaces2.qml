@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Hyprland
+import Quickshell.Io
 
 import qs.theme
 import qs.components
@@ -8,7 +9,7 @@ import qs.components
 Rectangle {
   id: root
 
-  implicitWidth: row.width + Theme.margin * 2
+  implicitWidth: row.width + Theme.margin
   implicitHeight: Theme.moduleHeight
   radius: Theme.radius
   color: Theme.pill
@@ -20,11 +21,32 @@ Rectangle {
 
     anchors {
       left: parent.left
-      centerIn: parent
+      // centerIn: parent
     }
     width: implicitWidth
     height: parent.height
     spacing: Theme.s1
+
+    PillIcon {
+      id: power
+
+      icon: "power_settings_new"
+      iconColor: Theme.red
+
+      MouseArea {
+        anchors.fill: parent
+        onClicked: {
+          process.running = true;
+        }
+      }
+
+      Process {
+        id: process
+
+        command: ["sh", "-c", "~/.config/rofi/scripts/capn-menu.sh power"]
+        running: false
+      }
+    }
 
     Repeater {
       model: Hyprland.workspaces.values

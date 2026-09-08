@@ -1,21 +1,20 @@
 import QtQuick
 import qs.theme
+import qs.config
 
 Rectangle {
   id: root
 
-  property double pillWidth: row.width
-  property double pillHeight: Theme.moduleHeight
-  property int pillRadius: Theme.radius
   property int textSize: Theme.fontSize
 
   property string icon: ""
   property color iconColor: Theme.text
   property string text: ""
+  property int pillHeight: Theme.moduleHeight
 
-  implicitWidth: pillWidth
+  implicitWidth: row.width
   implicitHeight: pillHeight
-  radius: pillRadius
+  radius: height / 2
   color: Theme.pill
 
   Shadow {}

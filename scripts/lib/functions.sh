@@ -2,26 +2,26 @@
 # Create a desktop launcher for a webapp #
 ##########################################
 web2app() {
-  if [ "$#" -ne 3 ]; then
-    echo "Usage: web2app <AppName> <AppURL> <IconURL> (IconURL must be in PNG -- use https://dashboardicons.com)"
-    return 1
-  fi
+	if [ "$#" -ne 3 ]; then
+		echo "Usage: web2app <AppName> <AppURL> <IconURL> (IconURL must be in PNG -- use https://dashboardicons.com)"
+		return 1
+	fi
 
-  local APP_NAME="$1"
-  local APP_URL="$2"
-  local ICON_URL="$3"
-  local ICON_DIR="$HOME/.local/share/applications/icons"
-  local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
-  local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
+	local APP_NAME="$1"
+	local APP_URL="$2"
+	local ICON_URL="$3"
+	local ICON_DIR="$HOME/.local/share/applications/icons"
+	local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
+	local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
 
-  mkdir -p "$ICON_DIR"
+	mkdir -p "$ICON_DIR"
 
-  if ! curl -sL -o "$ICON_PATH" "$ICON_URL"; then
-    echo "Error: Failed to download icon."
-    return 1
-  fi
+	if ! curl -sL -o "$ICON_PATH" "$ICON_URL"; then
+		echo "Error: Failed to download icon."
+		return 1
+	fi
 
-  cat > "$DESKTOP_FILE" <<EOF
+	cat >"$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Version=1.0
 Name=$APP_NAME
@@ -33,23 +33,23 @@ Icon=$ICON_PATH
 StartupNotify=true
 EOF
 
-  chmod +x "$DESKTOP_FILE"
+	chmod +x "$DESKTOP_FILE"
 }
 
 #################
 # Remove Webapp #
 #################
 web2app-remove() {
-  if [ "$#" -ne 1 ]; then
-    echo "Usage: web2app-remove <AppName>"
-    return 1
-  fi
+	if [ "$#" -ne 1 ]; then
+		echo "Usage: web2app-remove <AppName>"
+		return 1
+	fi
 
-  local APP_NAME="$1"
-  local ICON_DIR="$HOME/.local/share/applications/icons"
-  local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
-  local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
+	local APP_NAME="$1"
+	local ICON_DIR="$HOME/.local/share/applications/icons"
+	local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
+	local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
 
-  rm "$DESKTOP_FILE"
-  rm "$ICON_PATH"
+	rm "$DESKTOP_FILE"
+	rm "$ICON_PATH"
 }

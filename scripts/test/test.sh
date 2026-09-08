@@ -6,8 +6,7 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 echo "$ACTUAL_HOME"
 
 if [[ $(eval hostname) = Zues ]]; then
-  echo "Yes"
+	echo "Yes"
 else
-  echo "NO"
+	echo "NO"
 fi
-

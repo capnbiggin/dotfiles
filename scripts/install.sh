@@ -5,7 +5,7 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
 
 source "${SCRIPTS_DIR}/lib/colors.sh"
 source "${SCRIPTS_DIR}/lib/common.sh"
@@ -15,15 +15,15 @@ INSTALL_DIR="${SCRIPTS_DIR}/install"
 
 # Check if running as root user
 if [ "$EUID" -eq 0 ]; then
-  log_error "\nDo not run this script as root!!\n"
-  exit 1
+	log_error "\nDo not run this script as root!!\n"
+	exit 1
 fi
 
 show_logo() {
-  clear
-  echo -e "${FG_BLUE}"
-  cat <"${SCRIPTS_DIR}/lib/logo.txt"
-  echo -e "${NC}"
+	clear
+	echo -e "${FG_BLUE}"
+	cat <"${SCRIPTS_DIR}/lib/logo.txt"
+	echo -e "${NC}"
 }
 
 # Update System
@@ -32,10 +32,10 @@ sudo pacman -Syyu --noconfirm --needed
 show_logo
 
 if ping -q -c 2 -W 1 8.8.8.8 >/dev/null 2>&1; then
-  log_info "\nInternet connection is UP...  Continuing with install...\n"
+	log_info "\nInternet connection is UP...  Continuing with install...\n"
 else
-  log_error "\nInternet connection is DOWN.. Exiting Script...\n"
-  exit 1
+	log_error "\nInternet connection is DOWN.. Exiting Script...\n"
+	exit 1
 fi
 
 source "${SCRIPTS_DIR}/install/configs.sh"

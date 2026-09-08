@@ -6,10 +6,11 @@
   "terminal.integrated.fontSize": 12,
   "editor.fontLigatures": true,
 
+  
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  
+
   // Indent Guides and Bracket Pair Colorization
   "editor.guides.highlightActiveIndentation": true,
   "editor.bracketPairColorization.enabled": true,
@@ -38,26 +39,10 @@
     "editorBracketHighlight.foreground6": "#b4befe",
   },
 
-  // Formating
-  "editor.defaultFormatter": "Delgan.qml-format",
-  "qmlFormat.command": "/usr/lib/qt6/bin/qmlformat",
-  "qmlFormat.extraArguments": [
-    "--indent-width",
-    "2"
-  ],
-
-  "cSpell.words": [
-    "capn",
-    "gamemode",
-    "Layershell",
-    "opsz",
-    "paru",
-    "Pipewire",
-    "Propo",
-    "Quickshell",
-    "rgba",
-    "rofi",
-    "shellroot",
-    "wght"
-  ],
+  // Format on save
+  "editor.defaultFormatter": "foxundermoon.shell-format",
+  "shellformat.path": "/usr/local/bin/shfmt",
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
 }

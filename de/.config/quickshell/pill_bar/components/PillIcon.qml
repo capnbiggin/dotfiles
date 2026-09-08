@@ -14,8 +14,8 @@ Rectangle {
   width: height
   height: parent.height
   color: Theme.pillIcon
-  topLeftRadius: Theme.radius
-  bottomLeftRadius: Theme.radius
+  topLeftRadius: height / 2
+  bottomLeftRadius: height / 2
 
   Text {
     anchors {

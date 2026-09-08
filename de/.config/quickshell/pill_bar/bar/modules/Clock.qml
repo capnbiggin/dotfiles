@@ -10,6 +10,15 @@ Pill {
   icon: "schedule"
   iconColor: Theme.magenta
   text: Qt.formatDateTime(clock.date, "h:mm ap")
+  pillHeight: Theme.moduleHeightClock
+
+  MouseArea {
+    anchors.fill: parent
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    // onEntered: Theme.moduleHeightClock = Theme.moduleHeightExpanded
+    // onExited: Theme.moduleHeightClock = Theme.moduleHeight
+  }
 
   // pillHeight: 100
 

@@ -5,7 +5,7 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
 
 source "${SCRIPTS_DIR}/lib/colors.sh"
 source "${SCRIPTS_DIR}/lib/common.sh"
@@ -14,9 +14,9 @@ log-info "\nInstalling power-profiles-daemon\n"
 yay -S --noconfirm --needed power-profiles-daemon
 
 if ls /sys/class/power_supply/BAT* &>/dev/null; then
-  log-info "\nThis computer runs on a battery\n"
-  powerprofilesctl set balanced || true
+	log-info "\nThis computer runs on a battery\n"
+	powerprofilesctl set balanced || true
 else
-  log-info "\nThis computer runs on power outlet\n"
-  powerprofilesctl set performance || true
+	log-info "\nThis computer runs on power outlet\n"
+	powerprofilesctl set performance || true
 fi

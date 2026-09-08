@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import qs.theme
+import qs.services
 
 // Shadow.qml
 //
@@ -22,5 +23,5 @@ RectangularShadow {
   blur: Theme.shadowBlur
   spread: Theme.shadowSpread
   offset: Qt.vector2d(0, Theme.shadowOffset)
-  color: Theme.shadowColor
+  color: IpcManager.gameMode ? Theme.bgT : Theme.shadowColor
 }

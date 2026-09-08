@@ -6,7 +6,6 @@ VOL="$(amixer -D pulse get Master | grep Left: | sed 's/[][]//g' | awk '{print $
 VOLICON=""
 MUTEICON="婢"
 
-
 if [ "$VOLONOFF" = "on" ]; then
 	echo "$VOLICON $VOL"
 else

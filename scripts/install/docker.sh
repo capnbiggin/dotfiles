@@ -5,21 +5,21 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+SCRIPTS_DIR="${ACTUAL_HOME}/dotfiles/scripts"
 
 source "${SCRIPTS_DIR}/lib/colors.sh"
 source "${SCRIPTS_DIR}/lib/common.sh"
 
 PACKAGES=(
-  docker
-  docker-compose
-  docker-buildx
+	docker
+	docker-compose
+	docker-buildx
 )
 
 for pkg in "${PACKAGES[@]}"; do
-  log_info "\nInstalling $pkg\n"
-  yay -S --needed --noconfirm "$pkg" ||
-    echo -e "\n${FG_RED}Failed to install $pkg. Continuing without!${NC}\n"
+	log_info "\nInstalling $pkg\n"
+	yay -S --needed --noconfirm "$pkg" ||
+		echo -e "\n${FG_RED}Failed to install $pkg. Continuing without!${NC}\n"
 done
 
 log_info "\nLimit log size to avoid running out of disk/n"

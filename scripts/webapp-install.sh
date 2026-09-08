@@ -11,20 +11,20 @@ source "${SCRIPTS_DIR}/lib/colors.sh"
 source "${SCRIPTS_DIR}/lib/common.sh"
 
 if [ "$#" -ne 3 ]; then
-  source "$SCRIPTS_DIR"/show-logo.sh
-  echo -e "\e[32mLet's create a new web app you can start with the app launcher.\n\e[0m"
-  APP_NAME=$(gum input --prompt "Name> " --placeholder "My favorite web app")
-  APP_URL=$(gum input --prompt "URL> " --placeholder "https://example.com")
-  ICON_URL=$(gum input --prompt "Icon URL> " --placeholder "See https://dashboardicons.com (must use PNG!)")
+	source "$SCRIPTS_DIR"/show-logo.sh
+	echo -e "\e[32mLet's create a new web app you can start with the app launcher.\n\e[0m"
+	APP_NAME=$(gum input --prompt "Name> " --placeholder "My favorite web app")
+	APP_URL=$(gum input --prompt "URL> " --placeholder "https://example.com")
+	ICON_URL=$(gum input --prompt "Icon URL> " --placeholder "See https://dashboardicons.com (must use PNG!)")
 else
-  APP_NAME="$1"
-  APP_URL="$2"
-  ICON_URL="$3"
+	APP_NAME="$1"
+	APP_URL="$2"
+	ICON_URL="$3"
 fi
 
 if [[ -z "$APP_NAME" || -z "$APP_URL" || -z "$ICON_URL" ]]; then
-  echo "You must set app name, app URL, and icon URL!"
-  exit 1
+	echo "You must set app name, app URL, and icon URL!"
+	exit 1
 fi
 
 ICON_DIR="$ACTUAL_HOME/.local/share/applications/icons"
@@ -34,8 +34,8 @@ ICON_PATH="$ICON_DIR/$APP_NAME.png"
 mkdir -p "$ICON_DIR"
 
 if ! curl -sL -o "$ICON_PATH" "$ICON_URL"; then
-  echo "Error: Failed to download icon."
-  return 1
+	echo "Error: Failed to download icon."
+	return 1
 fi
 
 cat >"$DESKTOP_FILE" <<EOF
@@ -53,7 +53,7 @@ EOF
 chmod +x "$DESKTOP_FILE"
 
 if [ "$#" -ne 3 ]; then
-  echo -e "You can now find $APP_NAME using the app launcher (SUPER + SPACE)\n"
+	echo -e "You can now find $APP_NAME using the app launcher (SUPER + SPACE)\n"
 fi
 
 source "$SCRIPTS_DIR/show-done.sh"
