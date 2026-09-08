@@ -1,0 +1,41 @@
+{
+  "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
+  "editor.fontSize": 14,
+  "editor.allowVariableFonts": true,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 12,
+  "editor.fontLigatures": true,
+
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+
+  // Indent Guides and Bracket Pair Colorization
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    // non-active indent guide colors
+    "editorIndentGuide.background1": "#f38ba899",
+    "editorIndentGuide.background2": "#fab38799",
+    "editorIndentGuide.background3": "#f9e2af99",
+    "editorIndentGuide.background4": "#a6e3a199",
+    "editorIndentGuide.background5": "#74c6ec99",
+    "editorIndentGuide.background6": "#b4befe99",
+    // Indent Colors
+    "editorIndentGuide.activeBackground1": "#f38ba8",
+    "editorIndentGuide.activeBackground2": "#fab387",
+    "editorIndentGuide.activeBackground3": "#f9e2af",
+    "editorIndentGuide.activeBackground4": "#a6e3a1",
+    "editorIndentGuide.activeBackground5": "#74c6ec",
+    "editorIndentGuide.activeBackground6": "#b4befe",
+
+    // Bracket Colors
+    "editorBracketHighlight.foreground1": "#f38ba8",
+    "editorBracketHighlight.foreground2": "#fab387",
+    "editorBracketHighlight.foreground3": "#f9e2af",
+    "editorBracketHighlight.foreground4": "#a6e3a1",
+    "editorBracketHighlight.foreground5": "#74c6ec",
+    "editorBracketHighlight.foreground6": "#b4befe"
+  },
+  "editor.defaultFormatter": "sumneko.lua"
+}

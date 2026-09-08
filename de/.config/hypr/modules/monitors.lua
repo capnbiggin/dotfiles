@@ -15,9 +15,8 @@ hl.monitor({
 })
 
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
+  output   = "",
+  mode     = "preferred",
+  position = "auto",
+  scale    = "auto",
 })
-
