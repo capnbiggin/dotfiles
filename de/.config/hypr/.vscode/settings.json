@@ -37,5 +37,24 @@
     "editorBracketHighlight.foreground5": "#74c6ec",
     "editorBracketHighlight.foreground6": "#b4befe"
   },
-  "editor.defaultFormatter": "sumneko.lua"
+  "editor.defaultFormatter": "sumneko.lua",
+  "[hyprlang]": {
+    "editor.defaultFormatter": "ewen-lbh.vscode-hyprls"
+  },
+  "cSpell.words": [
+    "awww",
+    "capn",
+    "cliphist",
+    "dmenu",
+    "ghostty",
+    "halign",
+    "hypr",
+    "hyprlock",
+    "hyprpolkitagent",
+    "keybinds",
+    "onclick",
+    "quickshell",
+    "rgba",
+    "rofi"
+  ]
 }

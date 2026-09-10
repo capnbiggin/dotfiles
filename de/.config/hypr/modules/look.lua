@@ -8,24 +8,25 @@ hl.config({
     layout           = "scrolling",
 
     col              = {
-      active_border   = { colors = { "rgb(b4befe)", "rgba(b4befe99)" }, angle = 45 },
-      inactive_border = { colors = { "rgb(9399b2)", "rgba(9399b299)" }, angle = 45 },
+      active_border   = { colors = { "rgba(180, 190, 254, 1)", "rgba(180, 190, 254, 0.6)" }, angle = 45 },
+      inactive_border = { colors = { "rgba(147, 153, 178, 1)", "rgba(147, 153, 178, 0.6)" }, angle = 45 },
       -- inactive_border = "rgb(9399b2)",
     },
   },
 
   decoration = {
     rounding         = 10,
-    rounding_power   = 3,
+    rounding_power   = 5,
 
     active_opacity   = 1.0,
     inactive_opacity = 0.99,
 
     shadow           = {
       enabled      = true,
-      range        = 4,
+      range        = 15,
       render_power = 3,
-      color        = 0xee1a1a1a,
+      color        = "rgba(30, 30, 46, 0.45)",
+      -- color        = "rgba(243, 139, 168, 1)", -- Test color
     },
 
     blur             = {
