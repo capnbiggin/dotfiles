@@ -49,7 +49,7 @@ Rectangle {
     }
 
     Repeater {
-      model: Hyprland.workspaces.values
+      model: Hyprland.workspaces
 
       delegate: Item {
         id: ws
