@@ -9,10 +9,25 @@ import qs.components
 Rectangle {
   id: root
 
+  property bool isHovered: false
+
   implicitWidth: row.width + Theme.margin
   implicitHeight: Theme.moduleHeight
   radius: Theme.radius
   color: Theme.pill
+
+  // Behavior on implicitWidth {
+  //   NumberAnimation {
+  //     duration: Theme.aniFast
+  //   }
+  // }
+
+  MouseArea {
+    anchors.fill: parent
+    hoverEnabled: true
+    onEntered: root.isHovered = true
+    onExited: root.isHovered = false
+  }
 
   Shadow {}
 
@@ -59,9 +74,10 @@ Rectangle {
         readonly property bool isFocused: modelData.focused
         readonly property bool isOccupied: (modelData.topLevels?.values?.length ?? 0) > 0
 
-        implicitWidth: label.implicitWidth + 8
-        implicitHeight: parent.height - 8
+        implicitWidth: label.implicitWidth + Theme.s2
+        implicitHeight: parent.height - Theme.s2
         anchors.verticalCenter: parent.verticalCenter
+        visible: root.isHovered ? true : ws.isFocused
 
         Rectangle {
           anchors.fill: parent
@@ -69,14 +85,14 @@ Rectangle {
           color: ws.isFocused ? Theme.butBg2 : ws.isActive ? Theme.butBg1 : "transparent"
           Behavior on color {
             ColorAnimation {
-              duration: 200
+              duration: Theme.aniFast
             }
           }
 
           opacity: ws.isActive ? 1 : 0
           Behavior on opacity {
             NumberAnimation {
-              duration: 200
+              duration: Theme.aniFast
             }
           }
         }
@@ -97,7 +113,7 @@ Rectangle {
           color: ws.isFocused ? Theme.accent : (ws.isActive ? Theme.text : Theme.muteText)
           Behavior on color {
             ColorAnimation {
-              duration: 200
+              duration: Theme.aniFast
             }
           }
         }

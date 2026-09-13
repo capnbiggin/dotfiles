@@ -83,4 +83,9 @@ Singleton {
   property real shadowSpread: (Config.shadowStep * 0.25)
   property real shadowOffset: (Config.shadowStep * 0.75)
   property color shadowColor: Qt.rgba(0, 0, 0, Config.shadowOpacity / 100)
+
+  // Animations
+  property int aniFast: 150
+  property int aniMid: 225
+  property int aniSlo: 300
 }

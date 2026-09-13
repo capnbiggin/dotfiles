@@ -20,3 +20,7 @@ hl.monitor({
   position = "auto",
   scale    = "auto",
 })
+
+for i = 1, 10 do
+  hl.workspace_rule({ workspace = tostring(i), persistent = true, default = (i==1) })
+end

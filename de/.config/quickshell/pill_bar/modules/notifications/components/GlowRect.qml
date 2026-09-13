@@ -18,7 +18,7 @@ import qs.theme
 Item {
   id: root
 
-  property color glowColor: Theme.accent
+  property color glowColor: Theme.purple
   property bool active: false
   property real intensity: 0.6 // 0–1, glow strength
   property real spread: 24 // px, blur radius of the glow
