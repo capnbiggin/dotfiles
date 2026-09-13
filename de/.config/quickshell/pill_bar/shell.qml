@@ -1,9 +1,14 @@
 import QtQuick
 import Quickshell
-import qs.bar
+import "modules/bar"
+import "modules/notifications"
 
-Variants {
-  model: Quickshell.screens
+ShellRoot {
+  Variants {
+    model: Quickshell.screens
 
-  Bar {}
+    Bar {}
+  }
+
+  NotificationCenter {}
 }

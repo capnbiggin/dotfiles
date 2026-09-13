@@ -1,9 +1,9 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import qs.theme
-import qs.bar.modules
-import qs.services
+import "../../theme"
+import "../../modules"
+import "../../services"
 
 PanelWindow {
   id: bar

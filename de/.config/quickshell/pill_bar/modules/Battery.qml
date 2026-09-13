@@ -8,9 +8,11 @@ Pill {
   id: root
 
   property var battery: UPower.displayDevice
+  property bool available: battery ? battery.isLaptopBattery : false
   property bool charging: battery.state === UPowerDeviceState.Charging
   readonly property int level: Math.round(battery.percentage * 100)
 
+  visible: available
   text: level + "%"
   icon: {
     if (charging)

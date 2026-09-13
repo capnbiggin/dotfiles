@@ -38,6 +38,8 @@ Singleton {
   property int margin: Config.spacingStep * 4
   property int radius: moduleHeight / 2
 
+  property int notifiWidth: 600
+
   // Spacing
   property int s1: Config.spacingStep
   property int s2: Config.spacingStep * 2
