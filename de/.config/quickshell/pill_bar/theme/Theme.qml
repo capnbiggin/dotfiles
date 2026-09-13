@@ -8,59 +8,28 @@ import qs.config
 Singleton {
   id: root
 
-  QtObject {
-    id: palette
-
-    readonly property string rosewater: "#f5e0dc"
-    readonly property string flamingo: "#f2cdcd"
-    readonly property string pink: "#f5c2e7"
-    readonly property string mauve: "#cba6f7"
-    readonly property string red: "#f38ba8"
-    readonly property string maroon: "#eba0ac"
-    readonly property string peach: "#fab387"
-    readonly property string yellow: "#f9e2af"
-    readonly property string green: "#a6e3a1"
-    readonly property string teal: "#94e2d5"
-    readonly property string sky: "#89dceb"
-    readonly property string sapphire: "#74c6ec"
-    readonly property string blue: "#89b4fa"
-    readonly property string lavender: "#b4befe"
-    readonly property string text: "#cdd6f4"
-    readonly property string subtext1: "#bac2de"
-    readonly property string subtext0: "#a6adc8"
-    readonly property string overlay2: "#9399b2"
-    readonly property string overlay1: "#7f849c"
-    readonly property string overlay0: "#6c7086"
-    readonly property string surface2: "#585b70"
-    readonly property string surface1: "#45475a"
-    readonly property string surface0: "#45475a"
-    readonly property string base: "#1e1e2e"
-    readonly property string mantle: "#181825"
-    readonly property string crust: "#11111b"
-  }
-
   readonly property color bgT: "transparent"
 
   readonly property color pill: Palette.background0         // Pill BG
   readonly property color pillIcon: Palette.background2    // Icon square BG
   readonly property color text: Palette.text
   readonly property color muteText: Palette.subtext0
-  readonly property color accent: Palette.active1
+  readonly property color accent: Palette.teal
 
-  readonly property color butBg1: Palette.color0
-  readonly property color butBg2: Palette.color8
+  readonly property color butBg1: Palette.surface1
+  readonly property color butBg2: Palette.surface2
 
   readonly property color black: "#000000"
   readonly property color white: "#ffffff"
-  readonly property color red: Palette.color1
+  readonly property color red: Palette.red
   readonly property color orange: Palette.orange
-  readonly property color yellow: Palette.color3
-  readonly property color green: Palette.color2
-  readonly property color cyan: Palette.color6
-  readonly property color blue: Palette.color4
+  readonly property color yellow: Palette.yellow
+  readonly property color green: Palette.green
+  readonly property color cyan: Palette.teal
+  readonly property color blue: Palette.blue
   readonly property color purple: Palette.purple
-  readonly property color pink: Palette.color5
-  readonly property color magenta: Palette.magenta
+  readonly property color pink: Palette.pink
+  readonly property color magenta: Palette.lightRed
 
   property int barHeight: Config.barHeight
   property int moduleHeight: Config.moduleHeight

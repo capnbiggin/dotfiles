@@ -20,7 +20,7 @@ PanelWindow {
   exclusiveZone: barExclusionZone
   implicitHeight: barMaxHeight
 
-  WlrLayershell.namespace: "quickshell-bar" // Bar Namespace
+  WlrLayershell.namespace: "quickshell:bar" // Bar Namespace
   WlrLayershell.layer: WlrLayer.Top         // Bar Layer
 
   anchors {
