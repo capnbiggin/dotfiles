@@ -18,6 +18,7 @@ Singleton {
 
   readonly property color butBg1: Palette.surface1
   readonly property color butBg2: Palette.surface2
+  readonly property color butBg3: Palette.gray1
 
   readonly property color black: "#000000"
   readonly property color white: "#ffffff"
@@ -38,7 +39,7 @@ Singleton {
   property int margin: Config.spacingStep * 4
   property int radius: moduleHeight / 2
 
-  property int notifiWidth: 600
+  property int notifiWidth: 320
 
   // Spacing
   property int s1: Config.spacingStep

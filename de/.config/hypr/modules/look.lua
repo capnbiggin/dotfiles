@@ -5,17 +5,16 @@ hl.config({
     border_size      = 1,
     resize_on_border = true,
     allow_tearing    = false,
-    layout           = "scrolling",
+    layout           = "monocle",
 
     col              = {
       active_border   = { colors = { "rgba(180, 190, 254, 1)", "rgba(180, 190, 254, 0.6)" }, angle = 45 },
       inactive_border = { colors = { "rgba(147, 153, 178, 1)", "rgba(147, 153, 178, 0.6)" }, angle = 45 },
-      -- inactive_border = "rgb(9399b2)",
     },
   },
 
   decoration = {
-    rounding         = 10,
+    rounding         = 16,
     rounding_power   = 5,
 
     active_opacity   = 1.0,

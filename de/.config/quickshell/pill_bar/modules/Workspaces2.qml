@@ -77,7 +77,7 @@ Rectangle {
         implicitWidth: label.implicitWidth + Theme.s2
         implicitHeight: parent.height - Theme.s2
         anchors.verticalCenter: parent.verticalCenter
-        visible: root.isHovered ? true : ws.isFocused
+        visible: root.isHovered ? true : ws.isActive
 
         Rectangle {
           anchors.fill: parent

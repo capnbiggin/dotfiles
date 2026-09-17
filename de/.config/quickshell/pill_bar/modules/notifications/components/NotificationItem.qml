@@ -14,8 +14,8 @@ Rectangle {
   signal dismissed
 
   width: 300
-  height: column.implicitHeight + 24
-  radius: 15
+  height: column.implicitHeight + 28
+  radius: Theme.s5
   color: Theme.pill
   border.color: urgency === 2 ? Theme.red : Theme.cyan
   Component.onCompleted: slideAnim.start()
@@ -50,6 +50,7 @@ Rectangle {
 
     anchors {
       left: parent.left
+      leftMargin: Theme.s4
       right: parent.right
       top: parent.top
       margins: 12
@@ -57,6 +58,7 @@ Rectangle {
 
     // App name
     Text {
+      id: appName
       text: root.appName
       color: Theme.text
       font.family: Theme.fontFam
@@ -66,6 +68,7 @@ Rectangle {
 
     // Summary
     Text {
+      id: summary
       text: root.summary
       color: Theme.text
       font.family: Theme.fontFam
@@ -77,6 +80,7 @@ Rectangle {
 
     // Body (optional)
     Text {
+      id: body
       visible: root.body !== ""
       text: root.body
       color: Theme.text
@@ -92,6 +96,7 @@ Rectangle {
   // ─── Dismiss on click ───────────────────────────────────
   MouseArea {
     anchors.fill: parent
+    cursorShape: Qt.PointingHandCursor
     onClicked: root.dismissed()
   }
 

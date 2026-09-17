@@ -20,9 +20,8 @@ Item {
 
     actionsSupported: true
     bodySupported: true
-    // bodyHyperlinkSupported: false
+    bodyHyperlinksSupported: false
     bodyImagesSupported: false
-    // iconsSupported:       true
     persistenceSupported: true
     imageSupported: true
     onNotification: notif => {
@@ -49,13 +48,16 @@ Item {
 
     color: "transparent"
     implicitWidth: Theme.notifiWidth
-    implicitHeight: notifModel.count * 85 // rough estimate, grows with more notifs
+    implicitHeight: screen.height //notifModel.count * 80 // rough estimate, grows with more notifs
     exclusionMode: ExclusionMode.Ignore
     visible: notifModel.count > 0
 
+    mask: Region {
+      item: notification
+    }
+
     anchors {
       top: true
-      // right: true
     }
 
     margins {
@@ -64,12 +66,13 @@ Item {
     }
 
     ColumnLayout {
+      id: notification
       spacing: 8
 
       anchors {
-        // top: parent.top
-        // right: parent.right
-        centerIn: parent
+        top: parent.top
+        horizontalCenter: parent.horizontalCenter
+        // centerIn: parent
         topMargin: 0
         rightMargin: 16
       }
