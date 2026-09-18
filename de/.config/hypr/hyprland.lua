@@ -9,6 +9,7 @@ require("modules.inputs")
 require("modules.look")
 require("modules.animations")
 require("modules.misc")
+require("modules.layout")
 
 -----------------------
 ----- PERMISSIONS -----
