@@ -5,5 +5,5 @@ import Quickshell
 Singleton {
   id: root
 
-  property bool gameMode: false
+  property bool gameMode: true
 }

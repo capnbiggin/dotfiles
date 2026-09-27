@@ -1,28 +1,28 @@
-let red = "#ff6048";
-let green = "#7ad9a8";
-let orange = "#ffa478";
-let yellow = "#f5cd5b";
-let blue = "#5fc8d4";
-let pink = "#e89aa8";
-let teal = "#3dd1b0";
-let purple = "#e89aa8";
 
-let lightRed = "#eba0ac";
-let lightBlue = "#89dceb";
-let lightPurple = "#b4befe";
+let normfgcolor = "#CDD6F4";
+let normbgcolor = "#1E1E2E";
+let normbordercolor = "#313244";
+let selfgcolor = "#CDD6F4";
+let selbgcolor = "#313244";
+let selbordercolor = "#CBA6F7";
 
-let background0 = "#040e0d";
-let background1 = "#0a1816";
-let background2 = "#0f211f";
-
-let surface0 = "#152a26";
-let surface1 = "#1d3631";
-let surface2 = "#3a1a35";
-
-let gray0 = "#3a1a35";
-let gray1 = "#5a4d3e";
-let gray2 = "#c4b09a";
-
-let text = "#f5e2c5";
-let subtext0 = "#f5e2c5cc";
-let subtext1 = "#bac2de99";
+let bg = "#1e1e2e";
+let bg2 = "#181825";
+let fg = "#cdd6f4";
+let cursor = "#cba6f7";
+let color0 = "#45475a";
+let color1 = "#f38ba8";
+let color2 = "#a6e3a1";
+let color3 = "#f9e2af";
+let color4 = "#89b4fa";
+let color5 = "#f5c2e7";
+let color6 = "#94e2d5";
+let color7 = "#bac2de";
+let color8 = "#585b70";
+let color9 = "#f38ba8";
+let color10 = "#a6e3a1";
+let color11 = "#f9e2af";
+let color12 = "#89b4fa";
+let color13 = "#f5c2e7";
+let color14 = "#94e2d5";
+let color15 = "#bac2de";

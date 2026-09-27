@@ -16,11 +16,11 @@ Rectangle {
   radius: Theme.radius
   color: Theme.pill
 
-  // Behavior on implicitWidth {
-  //   NumberAnimation {
-  //     duration: Theme.aniFast
-  //   }
-  // }
+  Behavior on implicitWidth {
+    NumberAnimation {
+      duration: Theme.aniFast
+    }
+  }
 
   MouseArea {
     anchors.fill: parent

@@ -2,35 +2,71 @@ pragma Singleton
 
 import QtQuick
 import Quickshell
-import "Palette.js" as Palette
+// import "Palette.js" as Palette
 import qs.config
 
 Singleton {
   id: root
 
+  QtObject {
+    id: pal
+
+    readonly property color normfgcolor: "#CDD6F4"
+    readonly property color normbgcolor: "#1E1E2E"
+    readonly property color normbordercolor: "#313244"
+    readonly property color selfgcolor: "#CDD6F4"
+    readonly property color selbgcolor: "#313244"
+    readonly property color selbordercolor: "#CBA6F7"
+
+    readonly property color bg: "#1e1e2e"
+    readonly property color bg2: "#181825"
+    readonly property color fg: "#cdd6f4"
+    readonly property color cursor: "#cba6f7"
+    readonly property color color0: "#45475a"
+    readonly property color color1: "#f38ba8"
+    readonly property color color2: "#a6e3a1"
+    readonly property color color3: "#f9e2af"
+    readonly property color color4: "#89b4fa"
+    readonly property color color5: "#f5c2e7"
+    readonly property color color6: "#94e2d5"
+    readonly property color color7: "#bac2de"
+    readonly property color color8: "#585b70"
+    readonly property color color9: "#f38ba8"
+    readonly property color color10: "#a6e3a1"
+    readonly property color color11: "#f9e2af"
+    readonly property color color12: "#89b4fa"
+    readonly property color color13: "#f5c2e7"
+    readonly property color color14: "#94e2d5"
+    readonly property color color15: "#bac2de"
+  }
+
+  function alpha(c, a) {
+    return Qt.rgba(c.r, c.g, c.b, a);
+  }
+
   readonly property color bgT: "transparent"
 
-  readonly property color pill: Palette.background0         // Pill BG
-  readonly property color pillIcon: Palette.background2    // Icon square BG
-  readonly property color text: Palette.text
-  readonly property color muteText: Palette.subtext0
-  readonly property color accent: Palette.teal
+  readonly property color pill: pal.bg         // Pill BG
+  readonly property color pillIcon: pal.bg2  // Icon square BG
+  readonly property color text: pal.fg
+  readonly property color muteText: alpha(pal.fg, 0.80)
+  readonly property color accent: pal.color6
 
-  readonly property color butBg1: Palette.surface1
-  readonly property color butBg2: Palette.surface2
-  readonly property color butBg3: Palette.gray1
+  readonly property color butBg1: alpha(pal.bg2, 0.95)
+  readonly property color butBg2: alpha(pal.bg2, 0.90)
+  readonly property color butBg3: alpha(pal.bg2, 0.85)
 
   readonly property color black: "#000000"
   readonly property color white: "#ffffff"
-  readonly property color red: Palette.red
-  readonly property color orange: Palette.orange
-  readonly property color yellow: Palette.yellow
-  readonly property color green: Palette.green
-  readonly property color cyan: Palette.teal
-  readonly property color blue: Palette.blue
-  readonly property color purple: Palette.purple
-  readonly property color pink: Palette.pink
-  readonly property color magenta: Palette.lightRed
+  readonly property color red: pal.color1
+  readonly property color orange: pal.color3
+  readonly property color yellow: pal.color3
+  readonly property color green: pal.color2
+  readonly property color cyan: pal.color6
+  readonly property color blue: pal.color4
+  readonly property color purple: pal.color5
+  readonly property color pink: pal.color1
+  readonly property color magenta: pal.color1
 
   property int barHeight: Config.barHeight
   property int moduleHeight: Config.moduleHeight

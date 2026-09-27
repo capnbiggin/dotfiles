@@ -16,6 +16,8 @@ Rectangle {
   color: Theme.pillIcon
   topLeftRadius: height / 2
   bottomLeftRadius: height / 2
+  topRightRadius: IpcManager.gameMode ? height / 2 : 0
+  bottomRightRadius: IpcManager.gameMode ? height / 2 : 0
 
   Text {
     anchors {
