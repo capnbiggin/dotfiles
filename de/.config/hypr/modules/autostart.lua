@@ -2,7 +2,7 @@
 
 local appList = {
   "awww-daemon",
-  "quickshell -p ~/.config/quickshell/pill_bar/",
+  "quickshell -p ~/.config/quickshell/newbar/",
   "wl-paste --type text --watch cliphist store",
   "wl-paste --type image --watch cliphist store",
   "wl-clip-persist --clipboard regular",
