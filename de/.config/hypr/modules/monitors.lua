@@ -21,12 +21,12 @@ hl.monitor({
   scale    = "1",
 })
 
--- for i = 1, 10 do
---   hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-2", persistent = true, default = (i == 1) })
--- end
--- for i = 6, 10 do
---   hl.workspace_rule({ workspace = tostring(i), monitor = "desc:LG Electronics LG ULTRAWIDE 0x000357A4", persistent = true, default = (i == 1) })
--- end
+for i = 1, 5 do
+  hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-2", persistent = true, default = (i == 1) })
+end
+for i = 6, 10 do
+  hl.workspace_rule({ workspace = tostring(i), monitor = "desc:LG Electronics LG ULTRAWIDE 0x000357A4", persistent = true, default = (i == 1) })
+end
 -- for i = 1, 10 do
 --   hl.workspace_rule({ workspace = tostring(i), persistent = true, default = (i == 1) })
 -- end

@@ -3,6 +3,7 @@ import Quickshell
 import Quickshell.Io
 
 import qs.modules.bar
+import qs.modules.controlcenter
 
 ShellRoot {
   id: root
@@ -15,6 +16,10 @@ ShellRoot {
       required property var modelData
 
       Bar {
+        screen: perScreen.modelData
+      }
+
+      ControlCenter {
         screen: perScreen.modelData
       }
     }

@@ -28,7 +28,7 @@ Rectangle {
       mine.push(workspace);
     }
     mine.sort((a, b) => a.id - b.id);
-    return all;
+    return mine;
   }
   readonly property int activeIndex: {
     for (let i = 0; i < list.length; i++) {

@@ -12,7 +12,7 @@ local notes2      = "zennotes"
 local editor1     = "code"
 local editor2     = "zeditor"
 local editor3     = "codium"
-local bar_toggle  = "pkill quickshell || quickshell"
+local bar_toggle  = "pkill qs || qs"
 
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(terminal1))
 hl.bind(mod .. " + ALT + RETURN", hl.dsp.exec_cmd(terminal2))
@@ -20,9 +20,9 @@ hl.bind(mod .. " + W", hl.dsp.exec_cmd(browser1))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mod .. " + O", hl.dsp.exec_cmd(notes1))
 hl.bind(mod .. " + SHIFT + O", hl.dsp.exec_cmd(notes2))
-hl.bind(mod .. " + I", hl.dsp.exec_cmd(editor1))
+hl.bind(mod .. " + I", hl.dsp.exec_cmd(editor3))
 hl.bind(mod .. " + SHIFT + I", hl.dsp.exec_cmd(editor2))
-hl.bind(mod .. " + ALT + I", hl.dsp.exec_cmd(editor3))
+hl.bind(mod .. " + ALT + I", hl.dsp.exec_cmd(editor1))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd(bar_toggle))
 hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
@@ -38,6 +38,8 @@ local wallpaper  = "~/.config/rofi/scripts/wallpapers.sh"
 local cliphist   = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
 hl.bind(mod .. " + ALT + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call launcher toggle"))
+hl.bind(mod .. " + A", hl.dsp.exec_cmd("qs ipc call cc toggle"))
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(capn_menu))
 hl.bind(mod .. " + CTRL + SPACE", hl.dsp.exec_cmd(power_menu))
 hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(wallpaper))
