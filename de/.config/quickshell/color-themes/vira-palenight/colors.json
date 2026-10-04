@@ -1,0 +1,23 @@
+{
+  "name": "vira palenight",
+
+  "bg0": "#191c26",
+  "bg1": "#212432",
+  "bg2": "#292d3e",
+  "bg3": "#31364a",
+  "bg4": "#393e56",
+
+  "fg": "#D6DEEB",
+
+  "red": "#F07178",
+  "orange": "#F78C6C",
+  "yellow": "#FFCB6B",
+  "green": "#C3E88D",
+  "aqua": "#89DDFF",
+  "blue": "#82AAFF",
+  "purple": "#C792EA",
+
+  "grey0": "#61688B",
+  "grey1": "#8A93A8",
+  "grey2": "#C7CCD5"
+}

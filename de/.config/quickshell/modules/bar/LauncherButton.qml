@@ -14,7 +14,7 @@ RoundButton {
     text: "󰣇"
     color: Theme.accent
     font {
-      family: Theme.font
+      family: Theme.nerdFont
       pixelSize: Theme.iconSize
     }
   }

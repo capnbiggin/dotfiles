@@ -6,6 +6,6 @@ import qs.services
 
 RoundButton {
   icon: "tune"
-  accent: Theme.yellow
+  accent: Theme.orange
   onClicked: Popups.toggleControlCenter()
 }

@@ -54,6 +54,7 @@ PanelWindow {
     }
     spacing: Theme.spacing
 
+    BluetoothPill {}
     VolumePill {}
     WifiPill {}
     BatteryPill {}

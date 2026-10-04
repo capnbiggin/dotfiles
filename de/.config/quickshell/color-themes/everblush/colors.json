@@ -1,0 +1,23 @@
+{
+  "name": "everblush",
+
+  "bg0": "#0D1214",
+  "bg1": "#141B1E",
+  "bg2": "#1A2225",
+  "bg3": "#232A2D",
+  "bg4": "#2A3235",
+
+  "fg": "#DADADA",
+
+  "red": "#E57474",
+  "orange": "#E8967F",
+  "yellow": "#E5C76B",
+  "green": "#8CCF7E",
+  "aqua": "#6CBFBF",
+  "blue": "#67B0E8",
+  "purple": "#C47FD5",
+
+  "grey0": "#232A2D",
+  "grey1": "#5C6265",
+  "grey2": "#DADADA"
+}

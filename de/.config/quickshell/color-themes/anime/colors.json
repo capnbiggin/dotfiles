@@ -1,0 +1,23 @@
+{
+  "name": "anime",
+
+  "bg0": "#1a1b26",
+  "bg1": "#222332",
+  "bg2": "#2a2c3d",
+  "bg3": "#323449",
+  "bg4": "#3a3c55",
+
+  "fg": "#cdd6f4",
+
+  "red": "#f7768e",
+  "orange": "#fab387",
+  "yellow": "#e0af68",
+  "green": "#9ece6a",
+  "aqua": "#94e2d5",
+  "blue": "#7aa2f7",
+  "purple": "#bb9af7",
+
+  "grey0": "#565f89",
+  "grey1": "#7f849c",
+  "grey2": "#6c7086"
+}

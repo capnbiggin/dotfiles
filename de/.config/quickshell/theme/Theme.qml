@@ -80,7 +80,8 @@ Singleton {
   readonly property int shadowRoom: 24
 
   // font
-  readonly property string font: "JetBrainsMono Nerd Font Propo" //"SF Pro Text"
+  readonly property string font: "SF Pro Display" //"SF Pro Text"
+  readonly property string nerdFont: "JetBrainsMono Nerd Font Propo"
   readonly property int fontSize: 15
   readonly property int sFontSize: 13
   readonly property int xsFontSize: 11
