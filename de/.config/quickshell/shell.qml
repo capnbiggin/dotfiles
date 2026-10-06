@@ -2,10 +2,11 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
+import qs.services
 import qs.modules.bar
 import qs.modules.controlcenter
-
-import qs.services
+import qs.modules.notifications
+import qs.modules.launcher
 
 ShellRoot {
   id: root
@@ -21,7 +22,15 @@ ShellRoot {
         screen: perScreen.modelData
       }
 
+      Launcher {
+        screen: perScreen.modelData
+      }
+
       ControlCenter {
+        screen: perScreen.modelData
+      }
+
+      NotificationPopup {
         screen: perScreen.modelData
       }
     }

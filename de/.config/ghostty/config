@@ -1,11 +1,11 @@
 # Font
-font-family = JetBrainsMono Nerd Font
+font-family = JetBrainsMono Nerd Font Propo
 font-style = SemiBold
 font-size = 10
 
 # window-decoration = none
 
-background-opacity = 0.90
+background-opacity = 0.80
 window-decoration = none
 
 # Theme
@@ -38,3 +38,6 @@ cursor-style = block
 cursor-style-blink = false
 
 confirm-close-surface = false
+
+# Tmux command
+command = /home/capn/.config/ghostty/ghostty_tmux.sh

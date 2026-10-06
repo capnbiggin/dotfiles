@@ -10,11 +10,44 @@ Rectangle {
 
   required property var notification
 
-  readonly property color accent: notification.urgency === NotificationUrgency.Critical ? Theme.red : Theme.cyan
+  readonly property color accent: notification?.urgency === NotificationUrgency.Critical ? Theme.red : Theme.cyan
 
   height: 56
   radius: 16
-  color: Theme.bg2
+
+  color: hover.hovered ? Theme.bg3 : Theme.bg2
+  Behavior on color {
+    ColorAnimation {
+      duration: Theme.hoverTime
+    }
+  }
+
+  property bool shown: false
+  property bool leaving: false
+  Component.onCompleted: shown = true
+
+  opacity: shown && !leaving ? 1 : 0
+  Behavior on opacity {
+    NumberAnimation {
+      duration: Theme.fadeTime
+    }
+  }
+
+  transform: Translate {
+    x: row.leaving ? 16 : 0
+    Behavior on x {
+      NumberAnimation {
+        duration: Theme.fadeTime
+        easing.type: Easing.imQuad
+      }
+    }
+  }
+
+  Timer {
+    running: row.leaving
+    interval: Theme.fadeTime
+    onTriggered: row.notification?.dismiss()
+  }
 
   IconDisc {
     id: disc
@@ -40,7 +73,7 @@ Rectangle {
       Text {
         anchors.left: parent.left
         width: parent.width - 60
-        text: row.notification.summary
+        text: row.notification?.summary ?? ""
         color: Theme.fg
         font {
           family: Theme.font
@@ -51,7 +84,7 @@ Rectangle {
       }
       Text {
         anchors.right: parent.right
-        text: row.notification.appName
+        text: row.notification?.appName ?? ""
         color: Theme.grey2
         font {
           family: Theme.font
@@ -61,7 +94,7 @@ Rectangle {
     }
     Text {
       width: parent.width
-      text: row.notification.body
+      text: row.notification?.body ?? ""
       color: Theme.grey2
       font {
         family: Theme.font
@@ -75,6 +108,10 @@ Rectangle {
   MouseArea {
     anchors.fill: parent
     cursorShape: Qt.PointingHandCursor
-    onClicked: row.notification.dismiss()
+    onClicked: row.leaving = true
+  }
+
+  HoverHandler {
+    id: hover
   }
 }

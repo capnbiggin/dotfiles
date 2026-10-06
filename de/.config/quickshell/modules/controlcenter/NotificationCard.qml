@@ -20,6 +20,7 @@ Column {
       }
       text: Notifs.list.length === 0 ? "No Notifications" : "Notifications"
       color: Theme.fg
+
       font {
         family: Theme.font
         pixelSize: Theme.sFontSize
@@ -38,20 +39,59 @@ Column {
         pixelSize: Theme.sFontSize
         weight: 600
       }
-      visible: Notifs.list.length > 0
+      opacity: Notifs.list.length > 0 ? 1 : 0
+      Behavior on opacity {
+        NumberAnimation {
+          duration: Theme.fadeTime
+        }
+      }
 
       MouseArea {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
-        onClicked: Notifs.clearAll()
+        onClicked: listBox.shown = false
       }
     }
   }
 
   Item {
+    id: listBox
     width: parent.width
     height: Math.min(Notifs.list.length, 5) * 64 - 8
     visible: Notifs.list.length > 0
+
+    Behavior on height {
+      NumberAnimation {
+        duration: Theme.slideTime
+        easing.type: Easing.OutQuint
+      }
+    }
+
+    property bool shown: true
+
+    opacity: shown ? 1 : 0
+    Behavior on opacity {
+      NumberAnimation {
+        duration: Theme.fadeTime
+      }
+    }
+
+    x: shown ? 0 : 16
+    Behavior on x {
+      NumberAnimation {
+        duration: Theme.fadeTime
+        easing.type: Easing.InQuad
+      }
+    }
+
+    Timer {
+      running: !listBox.shown
+      interval: Theme.fadeTime
+      onTriggered: {
+        Notifs.clearAll();
+        listBox.shown = true;
+      }
+    }
 
     ListView {
       id: list
@@ -59,7 +99,17 @@ Column {
       clip: true
       spacing: 8
       boundsBehavior: Flickable.StopAtBounds
-      model: Notifs.list
+      model: ScriptModel {
+        values: Notifs.list
+      }
+
+      displaced: Transition {
+        NumberAnimation {
+          property: "y"
+          duration: Theme.slideTime
+          easing.type: Easing.OutQuint
+        }
+      }
 
       delegate: NotificationRow {
         required property var modelData
@@ -73,10 +123,22 @@ Column {
       x: parent.width + 6
       y: list.height * list.contentY / list.contentHeight
       width: 3
-      height: list.height * list.height / list.contentHeight
       radius: 2
-      color: Theme.gert2
+      color: Theme.grey2
       visible: list.contentHeight > list.height
+      height: list.height * list.height / list.contentHeight
+      Behavior on height {
+        NumberAnimation {
+          duration: Theme.slideTime
+          easing.type: Easing.OutQuint
+        }
+      }
+      opacity: list.contentHeight > list.height ? 1 : 0
+      Behavior on opacity {
+        NumberAnimation {
+          duration: Theme.fadeTime
+        }
+      }
     }
   }
 }

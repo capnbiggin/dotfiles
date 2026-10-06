@@ -11,22 +11,22 @@
   "editor.formatOnSave": true,
   
   // Indent Guides and Bracket Pair Colorization
+  "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": true,
   "editor.bracketPairColorization.enabled": true,
   "workbench.colorCustomizations": {
-    // non-active indent guide colors
-    "editorIndentGuide.background1": "#f38ba899",
-    "editorIndentGuide.background2": "#fab38799",
-    "editorIndentGuide.background3": "#f9e2af99",
-    "editorIndentGuide.background4": "#a6e3a199",
-    "editorIndentGuide.background5": "#74c6ec99",
-    "editorIndentGuide.background6": "#b4befe99",
-    // Indent Colors
+    // indent guide colors
+    "editorIndentGuide.background1": "#f38ba89e",
     "editorIndentGuide.activeBackground1": "#f38ba8",
+    "editorIndentGuide.background2": "#fab38799",
     "editorIndentGuide.activeBackground2": "#fab387",
+    "editorIndentGuide.background3": "#f9e2af99",
     "editorIndentGuide.activeBackground3": "#f9e2af",
+    "editorIndentGuide.background4": "#a6e3a199",
     "editorIndentGuide.activeBackground4": "#a6e3a1",
+    "editorIndentGuide.background5": "#74c6ec99",
     "editorIndentGuide.activeBackground5": "#74c6ec",
+    "editorIndentGuide.background6": "#b4befe99",
     "editorIndentGuide.activeBackground6": "#b4befe",
 
     // Bracket Colors
@@ -36,6 +36,15 @@
     "editorBracketHighlight.foreground4": "#a6e3a1",
     "editorBracketHighlight.foreground5": "#74c6ec",
     "editorBracketHighlight.foreground6": "#b4befe",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#d50000",
+
+    // Error, Warning & Info colors
+    "editorError.background": "#ff80ab66",
+    "editorError.foreground": "#d50000",
+    "editorWarning.background": "#fff98066",
+    "editorWarning.foreground": "#d5d500",
+    "editorInfo.background": "#ffe38045",
+    "editorInfo.foreground": "#d58e00",
   },
 
   // Formating
@@ -48,6 +57,7 @@
 
   "cSpell.words": [
     "capn",
+    "catppuccin",
     "controlcenter",
     "Flickable",
     "gamemode",

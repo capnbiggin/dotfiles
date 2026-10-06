@@ -5,7 +5,7 @@ import qs.components
 import qs.services
 
 Pill {
-  icon: Bluetooth.icon
+  icon: "bluetooth"
   accent: Theme.yellow
   text: Bluetooth.deviceName
   visible: Bluetooth.connected

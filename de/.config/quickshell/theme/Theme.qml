@@ -31,7 +31,8 @@ Singleton {
       property string green: "#7ad9a8"
       property string cyan: "#3dd1b0"
       property string blue: "#5fc8d4"
-      property string purple: "#e89aa8"
+      property string purple: "#bb9af7"
+      property string pink: "#f5c2e7"
 
       property string grey0: "#3a1a35"
       property string grey1: "#5a4d3e"

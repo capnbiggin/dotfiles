@@ -8,6 +8,7 @@ Singleton {
   id: root
 
   property bool doNotDisturb: false
+  property var popups: []
 
   NotificationServer {
     id: server
@@ -19,10 +20,23 @@ Singleton {
 
     onNotification: notif => {
       notif.tracked = true;
+      if (notif.lastGeneration) {
+        return;
+      }
+      if (!root.doNotDisturb && !Popups.controlCenter) {
+        if (root.popups.length === 0) {
+          Popups.pickScreen();
+        }
+        root.popups = [notif].concat(root.popups);
+      }
     }
   }
 
   readonly property var list: server.trackedNotifications.values.slice().reverse()
+
+  function hidePopup(notif) {
+    popups = popups.filter(p => p !== notif);
+  }
 
   function clearAll() {
     for (let notif of list) {

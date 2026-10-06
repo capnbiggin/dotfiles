@@ -15,4 +15,10 @@ Text {
     pixelSize: size
     variableAxes: filled ? Theme.iconAxesFilled : Theme.iconAxes
   }
+
+  Behavior on color {
+    ColorAnimation {
+      duration: Theme.fadeTime
+    }
+  }
 }
