@@ -1,5 +1,6 @@
 --require("autoload_modules")
 
+require("colors.colors")
 require("modules.autostart")
 require("modules.monitors")
 require("modules.rules")

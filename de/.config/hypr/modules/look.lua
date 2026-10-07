@@ -7,8 +7,14 @@ hl.config({
     allow_tearing    = false,
 
     col              = {
-      active_border   = { colors = { "rgba(180, 190, 254, 1)", "rgba(180, 190, 254, 0.6)" }, angle = 45 },
-      inactive_border = { colors = { "rgba(147, 153, 178, 1)", "rgba(147, 153, 178, 0.6)" }, angle = 45 },
+      active_border   = {
+        colors = { "rgba(" .. Colors.cyan.hex:sub(2) .. "cc)", "rgba(" .. Colors.blue.hex:sub(2) .. "cc)" },
+        angle = 45
+      },
+      inactive_border = {
+        colors = { Colors.grey0.hex, "rgba(" .. Colors.grey0.hex:sub(2) .. "cc)" },
+        angle = 45
+      },
     },
   },
 
@@ -23,14 +29,14 @@ hl.config({
       enabled      = true,
       range        = 15,
       render_power = 3,
-      color        = "rgba(30, 30, 46, 0.45)",
+      color        = "rgba(" .. Colors.bg1.hex:sub(2) .. "cc)",
       -- color        = "rgba(243, 139, 168, 1)", -- Test color
     },
 
     blur             = {
       enabled  = true,
-      size     = 3,
-      passes   = 1,
+      size     = 5,
+      passes   = 2,
       vibrancy = 0.1696,
     },
   },
