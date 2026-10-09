@@ -1,0 +1,23 @@
+{
+  "name": "tokyo night",
+
+  "bg0": "#1a1b26",
+  "bg1": "#222332",
+  "bg2": "#2a2c3d",
+  "bg3": "#323449",
+  "bg4": "#3a3c55",
+
+  "fg": "#c0caf5",
+
+  "red": "#f7768e",
+  "orange": "#ff9e64",
+  "yellow": "#e0af68",
+  "green": "#9ece6a",
+  "cyan": "#7dcfff",
+  "blue": "#7aa2f7",
+  "purple": "#bb9af7",
+
+  "grey0": "#545c7e",
+  "grey1": "#a9b1d6",
+  "grey2": "#c0caf5"
+}

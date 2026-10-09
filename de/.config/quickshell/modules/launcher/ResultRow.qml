@@ -13,6 +13,7 @@ Rectangle {
   property string detail: ""
   property string icon: "apps"
   property string iconName: ""
+  property bool current: false
   property color accent: Theme.cyan
 
   signal clicked
@@ -54,7 +55,7 @@ Rectangle {
       left: leading.right
       leftMargin: 10
       right: parent.right
-      rightMargin: 14
+      rightMargin: 44
       verticalCenter: parent.verticalCenter
     }
 
@@ -72,7 +73,7 @@ Rectangle {
     Text {
       width: parent.width
       text: row.detail
-      color: Theme.grey2
+      color: row.current ? Theme.accent : Theme.grey2
       font {
         family: Theme.font
         pixelSize: Theme.xsFontSize
@@ -80,6 +81,18 @@ Rectangle {
       elide: Text.ElideRight
       visible: row.detail !== ""
     }
+  }
+
+  Icon {
+    visible: row.current
+    anchors {
+      right: parent.right
+      rightMargin: 14
+      verticalCenter: parent.verticalCenter
+    }
+    name: "check_circle"
+    filled: true
+    color: Theme.accent
   }
 
   MouseArea {

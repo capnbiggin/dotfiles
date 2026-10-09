@@ -4,18 +4,19 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
+import qs.services
+
 Singleton {
   id: root
 
   FileView {
     id: file
-    path: Quickshell.shellDir + "/colors.json"
+    path: Quickshell.shellDir + "/themes/" + Settings.theme + "/colors.json"
     watchChanges: true
     onFileChanged: reload()
 
     JsonAdapter {
       id: pal
-      property string name: "ariadne"
 
       property string bg0: "#040e0d"
       property string bg1: "#0a1816"
@@ -41,7 +42,7 @@ Singleton {
   }
 
   // colors
-  readonly property string name: pal.name
+  readonly property string name: Settings.theme
 
   readonly property color bg0: pal.bg0
   readonly property color bg1: pal.bg1

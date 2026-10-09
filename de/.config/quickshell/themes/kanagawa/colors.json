@@ -1,0 +1,23 @@
+{
+  "name": "kanagawa",
+
+  "bg0": "#16161d",
+  "bg1": "#1f1f28",
+  "bg2": "#282833",
+  "bg3": "#30303e",
+  "bg4": "#393949",
+
+  "fg": "#dcd7ba",
+
+  "red": "#e82424",
+  "orange": "#ffa066",
+  "yellow": "#dca561",
+  "green": "#98bb6c",
+  "cyan": "#7aa89f",
+  "blue": "#7e9cd8",
+  "purple": "#957fb8",
+
+  "grey0": "#54546d",
+  "grey1": "#727169",
+  "grey2": "#c8c093"
+}

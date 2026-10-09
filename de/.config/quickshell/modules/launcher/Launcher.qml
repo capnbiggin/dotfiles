@@ -11,11 +11,23 @@ PanelWindow {
 
   readonly property bool open: Popups.launcher && Popups.screenName === screen.name
 
+  property string mode: "apps"
+
   readonly property string query: search.text
-  readonly property var rows: Apps.search(query)
+  readonly property var appRows: Apps.search(query)
+  readonly property var themeRows: Themes.names.filter(name => name.includes(query))
+
+  readonly property var rows: {
+    if (mode === "themes") {
+      return themeRows;
+    }
+    return appRows;
+  }
 
   property int selected: 0
   onQueryChanged: selected = 0
+
+  readonly property int railWidth: 56
 
   anchors {
     top: true
@@ -36,9 +48,22 @@ PanelWindow {
 
   onOpenChanged: {
     if (open) {
-      search.text = "";
-      selected = 0;
+      setMode("apps");
       search.forceActiveFocus();
+    }
+  }
+
+  function setMode(newMode) {
+    mode = newMode;
+    search.text = "";
+    selected = 0;
+  }
+
+  function nextMode() {
+    if (mode === "apps") {
+      setMode("themes");
+    } else {
+      setMode("apps");
     }
   }
 
@@ -58,7 +83,11 @@ PanelWindow {
       return;
     }
 
-    rows[selected].execute();
+    if (mode === "themes") {
+      Themes.apply(rows[selected]);
+    } else {
+      rows[selected].execute();
+    }
     Popups.closeAll();
   }
 
@@ -72,7 +101,7 @@ PanelWindow {
     id: panel
 
     width: Theme.panelWidth
-    height: content.height + 28
+    height: Math.max(content.height + 28, 200)
     y: Theme.belowBar
     radius: Theme.panelRadius
     color: Theme.bg1
@@ -90,6 +119,7 @@ PanelWindow {
         easing: Easing.OutQuint
       }
     }
+
     Shadow {}
 
     MouseArea {
@@ -100,11 +130,41 @@ PanelWindow {
       anchors.fill: parent
       clip: true
 
+      Rectangle {
+        id: rail
+        width: launcher.railWidth
+        height: parent.height
+        topLeftRadius: Theme.panelRadius
+        bottomLeftRadius: Theme.panelRadius
+        color: Theme.bg0
+
+        Column {
+          y: 10
+          width: parent.width
+          spacing: 2
+
+          RailButton {
+            icon: "apps"
+            label: "Apps"
+            accent: Theme.cyan
+            on: launcher.mode === "apps"
+            onClicked: launcher.setMode("apps")
+          }
+          RailButton {
+            icon: "palette"
+            label: "Themes"
+            accent: Theme.orange
+            on: launcher.mode === "themes"
+            onClicked: launcher.setMode("themes")
+          }
+        }
+      }
+
       Column {
         id: content
-        x: 14
+        x: launcher.railWidth + 14
         y: 14
-        width: parent.width - 28
+        width: parent.width - launcher.railWidth - 28
         spacing: 12
 
         // Search Bar
@@ -146,6 +206,8 @@ PanelWindow {
                 launcher.move(1);
               } else if (event.key === Qt.Key_Up) {
                 launcher.move(-1);
+              } else if (event.key === Qt.Key_Tab) {
+                launcher.nextMode();
               } else {
                 return;
               }
@@ -168,13 +230,20 @@ PanelWindow {
 
         // App List
         ListView {
+          readonly property bool active: launcher.mode === "apps"
           width: parent.width
-          height: Math.min(launcher.rows.length, 8) * 54 - 6
-          visible: launcher.rows.length > 0
+          height: Math.min(launcher.appRows.length, 8) * 54 - 6
+          visible: active && launcher.appRows.length > 0
+          opacity: active ? 1 : 0
+          Behavior on opacity {
+            NumberAnimation {
+              duration: Theme.fadeTime
+            }
+          }
           clip: true
           spacing: 6
           boundsBehavior: Flickable.StopAtBounds
-          model: launcher.rows
+          model: launcher.appRows
 
           currentIndex: launcher.selected
           highlightMoveDuration: Theme.hoverTime
@@ -199,6 +268,50 @@ PanelWindow {
             }
           }
         }
+
+        // Themes List
+        ListView {
+          readonly property bool active: launcher.mode === "themes"
+          width: parent.width
+          height: Math.min(launcher.themeRows.length, 8) * 54 - 6
+          visible: active && launcher.themeRows.length > 0
+          opacity: active ? 1 : 0
+          Behavior on opacity {
+            NumberAnimation {
+              duration: Theme.fadeTime
+            }
+          }
+          clip: true
+          spacing: 6
+          boundsBehavior: Flickable.StopAtBounds
+          model: launcher.themeRows
+
+          currentIndex: launcher.selected
+          highlightMoveDuration: Theme.hoverTime
+          highlight: Rectangle {
+            z: 2
+            radius: 16
+            color: Theme.tint(Theme.accent)
+          }
+
+          delegate: ResultRow {
+            required property string modelData
+            required property int index
+
+            width: content.width
+            name: modelData
+            detail: current ? "Current0" : ""
+            icon: "palette"
+            accent: Theme.orange
+            current: modelData === Themes.current
+
+            onClicked: {
+              launcher.selected = index;
+              launcher.activate();
+            }
+          }
+        }
+
         Text {
           visible: launcher.rows.length === 0
           width: parent.width

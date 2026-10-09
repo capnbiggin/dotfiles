@@ -1,0 +1,24 @@
+{
+  "name": "ariadne",
+
+  "bg0": "#040e0d",
+  "bg1": "#0a1816",
+  "bg2": "#0f211f",
+  "bg3": "#152a26",
+  "bg4": "#1d3631",
+
+  "fg": "#f5e2c5",
+
+  "red": "#ff6048",
+  "orange": "#ffa478",
+  "yellow": "#f5cd5b",
+  "green": "#7ad9a8",
+  "cyan": "#3dd1b0",
+  "blue": "#5fc8d4",
+  "purple": "#bb9af7",
+  "pink": "#f5c2e7",
+
+  "grey0": "#3a1a35",
+  "grey1": "#5a4d3e",
+  "grey2": "#c4b09a"
+}

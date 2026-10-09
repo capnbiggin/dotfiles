@@ -1,0 +1,23 @@
+{
+  "name": "nord",
+
+  "bg0": "#262b35",
+  "bg1": "#2e3440",
+  "bg2": "#363d4b",
+  "bg3": "#3e4757",
+  "bg4": "#475062",
+
+  "fg": "#d8dee9",
+
+  "red": "#bf616a",
+  "orange": "#d08770",
+  "yellow": "#ebcb8b",
+  "green": "#a3be8c",
+  "cyan": "#8fbcbb",
+  "blue": "#5e81ac",
+  "purple": "#b48ead",
+
+  "grey0": "#616e88",
+  "grey1": "#bfc5cd",
+  "grey2": "#e4e9ef"
+}
