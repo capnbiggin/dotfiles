@@ -50,4 +50,18 @@ ShellRoot {
       Popups.toggleControlCenter();
     }
   }
+  IpcHandler {
+    target: "power"
+
+    function toggle(): void {
+      Popups.togglePower();
+    }
+  }
+  IpcHandler {
+    target: "wallpapers"
+
+    function toggle(): void {
+      Popups.toggleWallpapers();
+    }
+  }
 }

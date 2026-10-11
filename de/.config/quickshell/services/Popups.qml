@@ -4,6 +4,8 @@ import QtQuick
 import Quickshell
 import Quickshell.Hyprland
 
+import qs.modules.launcher
+
 Singleton {
   id: root
 
@@ -12,6 +14,8 @@ Singleton {
 
   property bool power: false
   property bool lock: false
+
+  property bool wallpaperCenter: false
 
   property string screenName: Quickshell.screens[0].name
 
@@ -57,10 +61,24 @@ Singleton {
   function togglePower() {
     if (power) {
       power = false;
-    } else {
       closeAll();
-      pickScreen();
+    } else {
+      if (!controlCenter) {
+        toggleControlCenter();
+      }
       power = true;
+    }
+  }
+
+  function toggleWallpapers() {
+    if (wallpaperCenter) {
+      wallpaperCenter = false;
+      closeAll();
+    } else {
+      if (!launcher) {
+        toggleLauncher();
+      }
+      Launcher.setMode("wallpapers");
     }
   }
 

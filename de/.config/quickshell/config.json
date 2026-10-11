@@ -1,3 +1,8 @@
 {
-    "theme": "ariadne"
+    "theme": "catppuccin",
+    "wallpaperDir": "wallpapers",
+    "wallpapers": {
+        "catppuccin": "/home/capn/.config/quickshell/themes/catppuccin/wallpapers/livi-chan-city.jpg",
+        "wallpapers": "/home/capn/.config/quickshell/themes/catppuccin/wallpapers/livi-chan-city.jpg"
+    }
 }

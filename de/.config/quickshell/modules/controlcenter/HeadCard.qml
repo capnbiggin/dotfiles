@@ -6,13 +6,21 @@ import qs.components
 import qs.services
 
 Item {
-  width: parent.width
-  height: 36
+  // width: parent.width
+  // height: Popups.power ? 36 + 18 + 92 : 36
+  // clip: true
+  // Behavior on height {
+  //   NumberAnimation {
+  //     id: headerSlide
+  //     duration: Theme.slideTime
+  //     easing.type: Easing.OutQuint
+  //   }
+  // }
 
   // User Info
   Row {
     spacing: 10
-    anchors.verticalCenter: parent.verticalCenter
+    anchors.top: parent.top
     IconDisc {
       icon: "person"
       accent: Theme.cyan
@@ -41,7 +49,8 @@ Item {
   Row {
     spacing: 8
     anchors.right: parent.right
-    anchors.verticalCenter: parent.verticalCenter
+    anchors.top: parent.top
+    anchors.topMargin: 3
     // Lock Button
     RoundButton {
       icon: "lock"
@@ -57,4 +66,6 @@ Item {
       onClicked: Popups.togglePower()
     }
   }
+
+  PowerCard {}
 }

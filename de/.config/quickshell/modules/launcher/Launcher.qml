@@ -16,10 +16,14 @@ PanelWindow {
   readonly property string query: search.text
   readonly property var appRows: Apps.search(query)
   readonly property var themeRows: Themes.names.filter(name => name.includes(query))
+  readonly property var wallpaperRows: Wallpapers.files.filter(file => Wallpapers.nameOf(file).includes(query))
 
   readonly property var rows: {
     if (mode === "themes") {
       return themeRows;
+    }
+    if (mode === "wallpapers") {
+      return wallpaperRows;
     }
     return appRows;
   }
@@ -28,6 +32,7 @@ PanelWindow {
   onQueryChanged: selected = 0
 
   readonly property int railWidth: 56
+  readonly property int wideWidth: 480
 
   anchors {
     top: true
@@ -62,6 +67,8 @@ PanelWindow {
   function nextMode() {
     if (mode === "apps") {
       setMode("themes");
+    } else if (mode === "themes") {
+      setMode("wallpapers");
     } else {
       setMode("apps");
     }
@@ -85,6 +92,8 @@ PanelWindow {
 
     if (mode === "themes") {
       Themes.apply(rows[selected]);
+    } else if (mode === "wallpapers") {
+      Wallpapers.apply(rows[selected]);
     } else {
       rows[selected].execute();
     }
@@ -100,7 +109,7 @@ PanelWindow {
   Rectangle {
     id: panel
 
-    width: Theme.panelWidth
+    width: launcher.mode === "wallpapers" ? launcher.wideWidth : Theme.panelWidth
     height: Math.max(content.height + 28, 200)
     y: Theme.belowBar
     radius: Theme.panelRadius
@@ -114,6 +123,12 @@ PanelWindow {
       }
     }
     Behavior on height {
+      NumberAnimation {
+        duration: Theme.slideTime
+        easing: Easing.OutQuint
+      }
+    }
+    Behavior on width {
       NumberAnimation {
         duration: Theme.slideTime
         easing: Easing.OutQuint
@@ -156,6 +171,13 @@ PanelWindow {
             accent: Theme.orange
             on: launcher.mode === "themes"
             onClicked: launcher.setMode("themes")
+          }
+          RailButton {
+            icon: "wallpaper"
+            label: "Walls"
+            accent: Theme.purple
+            on: launcher.mode === "wallpapers"
+            onClicked: launcher.setMode("wallpapers")
           }
         }
       }
@@ -203,8 +225,12 @@ PanelWindow {
               if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                 launcher.activate();
               } else if (event.key === Qt.Key_Down) {
-                launcher.move(1);
+                launcher.move(launcher.mode === "wallpapers" ? 2 : 1);
               } else if (event.key === Qt.Key_Up) {
+                launcher.move(launcher.mode === "wallpapers" ? -2 : -1);
+              } else if (event.key === Qt.Key_Right && launcher.mode === "wallpapers") {
+                launcher.move(1);
+              } else if (event.key === Qt.Key_Left && launcher.mode === "wallpapers") {
                 launcher.move(-1);
               } else if (event.key === Qt.Key_Tab) {
                 launcher.nextMode();
@@ -300,7 +326,7 @@ PanelWindow {
 
             width: content.width
             name: modelData
-            detail: current ? "Current0" : ""
+            detail: current ? "Current" : ""
             icon: "palette"
             accent: Theme.orange
             current: modelData === Themes.current
@@ -312,6 +338,52 @@ PanelWindow {
           }
         }
 
+        // Wallpaper grid
+        GridView {
+          readonly property bool active: launcher.mode === "wallpapers"
+          width: 396
+          height: Math.min(Math.ceil(launcher.wallpaperRows.length / 2), 3) * 130
+          visible: active && launcher.wallpaperRows.length > 0
+          opacity: active ? 1 : 0
+          Behavior on opacity {
+            NumberAnimation {
+              duration: Theme.fadeTime
+            }
+          }
+          clip: true
+          cellWidth: 198
+          cellHeight: 130
+          boundsBehavior: Flickable.StopAtBounds
+          model: launcher.wallpaperRows
+          currentIndex: launcher.selected
+          highlightMoveDuration: Theme.hoverTime
+
+          highlight: Item {
+            z: 2
+            Rectangle {
+              width: 190
+              height: 107
+              radius: 16
+              color: "transparent"
+              border.width: 2
+              border.color: Theme.purple
+            }
+          }
+
+          delegate: WallpaperTile {
+            required property string modelData
+            required property int index
+            file: modelData
+            name: Wallpapers.nameOf(modelData)
+            current: modelData === Wallpapers.current
+            onClicked: {
+              launcher.selected = index;
+              launcher.activate();
+            }
+          }
+        }
+
+        // (query) Nothing Found
         Text {
           visible: launcher.rows.length === 0
           width: parent.width

@@ -51,8 +51,8 @@ PanelWindow {
         easing.type: Easing.OutQuint
       }
     }
-
     Behavior on height {
+      enabled: !headerSlide.running
       NumberAnimation {
         duration: Theme.slideTime
         easing.type: Easing.OutQuint
@@ -76,7 +76,18 @@ PanelWindow {
         width: parent.width - 28
         spacing: 18
 
-        HeadCard {}
+        HeadCard {
+          width: parent.width
+          height: Popups.power ? 36 + 18 + 92 : 36
+          clip: true
+          Behavior on height {
+            NumberAnimation {
+              id: headerSlide
+              duration: Theme.slideTime
+              easing.type: Easing.OutQuint
+            }
+          }
+        }
         ToggleCard {}
         SliderCard {}
         MediaCard {}

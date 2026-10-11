@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.allowVariableFonts": true,
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 12,
@@ -56,11 +56,14 @@
   ],
 
   "cSpell.words": [
+    "awww",
     "capn",
     "catppuccin",
     "controlcenter",
     "Flickable",
+    "folderlistmodel",
     "gamemode",
+    "hyprctl",
     "Layershell",
     "Mpris",
     "notif",
@@ -68,12 +71,14 @@
     "opsz",
     "paru",
     "Pipewire",
+    "poweroff",
     "Propo",
     "Quickshell",
     "rgba",
     "rofi",
     "shellroot",
     "toplevels",
+    "webp",
     "wght"
   ],
 }

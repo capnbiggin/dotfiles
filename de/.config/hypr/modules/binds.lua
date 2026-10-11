@@ -22,7 +22,7 @@ hl.bind(mod .. " + O", hl.dsp.exec_cmd(notes1))
 hl.bind(mod .. " + SHIFT + O", hl.dsp.exec_cmd(notes2))
 hl.bind(mod .. " + I", hl.dsp.exec_cmd(editor3))
 hl.bind(mod .. " + SHIFT + I", hl.dsp.exec_cmd(editor2))
-hl.bind(mod .. " + ALT + I", hl.dsp.exec_cmd(editor1))
+hl.bind(mod .. " + ALT + I", hl.dsp.exec_cmd(editor3))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd(bar_toggle))
 hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
@@ -42,8 +42,10 @@ hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call launcher toggle"))
 hl.bind(mod .. " + A", hl.dsp.exec_cmd("qs ipc call cc toggle"))
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(capn_menu))
 hl.bind(mod .. " + CTRL + SPACE", hl.dsp.exec_cmd(power_menu))
-hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(wallpaper))
+hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd("qs ipc call wallpapers toggle"))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(cliphist))
+
+hl.bind(mod .. " + ESCAPE", hl.dsp.exec_cmd("qs ipc call power toggle"))
 
 ---------------------
 -- Window Keybinds --
