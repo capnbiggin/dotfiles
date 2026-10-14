@@ -3,8 +3,8 @@ local mod         = "SUPER"
 ----------------------
 -- Program Keybinds --
 ----------------------
-local terminal1   = "ghostty"
-local terminal2   = "kitty"
+local terminal1   = "kitty"
+local terminal2   = "ghostty"
 local browser1    = "zen-browser || zen"
 local fileManager = "thunar"
 local notes1      = "obsidian"

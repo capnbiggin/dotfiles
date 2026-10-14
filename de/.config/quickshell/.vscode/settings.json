@@ -47,6 +47,17 @@
     "editorInfo.foreground": "#d58e00",
   },
 
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "variable.parameter",
+        "settings": {
+          "foreground": "#f3e4c2"
+        }
+      }
+    ]
+  },
+
   // Formating
   "editor.defaultFormatter": "Delgan.qml-format",
   "qmlFormat.command": "/usr/lib/qt6/bin/qmlformat",
@@ -57,12 +68,14 @@
 
   "cSpell.words": [
     "awww",
+    "brightnessctl",
     "capn",
     "catppuccin",
     "controlcenter",
     "Flickable",
     "folderlistmodel",
     "gamemode",
+    "Ghostty",
     "hyprctl",
     "Layershell",
     "Mpris",

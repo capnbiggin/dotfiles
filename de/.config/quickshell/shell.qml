@@ -7,6 +7,7 @@ import qs.modules.bar
 import qs.modules.controlcenter
 import qs.modules.notifications
 import qs.modules.launcher
+import qs.modules.theming
 
 ShellRoot {
   id: root
@@ -36,6 +37,9 @@ ShellRoot {
     }
   }
 
+  KittyColors {}
+  GhosttyColors {}
+
   IpcHandler {
     target: "launcher"
 
@@ -55,13 +59,6 @@ ShellRoot {
 
     function toggle(): void {
       Popups.togglePower();
-    }
-  }
-  IpcHandler {
-    target: "wallpapers"
-
-    function toggle(): void {
-      Popups.toggleWallpapers();
     }
   }
 }

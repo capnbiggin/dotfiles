@@ -18,7 +18,7 @@ PanelWindow {
     right: Theme.margin
   }
 
-  implicitHeight: Theme.moduleHeight + Theme.shadowRoom / 2
+  implicitHeight: Theme.moduleHeight + Theme.shadowRoom
   exclusiveZone: implicitHeight
 
   color: "transparent"

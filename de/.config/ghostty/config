@@ -9,7 +9,7 @@ background-opacity = 0.80
 window-decoration = none
 
 # Theme
-theme = catppuccin-mocha
+theme = colors
 #background = 0b0b12
 #foreground = f4efff
 #

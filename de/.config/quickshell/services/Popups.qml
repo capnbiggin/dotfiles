@@ -15,8 +15,6 @@ Singleton {
   property bool power: false
   property bool lock: false
 
-  property bool wallpaperCenter: false
-
   property string screenName: Quickshell.screens[0].name
 
   // Pick screen for Popup window
@@ -67,18 +65,6 @@ Singleton {
         toggleControlCenter();
       }
       power = true;
-    }
-  }
-
-  function toggleWallpapers() {
-    if (wallpaperCenter) {
-      wallpaperCenter = false;
-      closeAll();
-    } else {
-      if (!launcher) {
-        toggleLauncher();
-      }
-      Launcher.setMode("wallpapers");
     }
   }
 
