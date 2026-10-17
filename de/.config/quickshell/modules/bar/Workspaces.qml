@@ -10,7 +10,7 @@ Rectangle {
 
   required property var screen
 
-  property int cellWidth: 28
+  property int cellWidth: 20
   property int padding: 5
   property int thumbSize: 18
 
@@ -81,14 +81,22 @@ Rectangle {
         Rectangle {
           anchors.centerIn: parent
 
-          width: {
+          // width: {
+          //   if (dotMouse.containsMouse)
+          //     return 11;
+          //   if (parent.busy || parent.modelData.active)
+          //     return 8;
+          //   return 6;
+          // }
+          // height: width
+          width: 6
+          height: {
             if (dotMouse.containsMouse)
-              return 11;
+              return 14;
             if (parent.busy || parent.modelData.active)
-              return 8;
-            return 6;
+              return 12;
+            return 10;
           }
-          height: width
           radius: width / 2
 
           Behavior on width {

@@ -39,6 +39,7 @@ ShellRoot {
 
   KittyColors {}
   GhosttyColors {}
+  HyprlandColors {}
 
   IpcHandler {
     target: "launcher"

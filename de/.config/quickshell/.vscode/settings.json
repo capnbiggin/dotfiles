@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.allowVariableFonts": true,
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 12,
@@ -47,16 +47,16 @@
     "editorInfo.foreground": "#d58e00",
   },
 
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "variable.parameter",
-        "settings": {
-          "foreground": "#f3e4c2"
-        }
-      }
-    ]
-  },
+  // "editor.tokenColorCustomizations": {
+  //   "textMateRules": [
+  //     {
+  //       "scope": "variable.parameter",
+  //       "settings": {
+  //         "foreground": "#f3e4c2"
+  //       }
+  //     }
+  //   ]
+  // },
 
   // Formating
   "editor.defaultFormatter": "Delgan.qml-format",
@@ -76,6 +76,7 @@
     "folderlistmodel",
     "gamemode",
     "Ghostty",
+    "hypr",
     "hyprctl",
     "Layershell",
     "Mpris",

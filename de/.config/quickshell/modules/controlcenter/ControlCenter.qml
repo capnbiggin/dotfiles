@@ -21,7 +21,12 @@ PanelWindow {
   exclusionMode: ExclusionMode.Ignore
   WlrLayershell.keyboardFocus: open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
-  color: "transparent"
+  color: open ? Theme.alpha(Theme.bg0, 0.65) : "transparent"
+  Behavior on color {
+    ColorAnimation {
+      duration: Theme.fadeTime
+    }
+  }
 
   Region {
     id: nothing
@@ -43,6 +48,11 @@ PanelWindow {
     y: Theme.belowBar
     radius: Theme.panelRadius
     color: Theme.bg1
+
+    border {
+      width: 1
+      color: Theme.alpha(Theme.cyan, 0.45)
+    }
 
     x: cc.open ? cc.width - width - Theme.margin : cc.width
     Behavior on x {

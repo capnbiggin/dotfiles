@@ -71,6 +71,10 @@ Singleton {
     return Qt.alpha(c, 0.18);
   }
 
+  function alpha(c, a) {
+    return Qt.rgba(c.r, c.g, c.b, a);
+  }
+
   // sizing
   readonly property int moduleHeight: 30
   readonly property int spacing: 8

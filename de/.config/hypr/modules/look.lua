@@ -8,11 +8,11 @@ hl.config({
 
     col              = {
       active_border   = {
-        colors = { "rgba(" .. Colors.cyan.hex:sub(2) .. "cc)", "rgba(" .. Colors.blue.hex:sub(2) .. "cc)" },
+        colors = { "rgba(" .. Colors.cyan:sub(2) .. "cc)", "rgba(" .. Colors.blue:sub(2) .. "cc)" },
         angle = 45
       },
       inactive_border = {
-        colors = { Colors.grey0.hex, "rgba(" .. Colors.grey0.hex:sub(2) .. "cc)" },
+        colors = { Colors.grey0, "rgba(" .. Colors.grey0:sub(2) .. "cc)" },
         angle = 45
       },
     },
@@ -29,7 +29,7 @@ hl.config({
       enabled      = true,
       range        = 15,
       render_power = 3,
-      color        = "rgba(" .. Colors.bg1.hex:sub(2) .. "cc)",
+      color        = "rgba(" .. Colors.bg1:sub(2) .. "cc)",
       -- color        = "rgba(243, 139, 168, 1)", -- Test color
     },
 

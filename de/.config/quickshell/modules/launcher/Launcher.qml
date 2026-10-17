@@ -42,7 +42,12 @@ PanelWindow {
   }
 
   exclusionMode: ExclusionMode.Ignore
-  color: "transparent"
+  color: open ? Theme.alpha(Theme.bg0, 0.65) : "transparent"
+  Behavior on color {
+    ColorAnimation {
+      duration: Theme.fadeTime
+    }
+  }
 
   WlrLayershell.keyboardFocus: open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
@@ -115,6 +120,11 @@ PanelWindow {
     radius: Theme.panelRadius
     color: Theme.bg1
 
+    border {
+      width: 1
+      color: Theme.alpha(Theme.cyan, 0.45)
+    }
+
     x: launcher.open ? Theme.margin : -width
     Behavior on x {
       NumberAnimation {
@@ -152,6 +162,11 @@ PanelWindow {
         topLeftRadius: Theme.panelRadius
         bottomLeftRadius: Theme.panelRadius
         color: Theme.bg0
+
+        border {
+          width: 1
+          color: Theme.alpha(Theme.cyan, 0.45)
+        }
 
         Column {
           y: 10
