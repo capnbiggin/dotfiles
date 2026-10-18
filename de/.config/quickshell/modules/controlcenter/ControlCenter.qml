@@ -44,7 +44,7 @@ PanelWindow {
     id: panel
 
     width: Theme.panelWidth
-    height: content.height + 20
+    height: content.height + 25
     y: Theme.belowBar
     radius: Theme.panelRadius
     color: Theme.bg1
@@ -88,7 +88,7 @@ PanelWindow {
 
         HeadCard {
           width: parent.width
-          height: Popups.power ? 36 + 18 + 92 : 36
+          height: Popups.power ? 36 + 18 + 92 : 36 // 36=HeadCard height 18=spacing 92=PowerCard height
           clip: true
           Behavior on height {
             NumberAnimation {

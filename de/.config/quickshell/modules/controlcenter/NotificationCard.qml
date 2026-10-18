@@ -118,7 +118,7 @@ Column {
       }
     }
 
-    // Side Scroll Bar for Notifications
+    // Side Scroll Bar for Notifications list
     Rectangle {
       x: parent.width + 6
       y: list.height * list.contentY / list.contentHeight

@@ -49,12 +49,14 @@ PanelWindow {
     }
   }
 
+  // ---------------
+  // Make all keyboard and mouse clicks only available to this panel when open
   WlrLayershell.keyboardFocus: open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
-
   Region {
     id: nothing
   }
   mask: open ? null : nothing
+  // ---------------
 
   onOpenChanged: {
     if (open) {
@@ -82,10 +84,10 @@ PanelWindow {
   function move(step) {
     let next = selected + step;
     if (next < 0) {
-      next = 0;
+      next = rows.length - 1;
     }
     if (next > rows.length - 1) {
-      next = rows.length - 1;
+      next = 0;
     }
     selected = next;
   }
@@ -94,7 +96,6 @@ PanelWindow {
     if (rows.length === 0) {
       return;
     }
-
     if (mode === "themes") {
       Themes.apply(rows[selected]);
     } else if (mode === "wallpapers") {
@@ -151,6 +152,7 @@ PanelWindow {
       anchors.fill: parent
     }
 
+    // --- Side Rail Buttons ----------
     Item {
       anchors.fill: parent
       clip: true
@@ -204,7 +206,7 @@ PanelWindow {
         width: parent.width - launcher.railWidth - 28
         spacing: 12
 
-        // Search Bar
+        // --- Search Bar ----------
         Rectangle {
           width: parent.width
           height: 44
@@ -281,7 +283,7 @@ PanelWindow {
             }
           }
 
-          // App List
+          // --- App List ----------
           ListView {
             id: appList
             anchors.fill: parent
