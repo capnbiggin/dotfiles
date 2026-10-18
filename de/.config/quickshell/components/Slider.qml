@@ -68,10 +68,10 @@ Item {
     }
     height: slider.height
 
-    onPressed: mouse => sendValue(mouse.x)
-    onPositionChanged: mouse => sendValue(mouse.x)
+    onPressed: mouse => movedValue(mouse.x)
+    onPositionChanged: mouse => movedValue(mouse.x)
 
-    function sendValue(x) {
+    function movedValue(x) {
       slider.moved(x / width);
     }
   }

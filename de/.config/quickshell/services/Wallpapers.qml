@@ -9,10 +9,9 @@ import qs.theme
 Singleton {
   id: root
 
-  readonly property string folder: Quickshell.shellDir + "/themes"
+  readonly property string folder: Quickshell.shellDir
 
   property var all: []
-
   readonly property var files: all.filter(file => file.includes("/" + Theme.wallpaperDir + "/"))
 
   readonly property string current: Settings.wallpapers[Theme.wallpaperDir] ?? files[0] ?? ""
@@ -20,7 +19,7 @@ Singleton {
 
   Process {
     id: finder
-    command: ["find", "-L", root.folder, "-path", "*/wallpapers/*", "-type", "f", "(", "-iname", "*.jpg", "-o", "-iname", "*.jpeg", "-o", "-iname", "*.png", "-o", "-iname", "*.webp", ")"]
+    command: ["find", "-L", root.folder, "-type", "f", "(", "-iname", "*.jpg", "-o", "-iname", "*.jpeg", "-o", "-iname", "*.png", "-o", "-iname", "*.webp", ")"]
     running: true
 
     stdout: StdioCollector {

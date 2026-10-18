@@ -101,8 +101,8 @@ PanelWindow {
       Wallpapers.apply(rows[selected]);
     } else {
       rows[selected].execute();
+      Popups.closeAll();
     }
-    Popups.closeAll();
   }
 
   MouseArea {
@@ -269,8 +269,7 @@ PanelWindow {
           }
         }
 
-        // App List
-        ListView {
+        Item {
           readonly property bool active: launcher.mode === "apps"
           width: parent.width
           height: Math.min(launcher.appRows.length, 8) * 54 - 6
@@ -281,37 +280,65 @@ PanelWindow {
               duration: Theme.fadeTime
             }
           }
-          clip: true
-          spacing: 6
-          boundsBehavior: Flickable.StopAtBounds
-          model: launcher.appRows
 
-          currentIndex: launcher.selected
-          highlightMoveDuration: Theme.hoverTime
-          highlight: Rectangle {
-            z: 2
-            radius: 16
-            color: Theme.tint(Theme.accent)
+          // App List
+          ListView {
+            id: appList
+            anchors.fill: parent
+            clip: true
+            spacing: 6
+            boundsBehavior: Flickable.StopAtBounds
+            model: launcher.appRows
+
+            currentIndex: launcher.selected
+            highlightMoveDuration: Theme.hoverTime
+            highlight: Rectangle {
+              z: 2
+              radius: 16
+              color: Theme.tint(Theme.accent)
+            }
+
+            delegate: ResultRow {
+              required property var modelData
+              required property int index
+
+              width: content.width
+              name: modelData.name
+              detail: modelData.comment
+              iconName: modelData.icon
+
+              onClicked: {
+                launcher.selected = index;
+                launcher.activate();
+              }
+            }
           }
 
-          delegate: ResultRow {
-            required property var modelData
-            required property int index
-
-            width: content.width
-            name: modelData.name
-            detail: modelData.comment
-            iconName: modelData.icon
-
-            onClicked: {
-              launcher.selected = index;
-              launcher.activate();
+          // Side Scroll Bar for Apps
+          Rectangle {
+            x: parent.width + 6
+            y: appList.height * appList.contentY / appList.contentHeight
+            width: 3
+            radius: 2
+            color: Theme.grey2
+            visible: appList.contentHeight > appList.height && launcher.mode === "apps"
+            height: appList.height * appList.height / appList.contentHeight
+            Behavior on height {
+              NumberAnimation {
+                duration: Theme.slideTime
+                easing.type: Easing.OutQuint
+              }
+            }
+            opacity: appList.contentHeight > appList.height ? 1 : 0
+            Behavior on opacity {
+              NumberAnimation {
+                duration: Theme.fadeTime
+              }
             }
           }
         }
 
-        // Themes List
-        ListView {
+        Item {
           readonly property bool active: launcher.mode === "themes"
           width: parent.width
           height: Math.min(launcher.themeRows.length, 8) * 54 - 6
@@ -322,39 +349,66 @@ PanelWindow {
               duration: Theme.fadeTime
             }
           }
-          clip: true
-          spacing: 6
-          boundsBehavior: Flickable.StopAtBounds
-          model: launcher.themeRows
 
-          currentIndex: launcher.selected
-          highlightMoveDuration: Theme.hoverTime
-          highlight: Rectangle {
-            z: 2
-            radius: 16
-            color: Theme.tint(Theme.accent)
+          // Themes List
+          ListView {
+            id: themeList
+            anchors.fill: parent
+            clip: true
+            spacing: 6
+            boundsBehavior: Flickable.StopAtBounds
+            model: launcher.themeRows
+
+            currentIndex: launcher.selected
+            highlightMoveDuration: Theme.hoverTime
+            highlight: Rectangle {
+              z: 2
+              radius: 16
+              color: Theme.tint(Theme.accent)
+            }
+
+            delegate: ResultRow {
+              required property string modelData
+              required property int index
+
+              width: content.width
+              name: modelData
+              detail: current ? "Current" : ""
+              icon: "palette"
+              accent: Theme.orange
+              current: modelData === Themes.current
+
+              onClicked: {
+                launcher.selected = index;
+                launcher.activate();
+              }
+            }
           }
-
-          delegate: ResultRow {
-            required property string modelData
-            required property int index
-
-            width: content.width
-            name: modelData
-            detail: current ? "Current" : ""
-            icon: "palette"
-            accent: Theme.orange
-            current: modelData === Themes.current
-
-            onClicked: {
-              launcher.selected = index;
-              launcher.activate();
+          // Side Scroll Bar for Themes
+          Rectangle {
+            x: parent.width + 6
+            y: themeList.height * themeList.contentY / themeList.contentHeight
+            width: 3
+            radius: 2
+            color: Theme.grey2
+            visible: themeList.contentHeight > themeList.height && launcher.mode === "themes"
+            height: themeList.height * themeList.height / themeList.contentHeight
+            Behavior on height {
+              NumberAnimation {
+                duration: Theme.slideTime
+                easing.type: Easing.OutQuint
+              }
+            }
+            opacity: themeList.contentHeight > themeList.height ? 1 : 0
+            Behavior on opacity {
+              NumberAnimation {
+                duration: Theme.fadeTime
+              }
             }
           }
         }
 
-        // Wallpaper grid
-        GridView {
+        Item {
           readonly property bool active: launcher.mode === "wallpapers"
           width: 396
           height: Math.min(Math.ceil(launcher.wallpaperRows.length / 2), 3) * 130
@@ -365,35 +419,64 @@ PanelWindow {
               duration: Theme.fadeTime
             }
           }
-          clip: true
-          cellWidth: 198
-          cellHeight: 130
-          boundsBehavior: Flickable.StopAtBounds
-          model: launcher.wallpaperRows
-          currentIndex: launcher.selected
-          highlightMoveDuration: Theme.hoverTime
 
-          highlight: Item {
-            z: 2
-            Rectangle {
-              width: 190
-              height: 107
-              radius: 16
-              color: "transparent"
-              border.width: 2
-              border.color: Theme.purple
+          // Wallpaper grid
+          GridView {
+            id: grid
+            anchors.fill: parent
+            clip: true
+            cellWidth: 198
+            cellHeight: 130
+            boundsBehavior: Flickable.StopAtBounds
+            model: launcher.wallpaperRows
+            currentIndex: launcher.selected
+            highlightMoveDuration: Theme.hoverTime
+
+            highlight: Item {
+              z: 2
+              Rectangle {
+                width: 190
+                height: 107
+                radius: 16
+                color: "transparent"
+                border.width: 2
+                border.color: Theme.purple
+              }
+            }
+
+            delegate: WallpaperTile {
+              required property string modelData
+              required property int index
+              file: modelData
+              name: Wallpapers.nameOf(modelData)
+              current: modelData === Wallpapers.current
+              onClicked: {
+                launcher.selected = index;
+                launcher.activate();
+              }
             }
           }
 
-          delegate: WallpaperTile {
-            required property string modelData
-            required property int index
-            file: modelData
-            name: Wallpapers.nameOf(modelData)
-            current: modelData === Wallpapers.current
-            onClicked: {
-              launcher.selected = index;
-              launcher.activate();
+          // Side Scroll Bar for Wallpapers
+          Rectangle {
+            x: parent.width + 6
+            y: grid.height * grid.contentY / grid.contentHeight
+            width: 3
+            radius: 2
+            color: Theme.grey2
+            visible: grid.contentHeight > grid.height && launcher.mode === "wallpapers"
+            height: grid.height * grid.height / grid.contentHeight
+            Behavior on height {
+              NumberAnimation {
+                duration: Theme.slideTime
+                easing.type: Easing.OutQuint
+              }
+            }
+            opacity: grid.contentHeight > grid.height ? 1 : 0
+            Behavior on opacity {
+              NumberAnimation {
+                duration: Theme.fadeTime
+              }
             }
           }
         }

@@ -39,7 +39,7 @@ Singleton {
       newVolume = 0;
     }
     if (newVolume > 1.0) {
-      newvolume = 1.0;
+      newVolume = 1.0;
     }
     sink.audio.volume = newVolume;
   }

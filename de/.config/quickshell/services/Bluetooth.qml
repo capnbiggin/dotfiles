@@ -13,8 +13,8 @@ Singleton {
 
   readonly property var device: {
     let devices = Bluez.Bluetooth.devices.values;
-    for (let i = 0; i < devices.lenght; i++) {
-      if (devces[i].connected)
+    for (let i = 0; i < devices.length; i++) {
+      if (devices[i].connected)
         return devices[i];
     }
     return null;
