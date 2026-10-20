@@ -5,6 +5,7 @@ import Quickshell.Io
 import qs.services
 import qs.modules.bar
 import qs.modules.controlcenter
+import qs.modules.settingspanel
 import qs.modules.notifications
 import qs.modules.launcher
 import qs.modules.theming
@@ -28,6 +29,10 @@ ShellRoot {
       }
 
       ControlCenter {
+        screen: perScreen.modelData
+      }
+
+      SettingsPanel {
         screen: perScreen.modelData
       }
 

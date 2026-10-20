@@ -10,9 +10,9 @@ Rectangle {
 
   required property var screen
 
-  property int cellWidth: 20
+  property int cellWidth: 15
   property int padding: 5
-  property int thumbSize: 18
+  property int thumbSize: 20
 
   readonly property var monitor: Hyprland.monitorFor(root.screen)
 
@@ -47,8 +47,8 @@ Rectangle {
   Shadow {}
 
   Rectangle {
-    x: root.padding + root.activeIndex * root.cellWidth + (root.cellWidth - root.thumbSize) / 2
-    width: root.thumbSize
+    x: root.padding + root.activeIndex * root.cellWidth + (root.cellWidth - root.thumbSize / 1.5) / 2
+    width: root.thumbSize / 1.5
     height: root.thumbSize
     radius: root.thumbSize / 2
     anchors.verticalCenter: parent.verticalCenter

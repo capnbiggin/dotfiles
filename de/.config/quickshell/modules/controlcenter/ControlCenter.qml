@@ -18,16 +18,15 @@ PanelWindow {
     bottom: true
   }
 
-  exclusionMode: ExclusionMode.Ignore
-  WlrLayershell.keyboardFocus: open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
-
-  color: open ? Theme.alpha(Theme.bg0, 0.65) : "transparent"
+  color: open ? Theme.alpha(Theme.bg3, 0.65) : "transparent"
   Behavior on color {
     ColorAnimation {
       duration: Theme.fadeTime
     }
   }
 
+  exclusionMode: ExclusionMode.Ignore
+  WlrLayershell.keyboardFocus: open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
   Region {
     id: nothing
   }

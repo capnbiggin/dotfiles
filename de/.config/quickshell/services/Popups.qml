@@ -14,6 +14,7 @@ Singleton {
 
   property bool power: false
   property bool lock: false
+  property bool settingsPanel: false
 
   property string screenName: Quickshell.screens[0].name
 
@@ -31,6 +32,7 @@ Singleton {
     launcher = false;
     controlCenter = false;
     power = false;
+    settingsPanel = false;
   }
 
   // Launcher Toggle
@@ -66,6 +68,12 @@ Singleton {
       }
       power = true;
     }
+  }
+
+  // LSettings Function
+  function toggleSettings() {
+    closeAll();
+    settingsPanel = true;
   }
 
   // Lock Screen Function

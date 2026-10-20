@@ -41,12 +41,20 @@ Item {
     anchors.right: parent.right
     anchors.top: parent.top
     anchors.topMargin: 3
+
     // Lock Button
     RoundButton {
       icon: "lock"
       accent: Theme.yellow
       shadow: false
       onClicked: Popups.lockScreen()
+    }
+    //Settings Button
+    RoundButton {
+      icon: "settings"
+      accent: Theme.blue
+      shadow: false
+      onClicked: Popups.toggleSettings()
     }
     //Power Button
     RoundButton {
