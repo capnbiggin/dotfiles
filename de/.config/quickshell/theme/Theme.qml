@@ -112,6 +112,4 @@ Singleton {
   readonly property int slideTime: 360
   readonly property int fadeTime: 225
   readonly property int hoverTime: 140
-
-  readonly property string wallpaperDir: Settings.wallpaperDir
 }

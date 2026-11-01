@@ -11,10 +11,11 @@ Singleton {
 
   property bool launcher: false
   property bool controlCenter: false
+  property bool settingsPanel: false
 
   property bool power: false
   property bool lock: false
-  property bool settingsPanel: false
+  property bool wallpaper: false
 
   property string screenName: Quickshell.screens[0].name
 
@@ -33,6 +34,7 @@ Singleton {
     controlCenter = false;
     power = false;
     settingsPanel = false;
+    wallpaper = false;
   }
 
   // Launcher Toggle
@@ -67,6 +69,20 @@ Singleton {
         toggleControlCenter();
       }
       power = true;
+    }
+  }
+
+  // Power Menu toggle
+  function toggleWallpapers() {
+    if (wallpaper) {
+      wallpaper = false;
+      closeAll();
+    } else {
+      if (!launcher) {
+        toggleLauncher();
+      }
+      wallpaper = true;
+      Launcher.setMode("wallpapers");
     }
   }
 

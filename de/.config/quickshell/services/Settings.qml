@@ -8,8 +8,7 @@ Singleton {
   id: root
 
   property alias theme: saved.theme
-  property alias wallpaperDir: saved.wallpaperDir
-  property alias wallpapers: saved.wallpapers
+  property alias wallpaper: saved.wallpaper
 
   FileView {
     id: file
@@ -19,8 +18,7 @@ Singleton {
     JsonAdapter {
       id: saved
       property string theme: "catppuccin"
-      property string wallpaperDir: "wallpapers"
-      property var wallpapers: ({})
+      property string wallpaper: ""
     }
   }
 

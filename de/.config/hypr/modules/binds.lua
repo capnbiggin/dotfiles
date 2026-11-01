@@ -3,30 +3,29 @@ local mod         = "SUPER"
 ----------------------
 -- Program Keybinds --
 ----------------------
-local terminal1   = "kitty"
-local terminal2   = "ghostty"
-local browser1    = "zen-browser || zen"
-local fileManager = "thunar"
+local kitty       = "kitty"
+local ghostty     = "ghostty"
+local zen_browser = "zen-browser || zen"
+local thunar      = "pkill thunar || thunar"
 local notes1      = "obsidian"
 local notes2      = "zennotes"
-local editor1     = "code"
 local editor2     = "zeditor"
 local editor3     = "codium"
 local bar_toggle  = "pkill qs || qs"
 
-hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(terminal1))
-hl.bind(mod .. " + ALT + RETURN", hl.dsp.exec_cmd(terminal2))
-hl.bind(mod .. " + W", hl.dsp.exec_cmd(browser1))
-hl.bind(mod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mod .. " + O", hl.dsp.exec_cmd(notes1))
+hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(kitty), { description = "Launch kitty terminal" })
+hl.bind(mod .. " + ALT + RETURN", hl.dsp.exec_cmd(ghostty), { description = "Launch ghostty terminal" })
+hl.bind(mod .. " + B", hl.dsp.exec_cmd(zen_browser), { description = "Launch Zen Browser" })
+hl.bind(mod .. " + E", hl.dsp.exec_cmd(thunar), { description = "Launch Thunar" })
+hl.bind(mod .. " + O", hl.dsp.exec_cmd(notes1), { description = "Launch Obsidian" })
 hl.bind(mod .. " + SHIFT + O", hl.dsp.exec_cmd(notes2))
-hl.bind(mod .. " + I", hl.dsp.exec_cmd(editor3))
+hl.bind(mod .. " + I", hl.dsp.exec_cmd(editor3), { description = "Launch Codium" })
 hl.bind(mod .. " + SHIFT + I", hl.dsp.exec_cmd(editor2))
 hl.bind(mod .. " + ALT + I", hl.dsp.exec_cmd(editor3))
-hl.bind(mod .. " + B", hl.dsp.exec_cmd(bar_toggle))
-hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(bar_toggle), { description = "Toggle Bar" })
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"), { description = "Lockscreen" })
 
-hl.bind("ALT + RETURN", hl.dsp.exec_cmd(terminal1))
+hl.bind("ALT + RETURN", hl.dsp.exec_cmd(kitty))
 
 -------------------
 -- Menu Keybinds --
@@ -35,14 +34,14 @@ local menu       = "~/.config/rofi/launchers/launcher-1.sh"
 local capn_menu  = "~/.config/rofi/scripts/capn-menu.sh"
 local power_menu = "~/.config/rofi/scripts/capn-menu.sh power"
 local wallpaper  = "~/.config/rofi/scripts/wallpapers.sh"
-local cliphist   = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+local cliphist   = "~/.config/rofi/scripts/clipboard-history.sh"
 
 hl.bind(mod .. " + ALT + SPACE", hl.dsp.exec_cmd(menu))
-hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call launcher toggle"))
-hl.bind(mod .. " + A", hl.dsp.exec_cmd("qs ipc call cc toggle"))
+hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call launcher toggle"), { description = "Toggle Launcher" })
+hl.bind(mod .. " + A", hl.dsp.exec_cmd("qs ipc call cc toggle"), { description = "Toggle Control Center" })
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(capn_menu))
 hl.bind(mod .. " + CTRL + SPACE", hl.dsp.exec_cmd(power_menu))
-hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd("qs ipc call wallpapers toggle"))
+hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd("qs ipc call wallpapers toggle"), { description = "Toggle Wallpaper Picker" })
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(cliphist))
 
 hl.bind(mod .. " + ESCAPE", hl.dsp.exec_cmd("qs ipc call power toggle"))
@@ -146,3 +145,13 @@ hl.bind(mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" 
 -- Scroll through existing workspaces with mod + scroll
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+
+hl.bind("SUPER + X", function ()
+    if hl.get_workspace("special:minimized") then
+        hl.dispatch(hl.dsp.window.move({ workspace = hl.get_active_workspace(), window = "tag:minimized" }))
+        hl.dispatch(hl.dsp.window.clear_tags({ window = "tag:minimized" }))
+    else
+        hl.dispatch(hl.dsp.window.tag({ tag = "minimized", window = hl.get_active_window() }))
+        hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
+    end
+end)

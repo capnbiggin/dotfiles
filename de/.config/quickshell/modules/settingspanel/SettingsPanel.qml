@@ -46,7 +46,21 @@ PanelWindow {
     width: 800
     height: 600
     radius: Theme.panelRadius
-    color: Theme.bg1
+    // color: Theme.bg1
+    gradient: Gradient {
+      GradientStop {
+        position: 0.0
+        color: Theme.bg1
+      }
+      GradientStop {
+        position: 0.5
+        color: Theme.bg2
+      }
+      GradientStop {
+        position: 1.0
+        color: Theme.bg3
+      }
+    }
 
     border {
       width: 1
@@ -66,10 +80,53 @@ PanelWindow {
       anchors.fill: parent
     }
 
-    Text {
-      text: "Testing"
-      anchors.centerIn: parent
-      color: Theme.fg
+    Item {
+      anchors.fill: parent
+      clip: true
+
+      Rectangle {
+        id: rail
+        width: 180
+        height: parent.height
+        topLeftRadius: Theme.panelRadius
+        bottomLeftRadius: Theme.panelRadius
+        // color: Theme.bg1
+        gradient: Gradient {
+          GradientStop {
+            position: 0.0
+            color: Theme.bg1
+          }
+          GradientStop {
+            position: 0.5
+            color: Theme.bg2
+          }
+          GradientStop {
+            position: 1.0
+            color: Theme.bg3
+          }
+        }
+
+        border {
+          color: Theme.alpha(Theme.cyan, 0.45)
+          width: 1
+        }
+
+        Text {
+          text: "test"
+          color: Theme.fg
+          // anchors.centerIn: parent
+          anchors.top: parent.top
+          anchors.left: parent.left
+          anchors.topMargin: 20
+          anchors.leftMargin: 25
+        }
+      }
+
+      Text {
+        text: "test"
+        color: Theme.fg
+        anchors.centerIn: parent
+      }
     }
   }
 }

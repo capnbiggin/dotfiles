@@ -39,15 +39,16 @@ hl.window_rule({
   float = true,
 })
 
-hl.window_rule({ match = { class = "^(thunar)$" }, float = true })
-hl.window_rule({ match = { class = "^(org.kde.dolphin)$" }, float = true })
-hl.window_rule({ match = { class = "^(org.gnome.Nautilus)$" }, float = true })
-hl.window_rule({ match = { class = "^(capn.menu.window)$" }, float = true })
-hl.window_rule({ match = { class = "^(org.pulseaudio.pavucontrol)$" }, float = true })
-hl.window_rule({ match = { class = "^(blueberry.py)$" }, float = true })
-hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true, size = { 600, 600 }, center = true })
+hl.window_rule({ match = { class = "^(thunar)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(org.kde.dolphin)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(org.gnome.Nautilus)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(capn.menu.window)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(org.pulseaudio.pavucontrol)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(blueberry.py)$" }, float = true, size = { 800, 600 }, center = true  })
+hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true, size = { 800, 600 }, center = true })
+hl.window_rule({ match = { class = "^(xdg-desktop-portal-gtk)$", title = "Open Folder" }, float = true, size = { 800, 600 }, center = true })
 
-hl.window_rule({ match = { class = "^(ghostty)$" }, workspace = 1 })
+hl.window_rule({ match = { class = "^(kitty)$" }, workspace = 1 })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"

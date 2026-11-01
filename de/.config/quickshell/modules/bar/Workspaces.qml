@@ -47,10 +47,10 @@ Rectangle {
   Shadow {}
 
   Rectangle {
-    x: root.padding + root.activeIndex * root.cellWidth + (root.cellWidth - root.thumbSize / 1.5) / 2
-    width: root.thumbSize / 1.5
+    x: root.padding + root.activeIndex * root.cellWidth + (root.cellWidth - root.thumbSize /* / 1.5 */) / 2
+    width: root.thumbSize /* / 1.5 */
     height: root.thumbSize
-    radius: root.thumbSize / 2
+    radius: 3
     anchors.verticalCenter: parent.verticalCenter
     visible: root.activeIndex >= 0
     color: Theme.tint(Theme.accent)
@@ -71,6 +71,7 @@ Rectangle {
       model: root.list
 
       Item {
+
         required property var modelData
 
         readonly property bool busy: modelData.toplevels.values.length > 0
@@ -79,6 +80,7 @@ Rectangle {
         height: parent.height
 
         Rectangle {
+          id: ws
           anchors.centerIn: parent
 
           // width: {
@@ -89,17 +91,29 @@ Rectangle {
           //   return 6;
           // }
           // height: width
-          width: 6
+          width: {
+            if (parent.modelData.active || dotMouse.containsMouse)
+              return 12;
+            return 6;
+          }
           height: {
             if (dotMouse.containsMouse)
               return 14;
-            if (parent.busy || parent.modelData.active)
+            if (parent.modelData.active)
+              return 14;
+            if (parent.busy)
               return 12;
             return 10;
           }
-          radius: width / 2
+          radius: 3
 
           Behavior on width {
+            NumberAnimation {
+              duration: Theme.hoverTime
+              easing.type: Easing.OutCubic
+            }
+          }
+          Behavior on height {
             NumberAnimation {
               duration: Theme.hoverTime
               easing.type: Easing.OutCubic
@@ -108,7 +122,7 @@ Rectangle {
           color: {
             if (parent.modelData.urgent)
               return Theme.red;
-            if (parent.modelData.active)
+            if (parent.modelData.active || dotMouse.containsMouse)
               return Theme.accent;
             if (parent.busy)
               return Theme.fg;
@@ -120,6 +134,23 @@ Rectangle {
             }
           }
         }
+
+        Text {
+          anchors.centerIn: parent
+          color: Theme.grey0
+          text: {
+            if (parent.modelData.id === 10)
+              return 0;
+            return parent.modelData.id;
+          }
+          visible: parent.modelData.active || dotMouse.containsMouse
+          font {
+            family: Theme.font
+            pixelSize: Theme.xsFontSize
+            weight: 700
+          }
+        }
+
         MouseArea {
           id: dotMouse
           anchors.fill: parent

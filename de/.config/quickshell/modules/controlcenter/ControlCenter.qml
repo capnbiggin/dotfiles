@@ -46,7 +46,21 @@ PanelWindow {
     height: content.height + 25
     y: Theme.belowBar
     radius: Theme.panelRadius
-    color: Theme.bg1
+    // color: Theme.bg1
+    gradient: Gradient {
+      GradientStop {
+        position: 0.0
+        color: Theme.bg1
+      }
+      GradientStop {
+        position: 0.5
+        color: Theme.bg2
+      }
+      GradientStop {
+        position: 1.0
+        color: Theme.bg3
+      }
+    }
 
     border {
       width: 1

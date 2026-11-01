@@ -9,12 +9,11 @@ import qs.theme
 Singleton {
   id: root
 
-  readonly property string folder: Quickshell.shellDir
+  readonly property string folder: `${Quickshell.env("HOME")}/dotfiles/wallpapers/`
 
   property var all: []
-  readonly property var files: all.filter(file => file.includes("/" + Theme.wallpaperDir + "/"))
 
-  readonly property string current: Settings.wallpapers[Theme.wallpaperDir] ?? files[0] ?? ""
+  readonly property string current: Settings.wallpaper ?? files[0] ?? ""
   onCurrentChanged: show(current)
 
   Process {
@@ -49,12 +48,7 @@ Singleton {
   }
 
   function apply(image) {
-    let remembered = {};
-    for (let name in Settings.wallpapers) {
-      remembered[name] = Settings.wallpapers[name];
-    }
-    remembered[Theme.wallpaperDir] = image;
-    Settings.wallpapers = remembered;
+    Settings.wallpaper = image;
     Settings.save();
   }
 

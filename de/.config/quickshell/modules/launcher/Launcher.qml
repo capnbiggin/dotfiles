@@ -11,21 +11,20 @@ PanelWindow {
 
   readonly property bool open: Popups.launcher && Popups.screenName === screen.name
 
-  property string mode: "apps"
+  property string mode: Popups.wallpaper ? "wallpapers" : "apps"
 
   readonly property string query: search.text
   readonly property var appRows: Apps.search(query)
   readonly property var themeRows: Themes.names.filter(name => name.includes(query))
-  readonly property var wallpaperRows: Wallpapers.files.filter(file => Wallpapers.nameOf(file).includes(query))
+  readonly property var wallpaperRows: Wallpapers.all.filter(file => Wallpapers.nameOf(file).includes(query))
 
   readonly property var rows: {
     if (mode === "themes") {
       return themeRows;
-    }
-    if (mode === "wallpapers") {
+    } else if (mode === "wallpapers") {
       return wallpaperRows;
-    }
-    return appRows;
+    } else
+      return appRows;
   }
 
   property int selected: 0
@@ -120,7 +119,21 @@ PanelWindow {
     height: Math.max(content.height + 28, 200)
     y: Theme.belowBar
     radius: Theme.panelRadius
-    color: Theme.bg1
+    // color: Theme.bg1
+    gradient: Gradient {
+      GradientStop {
+        position: 0.0
+        color: Theme.bg1
+      }
+      GradientStop {
+        position: 0.5
+        color: Theme.bg2
+      }
+      GradientStop {
+        position: 1.0
+        color: Theme.bg3
+      }
+    }
 
     border {
       width: 1
@@ -153,18 +166,32 @@ PanelWindow {
       anchors.fill: parent
     }
 
-    // --- Side Rail Buttons ----------
     Item {
       anchors.fill: parent
       clip: true
 
+      // --- Side Rail Buttons ----------
       Rectangle {
         id: rail
         width: launcher.railWidth
         height: parent.height
         topLeftRadius: Theme.panelRadius
         bottomLeftRadius: Theme.panelRadius
-        color: Theme.bg0
+        // color: Theme.bg0
+        gradient: Gradient {
+          GradientStop {
+            position: 0.0
+            color: Theme.bg1
+          }
+          GradientStop {
+            position: 0.5
+            color: Theme.bg2
+          }
+          GradientStop {
+            position: 1.0
+            color: Theme.bg3
+          }
+        }
 
         border {
           width: 1
