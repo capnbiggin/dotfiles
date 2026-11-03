@@ -9,6 +9,7 @@ import qs.modules.settingspanel
 import qs.modules.notifications
 import qs.modules.launcher
 import qs.modules.theming
+import qs.modules.osd
 
 ShellRoot {
   id: root
@@ -37,6 +38,10 @@ ShellRoot {
       }
 
       NotificationPopup {
+        screen: perScreen.modelData
+      }
+
+      Osd {
         screen: perScreen.modelData
       }
     }
@@ -73,6 +78,14 @@ ShellRoot {
 
     function toggle(): void {
       Popups.toggleWallpapers();
+    }
+  }
+
+  IpcHandler {
+    target: "brightness"
+
+    function step(amount: string): void {
+      Brightness.step(amount);
     }
   }
 }

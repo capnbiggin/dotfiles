@@ -11,6 +11,7 @@ require("modules.look")
 require("modules.animations")
 require("modules.misc")
 require("modules.layout")
+-- require("modules.test")
 
 -----------------------
 ----- PERMISSIONS -----
